@@ -1,8 +1,8 @@
 <?php
 //PARAMETRODE DE CONFIGURAÇÃO INICIAL
 
-$host='localhost';
-$base='cafeteria';
+$host='192.168.1.200';
+$base='controle_materiais';
 $usuario='root';
 $senha='1234';
 
