@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09/09/2018, 19:54:12
+    Author     : Jonas
+*/
+
+body{
+    overflow-x:hidden;
+    font-family:'Roboto Slab','Helvetica Neue',Helvetica,Arial,sans-serif
+}
+
+p{line-height:1.75; text-align: justify;}
+a{color:#fed136}
+a:hover{color:#fec503}
+.text-primary{color:#fed136!important}
+h1,h2,h3,h4,h5,h6{font-weight:700;font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif}

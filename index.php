@@ -1,63 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
     <head>
-        <title>Manutenção TM</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Jonas Kuhn">
+
+        <meta property="og:url" content="">
+        <meta property="og:type" content="">
+        <!-- no type existem vários tipos article/wesite....-->
+        <meta property="og:title" content="">
+        <meta property="og:description" content="">
+
+        <!-- Tamanho que o FB recomenda 1200x630 máximo 5mb-->
+        <meta property="og:image" content="">
+
+        <title>Empréstimos NTI</title>
+        <link rel="shortcut icon" href="" type="image/x-icon"/>
+
+        <link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <!-- NOVAS -->
+        <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
+
     </head>
+
     <body>
-        <!-- Sidebar -->
-        <div id="sidebar">
-            <div class="inner">
-
-                <!-- Menu -->
-                <nav id="menu">
-                    <header class="major">
-                        <h2>Manutenção TM</h2>
-                    </header>
-
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="generic.html">Ordens de Serviço</a></li>
-                        <li><a href="elements.html">Solicitações de Serviço</a></li>
-                        <li><a href="#">Paradas</a></li>
-                        <li>
-                            <span class="opener">Máquinas</span>
-                            <ul>
-                                <li><a href="#">Lorem Dolor</a></li>
-                                <li><a href="#">Ipsum Adipiscing</a></li>
-                                <li><a href="#">Tempus Magna</a></li>
-                                <li><a href="#">Feugiat Veroeros</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="opener">Manutentores</span>
-                            <ul>
-                                <li><a href="#">Lorem Dolor</a></li>
-                                <li><a href="#">Ipsum Adipiscing</a></li>
-                                <li><a href="#">Tempus Magna</a></li>
-                                <li><a href="#">Feugiat Veroeros</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </nav>
-
-                <!-- Footer -->
-                <footer id="footer">
-                    <p class="copyright">&copy; Leonardo Roden. All rights reserved.</p>
-                </footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <p >TESTE</p>
+                </div>
+                <div class="col">
+                    <p >TESTE</p>
+                </div>
+                <div class="col">
+                    <p >TESTE</p>
+                </div>
+                <div class="col">
+                    <p >TESTE</p>
+                </div>
             </div>
-        </div>
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-    <script src="assets/js/main.js"></script>
-
-</body>
+        </div>  
+    </body>
+    <script src="dist/js/bootstrap.min.js" type="text/javascript"></script>
 </html>
