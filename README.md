@@ -1,4 +1,17 @@
 # dsv-Controle-de-Materiais
+
+
+BANCO DE DADOS
+
+172.16.120.76
+user: root
+senha: gti-315
+
+name bd: reservas_nti
+
+
+
+
 Desenvolvimento de uma aplicação web para o controle de materias.
 
 Desenvolvedores: JonasKuhn, LRoden, Matheus-7k e klunk66;
@@ -18,8 +31,9 @@ Base do projeto:
     -> Botão para adicionar um novo emprestimo;
     -> Número de equipamentos que não estão sendo utilizados (Em forma de lista ou
        em tabela);
-    -> Número de emprestimos que estão sendo realizados no momento (Em forma de lista ou
+    -> Emprestimos que estão sendo realizados no momento (Em forma de lista ou
        em tabela, com opção para encerrar e editar a mesma);
+
 ->Menu lateral:
     ->Painel de Controle;
     ->Emprestimo;
@@ -41,6 +55,3 @@ Base do projeto:
     ->Admin:
         ->Pedirá para inserir a senha de administrador para entrar nesse menu;
         ->Poderá adicionar novos logins e alterar dados do mesmo;
-
-
-***ATÉ O MOMENTO É ISSO QUE COSIGO ELABORAR;

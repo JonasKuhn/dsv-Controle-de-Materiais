@@ -24,3 +24,4 @@
 /app/Config/database.php
 /vendors/*
 /nbproject/private/
+/aps2/nbproject/private/
