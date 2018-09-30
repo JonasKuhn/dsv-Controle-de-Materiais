@@ -31,19 +31,32 @@
     </head>
 
     <body>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col">
-                    <p >TESTE</p>
-                </div>
-                <div class="col">
-                    <p >TESTE</p>
-                </div>
-                <div class="col">
-                    <p >TESTE</p>
-                </div>
-                <div class="col">
-                    <p >TESTE</p>
+        <header>
+            <h1 class="site-heading text-center text-white d-none d-lg-block">
+                <span class="site-heading-upper text-primary">Faça seu Empréstimo</span>
+            </h1>
+        </header>
+        <div class="container col-5">
+            <div class="align-center">
+                <div class="row">
+                    <div class="col align-self-md-center">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">
+                                    <a href="#">Alunos</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col align-self-md-center">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">
+                                    <a href="#">Professores</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>  

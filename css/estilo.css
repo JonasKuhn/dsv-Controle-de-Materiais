@@ -18,3 +18,9 @@ a{color:#fed136}
 a:hover{color:#fec503}
 .text-primary{color:#fed136!important}
 h1,h2,h3,h4,h5,h6{font-weight:700;font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif}
+
+header{
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
