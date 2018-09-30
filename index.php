@@ -44,6 +44,7 @@
                 </div>
                 <div class="col">
                     <p >TESTE</p>
+                    
                 </div>
             </div>
         </div>  
