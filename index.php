@@ -20,14 +20,6 @@
         <link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
 
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-        <!-- NOVAS -->
-        <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
-
     </head>
 
     <body>
@@ -40,22 +32,25 @@
             <div class="align-center">
                 <div class="row">
                     <div class="col align-self-md-center">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h4 class="card-title text-center">
-                                    <a href="#">Alunos</a>
-                                </h4>
+                        <a href="#">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center">
+                                        Alunos
+                                    </h4>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="col align-self-md-center">
-                        <div class="card h-100">
-                            <div class="card-body">
-                                <h4 class="card-title text-center">
-                                    <a href="#">Professores</a>
-                                </h4>
+                        <a href="#">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center">Professores
+                                    </h4>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
