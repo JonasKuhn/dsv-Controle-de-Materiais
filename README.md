@@ -7,7 +7,7 @@ BANCO DE DADOS
 user: root
 senha: gti-315
 
-name bd: reservas_nti
+name bd: emprestimo_nti
 
 
 
