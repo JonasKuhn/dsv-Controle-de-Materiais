@@ -5,7 +5,7 @@
 # Project name:                                                          #
 # Author:                                                                #
 # Script type:           Database creation script                        #
-# Created on:            2018-10-03 19:30                                #
+# Created on:            2018-10-03 19:49                                #
 # ---------------------------------------------------------------------- #
 
 
@@ -62,6 +62,8 @@ CREATE TABLE `tb_admin` (
     `nome_admin` VARCHAR(200) NOT NULL,
     `senha_admin` VARCHAR(200) NOT NULL,
     `login_admin` VARCHAR(200) NOT NULL,
+    `created` TIMESTAMP NOT NULL DEFAULT NOW(),
+    `modified` TIMESTAMP,
     CONSTRAINT `PK_tb_admin` PRIMARY KEY (`cod_admin`)
 );
 
@@ -87,6 +89,8 @@ CREATE TABLE `tb_emprestimo` (
     `cod_equipamento` INTEGER,
     `cod_pessoa` INTEGER,
     `cod_situacao` INTEGER,
+    `created` TIMESTAMP NOT NULL DEFAULT NOW(),
+    `modified` TIMESTAMP,
     CONSTRAINT `PK_tb_emprestimo` PRIMARY KEY (`cod_emprestimo`)
 );
 
@@ -102,6 +106,8 @@ CREATE TABLE `tb_pessoa` (
     `telefone_pessoa` VARCHAR(20) NOT NULL,
     `nome_pessoa` VARCHAR(200) NOT NULL,
     `cod_tipo_pessoa` INTEGER,
+    `created` TIMESTAMP NOT NULL DEFAULT NOW(),
+    `modified` TIMESTAMP,
     CONSTRAINT `PK_tb_pessoa` PRIMARY KEY (`cod_pessoa`)
 );
 
