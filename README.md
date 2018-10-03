@@ -9,6 +9,8 @@ senha: gti-315
 
 name bd: emprestimo_nti
 
+Cores Projeto: CINZA: #585657 || LARANJA: #FE6B00
+
 
 
 
