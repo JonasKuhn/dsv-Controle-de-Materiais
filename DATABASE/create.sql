@@ -5,7 +5,7 @@
 # Project name:                                                          #
 # Author:                                                                #
 # Script type:           Database creation script                        #
-# Created on:            2018-10-03 19:49                                #
+# Created on:            2018-10-03 20:21                                #
 # ---------------------------------------------------------------------- #
 
 
@@ -19,7 +19,7 @@
 
 CREATE TABLE `tb_tipo_equipamento` (
     `cod_tipo_equipamento` INTEGER NOT NULL AUTO_INCREMENT,
-    `desc_tipo` VARCHAR(200),
+    `desc_tipo` TEXT,
     `qtd_tipo` INTEGER,
     CONSTRAINT `PK_tb_tipo_equipamento` PRIMARY KEY (`cod_tipo_equipamento`)
 );
@@ -30,13 +30,13 @@ CREATE TABLE `tb_tipo_equipamento` (
 
 CREATE TABLE `tb_equipamento` (
     `cod_equipamento` INTEGER NOT NULL AUTO_INCREMENT,
-    `desc_equipamento` VARCHAR(200) NOT NULL,
-    `desc_observacao` VARCHAR(500),
+    `desc_equipamento` TEXT NOT NULL,
+    `desc_observacao` TEXT,
     `fl_curso_gti` BOOL NOT NULL,
     `fl_status` BOOL,
     `cod_tipo_equipamento` INTEGER,
     `created` TIMESTAMP NOT NULL DEFAULT NOW(),
-    `modified` TIMESTAMP,
+    `modified` TIMESTAMP NULL,
     CONSTRAINT `PK_tb_equipamento` PRIMARY KEY (`cod_equipamento`)
 );
 
@@ -63,7 +63,7 @@ CREATE TABLE `tb_admin` (
     `senha_admin` VARCHAR(200) NOT NULL,
     `login_admin` VARCHAR(200) NOT NULL,
     `created` TIMESTAMP NOT NULL DEFAULT NOW(),
-    `modified` TIMESTAMP,
+    `modified` TIMESTAMP NULL,
     CONSTRAINT `PK_tb_admin` PRIMARY KEY (`cod_admin`)
 );
 
@@ -90,7 +90,7 @@ CREATE TABLE `tb_emprestimo` (
     `cod_pessoa` INTEGER,
     `cod_situacao` INTEGER,
     `created` TIMESTAMP NOT NULL DEFAULT NOW(),
-    `modified` TIMESTAMP,
+    `modified` TIMESTAMP NULL,
     CONSTRAINT `PK_tb_emprestimo` PRIMARY KEY (`cod_emprestimo`)
 );
 
@@ -107,7 +107,7 @@ CREATE TABLE `tb_pessoa` (
     `nome_pessoa` VARCHAR(200) NOT NULL,
     `cod_tipo_pessoa` INTEGER,
     `created` TIMESTAMP NOT NULL DEFAULT NOW(),
-    `modified` TIMESTAMP,
+    `modified` TIMESTAMP NULL,
     CONSTRAINT `PK_tb_pessoa` PRIMARY KEY (`cod_pessoa`)
 );
 

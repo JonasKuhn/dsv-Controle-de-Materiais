@@ -24,13 +24,14 @@
 
     <body>
         <header>
-            <h1 class="site-heading text-center text-white d-none d-lg-block">
-                <span class="site-heading-upper text-primary">Faça seu Empréstimo</span>
+            <h1 class="text-center d-none d-lg-block">
+                Faça seu Empréstimo
             </h1>
         </header>
-        <div class="container col-5">
-            <div class="align-center">
-                <div class="row">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="align-center col-md-3 offset-md-3">
                     <div class="col align-self-md-center">
                         <a href="#">
                             <div class="card h-100">
@@ -42,18 +43,19 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col align-self-md-center">
-                        <a href="#">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">Professores
-                                    </h4>
-                                </div>
+                </div>
+                <div class="col align-self-md-center col-md-3">
+                    <a href="#">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h4 class="card-title text-center">Professores
+                                </h4>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
             </div>
+        </div>
     </body>
     <script src="dist/js/bootstrap.min.js" type="text/javascript"></script>
 </html>

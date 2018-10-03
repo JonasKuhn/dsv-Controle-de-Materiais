@@ -11,8 +11,12 @@ and open the template in the editor.
     
 }
 
+a:hover{
+    text-decoration: none;
+    color:#585657;
+}
+
 header{
     margin-top: 80px;
     margin-bottom: 80px;
 }
-
