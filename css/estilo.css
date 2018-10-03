@@ -7,8 +7,16 @@ and open the template in the editor.
     Created on : 09/09/2018, 19:54:12
     Author     : Jonas
 */
-*{
-    
+
+@font-face{
+    font-family: rogliano-regular;
+    src: url(../fonts/rogliano-regular.OTF);
+}
+
+* {
+    font-family: rogliano-regular;
+    color: black;
+    font-size: 1rem;
 }
 
 a:hover{
