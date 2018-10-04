@@ -68,7 +68,7 @@
 
                 <!-- text input-->
                 <div class="form-group row">
-                    <label class="col-md-1 " style="white-space: nowrap" for="idSenha">E-mail:</label>
+                    <label class="col-md-1 text-nowrap" for="idSenha">E-mail:</label>
                     <div class="col-md-5 ml-3 ">
                         <input id="idSenha" name="idSenha" type="text" placeholder="Digite seu e-mail" class="form-control input-md" required="">
 
