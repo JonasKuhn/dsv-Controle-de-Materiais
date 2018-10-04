@@ -28,3 +28,11 @@ header{
     margin-top: 80px;
     margin-bottom: 80px;
 }
+
+.trava{
+    clear: both;
+}
+
+.font-2x{
+    font-size: 1.2rem;
+}
