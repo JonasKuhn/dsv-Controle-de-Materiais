@@ -9,12 +9,12 @@ and open the template in the editor.
 */
 
 @font-face{
-    font-family: rogliano-regular;
-    src: url(../fonts/rogliano-regular.OTF);
+    font-family: noto-sans-regular;
+    src: url(../font/NotoSans-Regular.ttf);
 }
 
 * {
-    font-family: rogliano-regular;
+    font-family: noto-sans-regular;
     color: black;
     font-size: 1rem;
 }
