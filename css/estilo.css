@@ -19,12 +19,31 @@ and open the template in the editor.
     font-size: 1rem;
 }
 
+body{
+    background-color:#f2f2f2;
+}
+
 a:hover{
     text-decoration: none;
-    color:#585657;
 }
 
 header{
-    margin-top: 80px;
-    margin-bottom: 80px;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background-color: #adadad; 
+}
+
+/*Usado para a estilização do menus iniciais*/
+.item-card{
+    background-color: #f2f2f2;
+}
+
+.item-card a:hover{
+  background-color:#FE6B00;
+  border-radius: 2px;
+}
+
+.item-card a{
+  background-color:#585657;
+  border-radius: 2px;
 }

@@ -17,9 +17,8 @@
         <title>Empréstimos NTI</title>
         <link rel="shortcut icon" href="" type="image/x-icon"/>
 
-        <link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-
     </head>
 
     <body>
@@ -28,34 +27,43 @@
                 Faça seu Empréstimo
             </h1>
         </header>
-        <div class="container-fluid">
-
-            <div class="row">
+        <div class="container-fluid mt-md-5">
+            <div class="row item-card">
                 <div class="align-center col-md-3 offset-md-3">
                     <div class="col align-self-md-center">
-                        <a href="#">
-                            <div class="card h-100">
-                                <div class="card-body">
-                                    <h4 class="card-title text-center">
-                                        Alunos
-                                    </h4>
+                        <div class="card h-100">
+                            <a href="#">
+                                <div class="card-body align-self-md-center" style="height: 200px;">
+                                    <h4 class="card-title text-center">Alunos</h4>
                                 </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col align-self-md-center col-md-3">
+                    <div class="card h-100">
+                        <a href="#">
+                            <div class="card-body text-center" style="height: 200px;">
+                                <h4 class="card-text">Professores</h4>
                             </div>
                         </a>
                     </div>
                 </div>
-                <div class="col align-self-md-center col-md-3">
-                    <a href="#">
-                        <div class="card h-100">
+            </div>
+            <div class="row item-card">
+                <div class="col col-md-2 offset-md-9 fixed-bottom mb-5">
+                    <div class="card">
+                        <a href="#">
                             <div class="card-body">
-                                <h4 class="card-title text-center">Professores
-                                </h4>
+                                <h6 class="card-subtitle text-center">
+                                    Administradores
+                                </h6>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </body>
-    <script src="dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="dist/js/bootstrap.js" type="text/javascript"></script>
 </html>
