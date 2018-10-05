@@ -19,51 +19,59 @@
 
         <link href="dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
+        <link href="events/css/hover.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
+        <a href="#" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
-            <h1 class="text-center d-none d-lg-block">
+            <h1 class="d-none d-lg-block text-nowrap text-center">
                 Faça seu Empréstimo
             </h1>
+
         </header>
-        <div class="container-fluid mt-md-5">
-            <div class="row item-card">
+        <div class="trava container-fluid mt-md-5">
+            <div class="row item-card text-center">
                 <div class="align-center col-md-3 offset-md-3">
                     <div class="col align-self-md-center">
                         <div class="card h-100">
-                            <a href="#">
-                                <div class="card-body align-self-md-center" style="height: 200px;">
-                                    <h4 class="card-title text-center">Alunos</h4>
+                            <a href="#" class="hvr-grow-shadow">
+                                <div class="card-body" style="height: 200px;">
+                                    <h3>Alunos</h3>
                                 </div>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col align-self-md-center col-md-3">
+                <div class="col col-md-3">
                     <div class="card h-100">
-                        <a href="#">
-                            <div class="card-body text-center" style="height: 200px;">
-                                <h4 class="card-text">Professores</h4>
+                        <a href="#" class="hvr-grow-shadow">
+                            <div class="card-body"  style="height: 200px;">
+                                <h3>Professores</h3>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="row item-card">
-                <div class="col col-md-2 offset-md-9 fixed-bottom mb-5">
-                    <div class="card">
-                        <a href="#">
-                            <div class="card-body">
-                                <h6 class="card-subtitle text-center">
-                                    Administradores
-                                </h6>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+            <div class="fixed-bottom " >
+                <a href="#" class="hvr-bubble-float-bottom-new" style="float: right; margin-right: 100px; margin-bottom:0px; background-color: #585657; border-radius: 2px; color: #FFF; padding: 5px;">
+                    Administradores
+                </a>
             </div>
         </div>
     </body>
     <script src="dist/js/bootstrap.js" type="text/javascript"></script>
+    <!-- Ativar events -->
+    <script>
+        var effects = document.querySelectorAll('.effects')[0];
+
+        effects.addEventListener('click', function (e) {
+
+            if (e.target.className.indexOf('hvr') > -1) {
+                e.preventDefault();
+                e.target.blur();
+
+            }
+        });
+    </script>
 </html>

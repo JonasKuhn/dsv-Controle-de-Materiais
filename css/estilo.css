@@ -15,12 +15,11 @@ and open the template in the editor.
 
 * {
     font-family: noto-sans-regular;
-    color: black;
     font-size: 1rem;
 }
 
 body{
-    background-color:#f2f2f2;
+    background-color:#FFF;
 }
 
 a:hover{
@@ -28,24 +27,35 @@ a:hover{
 }
 
 header{
-    padding-top: 5%;
-    padding-bottom: 5%;
+    height: 108px;
+    align-self: center;
     background-color: #adadad; 
 }
 
-/*Usado para a estilização do menus iniciais*/
-.item-card{
-    background-color: #f2f2f2;
+header h1{
+    font-size: 40px;
+    color: #585657;
+    font-weight: bold;
+    line-height: 70px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 16%;
+    text-transform: uppercase;
+    float: left;
+    background: url(../img/barra.jpg) no-repeat bottom left;
 }
 
+/*Usado para a estilização do menus iniciais*/
+
 .item-card a:hover{
-  background-color:#FE6B00;
-  border-radius: 2px;
+    background-color:#FE6B00;
+    border-radius: 2px;
 }
 
 .item-card a{
-  background-color:#585657;
-  border-radius: 2px;
+    color: #FFF !important;
+    background-color:#585657;
+    border-radius: 2px;
 }
 
 .trava{

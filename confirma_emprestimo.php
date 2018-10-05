@@ -17,7 +17,7 @@
         <title>Empréstimos NTI</title>
         <link rel="shortcut icon" href="" type="image/x-icon"/>
         <link href="intranet/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <link href="dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
 
     </head>
