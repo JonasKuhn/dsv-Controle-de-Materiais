@@ -23,67 +23,71 @@
     </head>
 
     <body>
-        <header > 
-            <h1 class="text-center d-none d-lg-block">
+        <a href="#" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
+        <header>
+            <h1 class="d-none d-lg-block text-nowrap text-center">
                 Preencha seus dados:
             </h1>
         </header>
-        <div class="container-fluid">
-            <div class=" offset-md-4">
-                <!-- Text input-->
+        <div class="trava"></div>
+        <form>
+            <div class="container-fluid">
+                <div class="col-md-6 offset-md-3">
+                    <!-- Text input-->
 
-                <div class="form-group row">
-                    <label class="col-md-1" for="idDepto">Matrícula:</label>  
-                    <div class="col-md-5 ml-3">
-                        <input id="idDepto" name="idDepto" type="text" placeholder="Digite sua Matrícula" class="form-control input-md" required="">
+                    <div class="form-group row offset-md-1">
+                        <label class="col-md-2 col-form-label">Matrícula:</label>  
+                        <div class="col-md-8 ml-3">
+                            <input id="idDepto" name="matricula" type="text" placeholder="Digite sua Matrícula" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
 
-                <!-- Text input-->
-                <div class="form-group row">
-                    <label class="col-md-1" for="idDepto">Nome:</label>  
-                    <div class="col-md-5 ml-3 ">
-                        <input id="idDepto" name="idDepto" type="text" placeholder="Digite seu nome" class="form-control input-md" required="">
+                    <!-- Text input-->
+                    <div class="form-group row offset-md-1">
+                        <label class="col-md-2 col-form-label">Nome:</label>  
+                        <div class="col-md-8 ml-3 ">
+                            <input id="idDepto" name="nome" type="text" placeholder="Digite seu nome" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
 
-                <!-- Text input-->
-                <div class="form-group row">
-                    <label class="col-md-1" for="idUsuario">Celular:</label>  
-                    <div class="col-md-5 ml-3">
-                        <input id="idUsuario" name="idUsuario" type="text" placeholder="Digite seu número de telefone" class="form-control input-md" required="">
+                    <!-- Text input-->
+                    <div class="form-group row offset-md-1">
+                        <label class="col-md-2 col-form-label">Celular:</label>  
+                        <div class="col-md-8 ml-3">
+                            <input id="idUsuario" name="telefone" type="tel" placeholder="Digite seu número de telefone" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
 
-                <!-- text input-->
-                <div class="form-group row">
-                    <label class="col-md-1 text-nowrap" for="idSenha">E-mail:</label>
-                    <div class="col-md-5 ml-3 ">
-                        <input id="idSenha" name="idSenha" type="text" placeholder="Digite seu e-mail" class="form-control input-md" required="">
+                    <!-- text input-->
+                    <div class="form-group row offset-md-1">
+                        <label class="col-md-2 text-nowrap col-form-label">E-mail:</label>
+                        <div class="col-md-8 ml-3 ">
+                            <input id="idSenha" name="email" type="email" placeholder="Digite seu e-mail" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
 
-                <!-- text input-->
-                <div class="form-group row">
-                    <label class="col-md-1 " for="idSenha">Sala:</label>
-                    <div class="col-md-5 ml-3 ">
-                        <input id="idSenha" name="idSenha" type="text" placeholder="Digite sua sala" class="form-control input-md" required="">
+                    <!-- text input-->
+                    <div class="form-group row offset-md-1">
+                        <label class="col-md-2 col-form-label">Sala:</label>
+                        <div class="col-md-8 ml-3 ">
+                            <input id="idSenha" name="sala" type="text" placeholder="Digite sua sala" class="form-control input-md" required="">
 
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Button (Double) -->
-            <div class="form-group">
-                <label class="col-md-4 form-group " for="idConfirmar"></label>
-                <div class="col-md-12 ">
-                    <button id="idCancelar" name="idCancelar" class="btn btn-danger col-md-2 offset-md-1 ">Voltar</button>
-                    <button id="idConfirmar" name="idConfirmar" class="btn btn-primary col-md-2 offset-md-6">Próximo</button>                
+                    <button type="button" class="btn btn-secondary btn-lg">
+                        <a href="#" style="color: white">Voltar</a>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-lg" style="float: right;background-color: #FE6B00;border-color: #FE6B00">
+                        <a href="#" style="color: white;">Concluir</a>
+                    </button>
+                    <div class="trava"></div>
                 </div>
             </div>
         </div>
-    </body>
+    </form>
+</body>
 </html>

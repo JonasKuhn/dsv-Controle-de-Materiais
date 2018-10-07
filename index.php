@@ -28,7 +28,6 @@
             <h1 class="d-none d-lg-block text-nowrap text-center">
                 Faça seu Empréstimo
             </h1>
-
         </header>
         <div class="trava container-fluid mt-md-5">
             <div class="row item-card text-center">
