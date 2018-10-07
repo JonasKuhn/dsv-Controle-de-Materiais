@@ -53,8 +53,8 @@
                     </div>
                 </div>
             </div>
-            <div class="fixed-bottom " >
-                <a href="#" class="hvr-bubble-float-bottom-new" style="float: right; margin-right: 100px; margin-bottom:0px; background-color: #585657; border-radius: 2px; color: #FFF; padding: 5px;">
+            <div class="item-card fixed-bottom " >
+                <a href="#" class="hvr-bubble-float-bottom-new" style="float: right; margin-right: 100px; margin-bottom:0px; border-radius: 2px; color: #FFF; padding: 5px;">
                     Administradores
                 </a>
             </div>
