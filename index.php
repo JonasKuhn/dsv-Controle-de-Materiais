@@ -35,7 +35,7 @@
                     <div class="col align-self-md-center">
                         <div class="card h-100">
                             <a href="#" class="hvr-grow-shadow">
-                                <div class="card-body" style="height: 200px;">
+                                <div class="card-body" style="display: flex; align-items: center; justify-content: center; height: 200px;">
                                     <h3>Alunos</h3>
                                 </div>
                             </a>
@@ -45,7 +45,7 @@
                 <div class="col col-md-3">
                     <div class="card h-100">
                         <a href="#" class="hvr-grow-shadow">
-                            <div class="card-body"  style="height: 200px;">
+                            <div class="card-body"  style="display: flex; align-items: center; justify-content: center; height: 200px;">
                                 <h3>Professores</h3>
                             </div>
                         </a>
