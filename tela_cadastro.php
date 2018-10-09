@@ -69,19 +69,10 @@
 
                         </div>
                     </div>
-
-                    <!-- text input-->
-                    <div class="form-group row offset-md-1">
-                        <label class="col-md-2 col-form-label">Sala:</label>
-                        <div class="col-md-8 ml-3 ">
-                            <input name="sala" type="text" placeholder="Digite sua sala" class="form-control input-md" required="">
-
-                        </div>
-                    </div>
-                    <button type="button" class="btn btn-secondary btn-lg">
+                    <button type="submit" class="btn btn-secondary btn-lg">
                         <a href="#" style="color: white">Voltar</a>
                     </button>
-                    <button type="button" class="btn btn-primary btn-lg" style="float: right;">
+                    <button type="submit" class="btn btn-primary btn-lg" style="float: right;">
                         <a href="#" style="color: white;">Concluir</a>
                     </button>
                     <div class="trava"></div>
