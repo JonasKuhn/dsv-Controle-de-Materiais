@@ -29,7 +29,50 @@
                 Selecione os Equipamentos Desejados
             </h1>
         </header>
-        
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 offset-3 mt-md-5">
+                    <form action="#" method="POST">
+                        <table class="table table-bordered table-hover table-responsive-md">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="font-2x">Equipamento</th>
+                                    <th scope="col" class="font-2x">Quantidade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <tr>
+                                    <td>Notebook</td>
+                                    <td><input class="form-control" type="number" name="notebook" required=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Régua</td>
+                                    <td><input class="form-control" type="number" name="regua" required=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Adaptador HDMI</td>
+                                    <td><input class="form-control" type="number" name="hdmi" required=""></td>
+                                </tr>
+                                <tr>
+                                    <td>Passador de slides</td>
+                                    <td><input class="form-control" type="number" name="passador" required=""></td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-secondary btn-lg" >
+                            <a href="#" style="color: white">Voltar</a>
+                        </button>
+                        <input type="submit" name="enviar" class="btn btn-primary btn-lg" value="Concluir" style=" float: right;font-size: 1rem; padding: 1.7%">
+                        <div class="trava"></div>  
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </body>
     <script src="dist/js/bootstrap.js" type="text/javascript"></script>
     <!-- Ativar events -->
