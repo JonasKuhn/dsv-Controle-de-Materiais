@@ -81,7 +81,7 @@
                     <button type="button" class="btn btn-secondary btn-lg">
                         <a href="#" style="color: white">Voltar</a>
                     </button>
-                    <button type="button" class="btn btn-secondary btn-lg" style="float: right;background-color: #FE6B00;border-color: #FE6B00">
+                    <button type="button" class="btn btn-primary btn-lg" style="float: right;">
                         <a href="#" style="color: white;">Concluir</a>
                     </button>
                     <div class="trava"></div>
