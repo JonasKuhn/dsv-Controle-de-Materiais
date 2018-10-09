@@ -26,7 +26,7 @@
         <a href="#" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
             <h1 class="d-none d-lg-block text-nowrap text-center">
-                Preencha seus dados:
+                Preencha seus dados
             </h1>
         </header>
         <div class="trava"></div>
@@ -38,7 +38,7 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Matrícula:</label>  
                         <div class="col-md-8 ml-3">
-                            <input id="idDepto" name="matricula" type="text" placeholder="Digite sua Matrícula" class="form-control input-md" required="">
+                            <input name="matricula" type="text" placeholder="Digite sua Matrícula" class="form-control input-md" required="">
 
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Nome:</label>  
                         <div class="col-md-8 ml-3 ">
-                            <input id="idDepto" name="nome" type="text" placeholder="Digite seu nome" class="form-control input-md" required="">
+                            <input name="nome" type="text" placeholder="Digite seu nome" class="form-control input-md" required="">
 
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Celular:</label>  
                         <div class="col-md-8 ml-3">
-                            <input id="idUsuario" name="telefone" type="tel" placeholder="Digite seu número de telefone" class="form-control input-md" required="">
+                            <input name="telefone" type="tel" placeholder="Digite seu número de telefone" class="form-control input-md" required="">
 
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 text-nowrap col-form-label">E-mail:</label>
                         <div class="col-md-8 ml-3 ">
-                            <input id="idSenha" name="email" type="email" placeholder="Digite seu e-mail" class="form-control input-md" required="">
+                            <input name="email" type="email" placeholder="Digite seu e-mail" class="form-control input-md" required="">
 
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Sala:</label>
                         <div class="col-md-8 ml-3 ">
-                            <input id="idSenha" name="sala" type="text" placeholder="Digite sua sala" class="form-control input-md" required="">
+                            <input name="sala" type="text" placeholder="Digite sua sala" class="form-control input-md" required="">
 
                         </div>
                     </div>
