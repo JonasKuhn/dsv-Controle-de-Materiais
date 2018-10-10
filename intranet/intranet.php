@@ -14,33 +14,17 @@
                 <!-- Menu -->
                 <nav id="menu">
                     <header class="major">
-                        <h2>Manutenção TM</h2>
+                        <h2>Empréstimo NTI</h2>
                     </header>
 
                     <ul>
                         <li><a href="intranet.php">Home</a></li>
-                        <li><a href="generic.html">Ordens de Serviço</a></li>
-                        <li><a href="elements.html">Solicitações de Serviço</a></li>
-                        <li><a href="#">Paradas</a></li>
-                        <li>
-                            <span class="opener">Máquinas</span>
-                            <ul>
-                                <li><a href="#">Lorem Dolor</a></li>
-                                <li><a href="#">Ipsum Adipiscing</a></li>
-                                <li><a href="#">Tempus Magna</a></li>
-                                <li><a href="#">Feugiat Veroeros</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <span class="opener">Manutentores</span>
-                            <ul>
-                                <li><a href="#">Lorem Dolor</a></li>
-                                <li><a href="#">Ipsum Adipiscing</a></li>
-                                <li><a href="#">Tempus Magna</a></li>
-                                <li><a href="#">Feugiat Veroeros</a></li>
-                            </ul>
-                        </li>
-
+                        <li><a href="generic.html">Cadastro de Equipamento</a></li>
+                        <li><a href="elements.html">Cadastro de Alunos</a></li>
+                        <li><a href="#">####</a></li>
+                        <li><a href="#">####</a></li>
+                        <li><a href="#">####</a></li>
+                        <li><a href="#">####</a></li>
                     </ul>
                 </nav>
 
