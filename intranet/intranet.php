@@ -1,13 +1,13 @@
 <html>
     <head>
-        <title>Manutenção TM</title>
+        <title>Empréstimo NTI</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <!-- Sidebar -->
+        <!--Sidebar -->
         <div id="sidebar">
             <div class="inner">
 
@@ -18,17 +18,24 @@
                     </header>
 
                     <ul>
-                        <li><a href="intranet.php">Home</a></li>
-                        <li><a href="generic.html">Cadastro de Equipamento</a></li>
-                        <li><a href="elements.html">Cadastro de Alunos</a></li>
-                        <li><a href="#">####</a></li>
-                        <li><a href="#">####</a></li>
-                        <li><a href="#">####</a></li>
-                        <li><a href="#">####</a></li>
+                        <li><a href="intranet.php">Página Inicial</a></li>
+                        <li><a href="#">Cadastro de Equipamento</a></li>
+                        <li><a href="#">Cadastro de Alunos</a></li>
+                        <li>
+                            <span class="opener">Equipamentos</span>
+                            <ul>
+                                <li><a href="#">Notebook</a></li>
+                                <li><a href="#">Régua</a></li>
+                                <li><a href="#">Projetor</a></li>
+                                <li><a href="#">Adaptador HDMI</a></li>
+                                <li><a href="#">Passador de Slides</a></li>
+
+                            </ul>
+                        </li>
                     </ul>
                 </nav>
 
-                <!-- Footer -->
+                <!--Footer--> 
                 <footer id="footer">
                     <p class="copyright">&copy; Leonardo Roden. All rights reserved.</p>
                 </footer>
