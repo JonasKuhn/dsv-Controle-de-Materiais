@@ -33,7 +33,7 @@
         <div class="trava"></div>
         <form method="POST" action="cadastro_BD.php" enctype="multipart/form-data">
             <div class="container-fluid">
-                <div class="col-md-6 offset-md-3">
+                <div class="col-md-6 offset-md-3 mt-md-5">
                     <!-- Text input-->
 
                     <div class="form-group row offset-md-1">
@@ -72,10 +72,10 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-secondary btn-lg" style="color: white">
+                    <a href="validacaoCadastro.php"><button type="button" class="btn btn-secondary" style="color: white">
                         Voltar
-                    </button>
-                    <button type="submit" class="btn btn-primary btn-lg" style="float: right; color: white" >
+                        </button></a>
+                    <button type="submit" class="btn btn-primary" style="float: right; color: white" >
                         Concluir
                     </button>
                     <div class="trava"></div>

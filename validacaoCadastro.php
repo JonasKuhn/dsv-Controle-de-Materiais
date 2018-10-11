@@ -67,10 +67,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <a href="#" >Não possuí cadastro?</a>
+                        <a href="cadastro.php" >Não possui cadastro?</a>
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" class="btn btn-primary btn-sm" style="float: right; color: white;">
+                        <button type="submit" class="btn btn-primary" style="float: right; color: white;">
                             Entrar
                         </button>
                     </div>
