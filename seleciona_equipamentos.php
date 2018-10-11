@@ -45,19 +45,19 @@
 
                                 <tr>
                                     <td>Notebook</td>
-                                    <td><input class="form-control" type="number" name="notebook" required=""></td>
+                                    <td><input class="form-control" type="number" name="notebook" required="" value="0"></td>
                                 </tr>
                                 <tr>
                                     <td>Régua</td>
-                                    <td><input class="form-control" type="number" name="regua" required=""></td>
+                                    <td><input class="form-control" type="number" name="regua" required="" value="0"></td>
                                 </tr>
                                 <tr>
                                     <td>Adaptador HDMI</td>
-                                    <td><input class="form-control" type="number" name="hdmi" required=""></td>
+                                    <td><input class="form-control" type="number" name="hdmi" required="" value="0"></td>
                                 </tr>
                                 <tr>
                                     <td>Passador de slides</td>
-                                    <td><input class="form-control" type="number" name="passador" required=""></td>
+                                    <td><input class="form-control" type="number" name="passador" required="" value="0"></td>
                                 </tr>
 
 
