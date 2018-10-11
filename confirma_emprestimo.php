@@ -23,14 +23,13 @@
     </head>
 
     <body>
-        <a href="#" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
+        <a href="#" style="position: absolute; top: 5%; left: 3%;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
-            <h1 class="d-none d-lg-block text-nowrap text-center">
-                Preencha seus dados:
+            <h1 style="position: absolute; left: 3%">
+                Confirmar Reserva
             </h1>
         </header>
-        <div class="trava"></div>
-        <div class="container-fluid">
+        <div class="container-fluid mt-md-5">
 
             <div class="row">
                 <div class="col-md-6 offset-3">
@@ -43,18 +42,25 @@
                         </thead>
                         <tbody>
                             <?php
-                            $cont = 0;
-                            while ($cont < 5) {
-                                $cont++;
-                                ?>
+                                include ('conexao.php');
+                                $sqlEq = "select * from tb_tipo_equipamento";
+                                $queryEq = $pdo->query($sqlEq);
+                                while ($dadosEq = $queryEq->fetch()) {
+                                    $equipamentoNome = $dadosEq['desc_tipo'];
+                                    $nomeTrim = str_replace(' ','',$equipamentoNome);
+                                    //$nomeMin = strtolower($nomeTrim);
+                                    $qtde = $_POST[$nomeTrim];
+                                
+?>
+                            
                                 <tr>
-                                    <td>Equipamento <?= $cont; ?></td>
-                                    <td>1<?php } ?></td>
+                                    <td><?= $equipamentoNome?></td>
+                                <td><?=$qtde;}?></td>
                             </tr>
 
                         </tbody>
                     </table>
-                    <button type="button" class="btn btn-secondary btn-lg"><a href="#" style="color: white">Voltar</a></button>
+                    <button type="button" class="btn btn-secondary btn-lg"><a href="seleciona_equipamentos.php" style="color: white">Voltar</a></button>
                     <button type="button" class="btn btn-primary btn-lg" style="float: right;"><a href="#" style="color: white;">Concluir</a></button>
                     <div class="trava"></div>
                 </div>

@@ -26,14 +26,14 @@
         <a href="#" style="position: absolute; top: 5%; left: 3%;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
             <h1 style="position: absolute; left: 3%">
-                Selecione os Equipamentos Desejados
+                Selecione os Equipamentos
             </h1>
         </header>
 
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6 offset-3 mt-md-5">
-                    <form action="#" method="POST">
+                    <form action="confirma_emprestimo.php" method="POST">
                         <table class="table table-bordered table-hover table-responsive-md">
                             <thead>
                                 <tr>
@@ -42,12 +42,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                <?php
+                                include ('conexao.php');
+                                $sqlEq = "select * from tb_tipo_equipamento";
+                                $queryEq = $pdo->query($sqlEq);
+                                while ($dadosEq = $queryEq->fetch()) {
+                                    $equipamento = $dadosEq['desc_tipo'];
+                                    $qtde = $dadosEq['qtd_tipo'];
+                                    $equipamentoTrim = str_replace(' ','',$equipamento);
+                                
+                                ?>
                                 <tr>
-                                    <td>Notebook</td>
-                                    <td><input class="form-control" type="number" name="notebook" required="" value="0"></td>
+                                    <td><?=$equipamento?></td>
+                                    <td><input class="form-control" type="number" name="<?=$equipamentoTrim?>" required="" value="0"></td>
                                 </tr>
-                                <tr>
+                                <?php } ?>
+                                <!--<tr>
                                     <td>Régua</td>
                                     <td><input class="form-control" type="number" name="regua" required="" value="0"></td>
                                 </tr>
@@ -58,7 +68,7 @@
                                 <tr>
                                     <td>Passador de slides</td>
                                     <td><input class="form-control" type="number" name="passador" required="" value="0"></td>
-                                </tr>
+                                </tr>-->
 
 
                             </tbody>
@@ -67,7 +77,7 @@
                             <a href="#" style="color: white">Voltar</a>
                         </button>
                         <input type="submit" name="enviar" class="btn btn-primary btn-lg" value="Concluir" style=" float: right;font-size: 1rem; padding: 1.7%">
-                        <div class="trava"></div>  
+                        <div class="trava mt-md-5"></div>  
                     </form>
                 </div>
             </div>
