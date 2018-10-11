@@ -42,41 +42,40 @@
         <a href="#" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
             <h1 class="d-none d-lg-block text-nowrap text-center">
-                Faça seu Empréstimo
+                Faça seu Login
             </h1>
         </header>
 
-        <?php
-        $url = $_GET['url'];
-
-        switch ($url) {
-            // CASE PARA OS MENUS
-            case 'selecao.php':
-                include './selecao.php';
-                break;
-            case 'administradores.php':
-                include './intranet/login.html';
-                break;
-            default :
-                include './selecao.php';
-                break;
-        }
-        ?>
-
-
+        <div class="trava"></div>
+        <div class="col-md-4 offset-md-4 mt-md-5">
+            <form action="login.php" method="post" name="form" id="form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="margin-right: 0.4rem;">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <input type="text" name="codigo" id="codigo" value="" class="form-control" placeholder="Usuário">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon" style="margin-right: 0.4rem;">
+                            <i class="fa fa-asterisk"></i>
+                        </div>
+                        <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <a href="cadastro.php" >Não possui cadastro?</a>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="submit" class="btn btn-primary" style="float: right; color: white;">
+                            Entrar
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </body>
-    <script src="dist/js/bootstrap.js" type="text/javascript"></script>
-    <!-- Ativar events -->
-    <script>
-            var effects = document.querySelectorAll('.effects')[0];
-
-            effects.addEventListener('click', function (e) {
-
-                if (e.target.className.indexOf('hvr') > -1) {
-                    e.preventDefault();
-                    e.target.blur();
-
-                }
-            });
-    </script>
 </html>
