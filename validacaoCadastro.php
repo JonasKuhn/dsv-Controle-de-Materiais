@@ -47,7 +47,7 @@
         </header>
 
         <div class="trava"></div>
-        <div class="col-md-4 offset-md-4">
+        <div class="col-md-4 offset-md-4 mt-md-5">
             <form action="login.php" method="post" name="form" id="form">
                 <div class="form-group">
                     <div class="input-group">
