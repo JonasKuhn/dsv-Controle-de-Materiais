@@ -18,8 +18,9 @@
         <link rel="shortcut icon" href="" type="image/x-icon"/>
 
         <link href="dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="dist/js/bootstrap.js" type="text/javascript"></script>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-
+        <script src="jquery/jquery.js" type="text/javascript"></script>
     </head>
 
     <body>
@@ -30,7 +31,7 @@
             </h1>
         </header>
         <div class="trava"></div>
-        <form>
+        <form method="POST" action="cadastro_BD.php" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="col-md-6 offset-md-3">
                     <!-- Text input-->
@@ -38,7 +39,8 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Matrícula:</label>  
                         <div class="col-md-8 ml-3">
-                            <input name="matricula" type="text" placeholder="Digite sua Matrícula" class="form-control input-md" required="">
+                            <input name="cod_tipo_pessoa" value="<?= $_GET['i']; ?>" style="display: none;">
+                            <input name="nr_matricula" type="text" placeholder="Digite sua Matrícula" class="form-control input-md" required="">
 
                         </div>
                     </div>
@@ -47,7 +49,7 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Nome:</label>  
                         <div class="col-md-8 ml-3 ">
-                            <input name="nome" type="text" placeholder="Digite seu nome" class="form-control input-md" required="">
+                            <input name="nome_pessoa" type="text" placeholder="Digite seu nome" class="form-control input-md" required="">
 
                         </div>
                     </div>
@@ -56,7 +58,7 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Celular:</label>  
                         <div class="col-md-8 ml-3">
-                            <input name="telefone" type="tel" placeholder="Digite seu número de telefone" class="form-control input-md" required="">
+                            <input name="telefone_pessoa" type="tel" placeholder="Digite seu número de telefone" class="form-control input-md" required="">
 
                         </div>
                     </div>
@@ -65,15 +67,16 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 text-nowrap col-form-label">E-mail:</label>
                         <div class="col-md-8 ml-3 ">
-                            <input name="email" type="email" placeholder="Digite seu e-mail" class="form-control input-md" required="">
+                            <input name="email_pessoa" type="email" placeholder="Digite seu e-mail" class="form-control input-md" required="">
 
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-secondary btn-lg">
-                        <a href="#" style="color: white">Voltar</a>
+
+                    <button type="submit" class="btn btn-secondary btn-lg" style="color: white">
+                        Voltar
                     </button>
-                    <button type="submit" class="btn btn-primary btn-lg" style="float: right;">
-                        <a href="#" style="color: white;">Concluir</a>
+                    <button type="submit" class="btn btn-primary btn-lg" style="float: right; color: white" >
+                        Concluir
                     </button>
                     <div class="trava"></div>
                 </div>
