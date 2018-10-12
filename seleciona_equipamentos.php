@@ -48,13 +48,14 @@
                                 $queryEq = $pdo->query($sqlEq);
                                 while ($dadosEq = $queryEq->fetch()) {
                                     $equipamento = $dadosEq['desc_tipo'];
+                                    $id = $dadosEq['cod_tipo_equipamento'];
                                     $qtde = $dadosEq['qtd_tipo'];
                                     $equipamentoTrim = str_replace(' ','',$equipamento);
                                 
                                 ?>
                                 <tr>
                                     <td><?=$equipamento?></td>
-                                    <td><input class="form-control" type="number" name="<?=$equipamentoTrim?>" required="" value="0"></td>
+                                    <td><input class="form-control" type="number" name="<?=$id?>" required="" value="0"></td>
                                 </tr>
                                 <?php } ?>
                                 <!--<tr>
