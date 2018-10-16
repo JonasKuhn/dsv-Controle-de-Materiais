@@ -47,8 +47,8 @@
         </header>
 
         <div class="trava"></div>
-        <div class="col-md-4 offset-md-4">
-            <form action="validacaoCadastroBD.php" method="post" name="form" id="form">
+        <div class="col-md-4 offset-md-4 mt-md-5">
+            <form action="loginBD.php" method="post" name="form" id="form">
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon" style="margin-right: 0.4rem;">

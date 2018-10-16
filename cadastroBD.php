@@ -15,14 +15,25 @@ $dados = $queryValidacao->fetch();
 $validacao = $dados['nr_matricula'];
 
 if ($validacao != NULL or $validacao != '') {
-    echo "<SCRIPT Language='javascript'>
+    if ($x1 == 1) {
+        echo "<SCRIPT Language='javascript'>
             var confirma = confirm('Número de matricula já cadastrado!');
             if (confirma) {
-            location.href='index.php?url=cadastro.php';
+            location.href='cadastro.php?&i=1';
             } else {
-            location.href='index.php?url=cadastro.php';
+            location.href='cadastro.php?&i=1';
             }
             </SCRIPT>";
+    } else {
+        echo "<SCRIPT Language='javascript'>
+            var confirma = confirm('Número de matricula já cadastrado!');
+            if (confirma) {
+            location.href='cadastro.php?&i=2';
+            } else {
+            location.href='cadastro.php?&i=2';
+            }
+            </SCRIPT>";
+    }
 } else {
     $sql = "CALL insere_cadastro ('$x1', '$x2', '$x3', '$x4', '$x5');";
     $pdo->query($sql);
@@ -30,7 +41,7 @@ if ($validacao != NULL or $validacao != '') {
     header('location: ./index.php?url=selecao.php');
     echo "'<SCRIPT Language='javascript'>
             window.alert('Atualizado com Sucesso!');
-            location.href='index.php?url=contato.php';
+            location.href='index.php?url=selecao.php';
             </SCRIPT>'";
     exit();
 }

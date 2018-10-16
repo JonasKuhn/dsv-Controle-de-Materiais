@@ -63,18 +63,17 @@
                                             $sql1 = "insert into tb_emprestimo (nr_matricula,data_emprestimo,status,cod_equipamento,cod_pessoa,cod_situacao,created) values (1234,now(),true,$emerson, 1,1,now())";
                                             if ($pdo->query($sql1)) {
                                                 header("location: index.php");
-                                                } else {
+                                            } else {
                                                 echo ("Erro: %s\n" . $pdo->error);
                                             }
                                         }
                                     }
-                                    
                                     ?>
-
                                     <tr>
                                         <td><?= $equipamentoNome ?></td>
                                         <td><?= $qtde;
-                            } ?></td>
+                            }
+                                ?></td>
                                 </tr>
 
                             </tbody>
@@ -82,12 +81,9 @@
                         <button type="button" class="btn btn-secondary btn-lg"><a href="seleciona_equipamentos.php" style="color: white">Voltar</a></button>
                         <button type="submit" class="btn btn-primary" style="float: right;">Concluir</button>
                     </form>
-
                     <div class="trava"></div>
                 </div>
-
             </div>
-
         </div>
     </body>
 </html>
