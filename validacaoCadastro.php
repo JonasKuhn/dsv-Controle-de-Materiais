@@ -71,7 +71,7 @@
                         <a href="cadastro.php?i=<?= $_GET['i'];?>" >Não possuí cadastro?</a>
                     </div>
                     <div class="col-md-6">
-                        <button type="submit" class="btn btn-primary btn-sm" style="float: right; color: white;">
+                        <button type="submit" class="btn btn-primary" style="float: right; color: white;">
                             Entrar
                         </button>
                     </div>
