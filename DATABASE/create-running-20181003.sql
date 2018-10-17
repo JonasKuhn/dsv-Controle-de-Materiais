@@ -61,6 +61,7 @@ CREATE TABLE `tb_emprestimo` (
 CREATE TABLE `tb_pessoa` (
     `cod_pessoa` INTEGER NOT NULL AUTO_INCREMENT,
     `nr_matricula` INTEGER(8) NOT NULL,
+    `senha_pessoa` VARCHAR(8) NOT NULL,
     `email_pessoa` VARCHAR(100),
     `fl_validacao` BOOL,
     `telefone_pessoa` VARCHAR(20) NOT NULL,

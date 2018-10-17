@@ -39,26 +39,25 @@
     </head>
 
     <body>
-        <a href="#" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
-        <header>
-            <h1 class="d-none d-lg-block text-nowrap text-center">
-                Faça seu Empréstimo
-            </h1>
-        </header>
-
         <?php
         $url = $_GET['url'];
 
         switch ($url) {
             // CASE PARA OS MENUS
-            case 'selecao.php':
-                include './selecao.php';
+            case 'selecao_pessoa.php':
+                include './selecao_pessoa.php';
                 break;
             case 'administradores.php':
                 include './intranet/login.html';
                 break;
+            case 'cadastro.php':
+                include './cadastro.php';
+                break;
+            case 'login.php':
+                include './login.php';
+                break;
             default :
-                include './selecao.php';
+                include './selecao_pessoa.php';
                 break;
         }
         ?>

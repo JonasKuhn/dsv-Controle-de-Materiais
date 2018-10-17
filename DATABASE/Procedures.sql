@@ -11,8 +11,8 @@ BEGIN
 	IF((aux != ''))THEN
     
 		IF((nr_matricula != '') && (nome_pessoa != '') && (telefone_pessoa != '') && (email_pessoa != ''))THEN
-			INSERT INTO tb_pessoa(nr_matricula, email_pessoa, fl_validacao, telefone_pessoa, nome_pessoa, cod_tipo_pessoa) 
-			VALUES (nr_matricula, email_pessoa, false, telefone_pessoa, nome_pessoa, tipo_pessoa);
+			INSERT INTO tb_pessoa(nr_matricula, email_pessoa, fl_validacao, telefone_pessoa, nome_pessoa, cod_tipo_pessoa, senha_pessoa) 
+			VALUES (nr_matricula, email_pessoa, false, telefone_pessoa, nome_pessoa, tipo_pessoa, nr_matricula);
 		ELSE
 			SELECT 'Preencha todos os campos!';
         END IF;

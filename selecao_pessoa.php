@@ -1,3 +1,10 @@
+
+<a href="#" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
+<header>
+    <h1 class="d-none d-lg-block text-nowrap text-center">
+        Faça seu Empréstimo
+    </h1>
+</header>
 <div class="trava container-fluid mt-md-5">
     <div class="offset-md-3">
         <div class="row item-card text-center">
@@ -24,7 +31,7 @@
                     <div class="align-center col-md-4">
                         <div class="col align-self-md-center">
                             <div class="card h-100">
-                                <a href="./validacaoCadastro.php?&CHcy;&AMP;i=<?= $cod; ?>" class="hvr-grow-shadow">
+                                <a href="./login.php?&CHcy;&AMP;i=<?= $cod; ?>" class="hvr-grow-shadow">
                                     <div class="card-body" 
                                          style="display: flex; 
                                          align-items: center; 

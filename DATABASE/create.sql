@@ -5,7 +5,7 @@
 # Project name:                                                          #
 # Author:                                                                #
 # Script type:           Database creation script                        #
-# Created on:            2018-10-03 20:21                                #
+# Created on:            2018-10-10 23:57                                #
 # ---------------------------------------------------------------------- #
 
 
@@ -108,6 +108,7 @@ CREATE TABLE `tb_pessoa` (
     `cod_tipo_pessoa` INTEGER,
     `created` TIMESTAMP NOT NULL DEFAULT NOW(),
     `modified` TIMESTAMP NULL,
+    `senha_pessoa` VARCHAR(8) NOT NULL,
     CONSTRAINT `PK_tb_pessoa` PRIMARY KEY (`cod_pessoa`)
 );
 

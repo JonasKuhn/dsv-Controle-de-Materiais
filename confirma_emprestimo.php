@@ -33,40 +33,57 @@
 
             <div class="row">
                 <div class="col-md-6 offset-3">
-                    <table class="table table-bordered table-hover table-responsive-md">
-                        <thead>
-                            <tr>
-                                <th scope="col" class="font-2x">Equipamento</th>
-                                <th scope="col" class="font-2x">Quantidade</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
+                    <form method="POST" action="#">
+                        <table class="table table-bordered table-hover table-responsive-md">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="font-2x">Equipamento</th>
+                                    <th scope="col" class="font-2x">Quantidade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
                                 include ('conexao.php');
                                 $sqlEq = "select * from tb_tipo_equipamento";
                                 $queryEq = $pdo->query($sqlEq);
                                 while ($dadosEq = $queryEq->fetch()) {
                                     $equipamentoNome = $dadosEq['desc_tipo'];
-                                    $nomeTrim = str_replace(' ','',$equipamentoNome);
+                                    $id = $dadosEq['cod_tipo_equipamento'];
+                                    $nomeTrim = str_replace(' ', '', $equipamentoNome);
                                     //$nomeMin = strtolower($nomeTrim);
-                                    $qtde = $_POST[$nomeTrim];
-                                
-?>
-                            
-                                <tr>
-                                    <td><?= $equipamentoNome?></td>
-                                <td><?=$qtde;}?></td>
-                            </tr>
+                                    $qtde = $_POST[$id];
 
-                        </tbody>
-                    </table>
-                    <button type="button" class="btn btn-secondary btn-lg"><a href="seleciona_equipamentos.php" style="color: white">Voltar</a></button>
-                    <button type="button" class="btn btn-primary btn-lg" style="float: right;"><a href="#" style="color: white;">Concluir</a></button>
+
+                                    if ($qtde > 0) {
+                                        $sql = "select cod_equipamento from tb_equipamento "
+                                                . "where cod_tipo_equipamento = $id limit $qtde";
+                                        $query = $pdo->query($sql);
+                                        while ($dados = $query->fetch()) {
+                                            $emerson = $dados['cod_equipamento'];
+                                            $sql1 = "insert into tb_emprestimo (nr_matricula,data_emprestimo,status,cod_equipamento,cod_pessoa,cod_situacao,created) values (1234,now(),true,$emerson, 1,1,now())";
+                                            if ($pdo->query($sql1)) {
+                                                header("location: index.php");
+                                            } else {
+                                                echo ("Erro: %s\n" . $pdo->error);
+                                            }
+                                        }
+                                    }
+                                    ?>
+                                    <tr>
+                                        <td><?= $equipamentoNome ?></td>
+                                        <td><?= $qtde;
+                            }
+                                ?></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <button type="button" class="btn btn-secondary btn-lg"><a href="seleciona_equipamentos.php" style="color: white">Voltar</a></button>
+                        <button type="submit" class="btn btn-primary" style="float: right;">Concluir</button>
+                    </form>
                     <div class="trava"></div>
                 </div>
-
             </div>
-
         </div>
     </body>
 </html>

@@ -31,7 +31,7 @@
             </h1>
         </header>
         <div class="trava"></div>
-        <form method="POST" action="cadastro_BD.php" enctype="multipart/form-data">
+        <form method="POST" action="cadastroBD.php" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="col-md-6 offset-md-3 mt-md-5">
                     <!-- Text input-->
@@ -72,7 +72,7 @@
                         </div>
                     </div>
 
-                    <a href="validacaoCadastro.php"><button type="button" class="btn btn-secondary" style="color: white">
+                    <a href="login.php?i=<?= $_GET['i']; ?>"><button type="button" class="btn btn-secondary" style="color: white">
                         Voltar
                         </button></a>
                     <button type="submit" class="btn btn-primary" style="float: right; color: white" >
