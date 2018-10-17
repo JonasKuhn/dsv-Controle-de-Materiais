@@ -32,6 +32,7 @@
 
                             </ul>
                         </li>
+                        <li><a href="#">Sair</a></li>
                     </ul>
                 </nav>
 
