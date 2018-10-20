@@ -23,14 +23,16 @@
     </head>
     <!--style="line-height:90px; margin-left: 8%; float: left;"-->
     <body>
-        <a href="#" style="position: absolute; top: 5%; left: 3%;"><img src="img/logo.png" alt="UCEFF" ></a>
-        <header>
-            <h1 style="position: absolute; left: 3%">
-                Selecione os Equipamentos
+        <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;">
+            <img src="img/logo.png" alt="UCEFF" >
+        </a>
+        <div class="cabecalho_selec_equip">
+            <h1 class="d-none d-lg-block text-nowrap text-center">
+                Selecione a qtd de equipamentos
             </h1>
         </header>
 
-        <div class="container-fluid">
+        <div class="trava container-fluid">
             <div class="row">
                 <div class="col-md-6 offset-3 mt-md-5">
                     <form action="confirma_emprestimo.php" method="POST">
@@ -44,38 +46,73 @@
                             <tbody>
                                 <?php
                                 include ('conexao.php');
-                                $sqlEq = "select * from tb_tipo_equipamento";
+                                $sqlEq = "select cod_tipo_equipamento, desc_tipo, qtd_tipo from tb_tipo_equipamento";
                                 $queryEq = $pdo->query($sqlEq);
+
                                 while ($dadosEq = $queryEq->fetch()) {
                                     $equipamento = $dadosEq['desc_tipo'];
                                     $id = $dadosEq['cod_tipo_equipamento'];
                                     $qtde = $dadosEq['qtd_tipo'];
-                                    $equipamentoTrim = str_replace(' ','',$equipamento);
-                                
-                                ?>
-                                <tr>
-                                    <td><?=$equipamento?></td>
-                                    <td><input class="form-control" type="number" name="<?=$id?>" required="" value="0"></td>
-                                </tr>
-                                <?php } ?>
-                                <!--<tr>
-                                    <td>Régua</td>
-                                    <td><input class="form-control" type="number" name="regua" required="" value="0"></td>
-                                </tr>
-                                <tr>
-                                    <td>Adaptador HDMI</td>
-                                    <td><input class="form-control" type="number" name="hdmi" required="" value="0"></td>
-                                </tr>
-                                <tr>
-                                    <td>Passador de slides</td>
-                                    <td><input class="form-control" type="number" name="passador" required="" value="0"></td>
-                                </tr>-->
+                                    $equipamentoTrim = str_replace(' ', '', $equipamento);
 
+                                    if ($_GET['i'] == 1) {
+                                        if ($id == 2) {
+                                            
+                                        } else {
+                                            ?>
+                                            <tr>
+                                                <td><?= $equipamento ?></td>
+                                                <td>
+                                                    <select class="form-control" name="qtd_select">
+                                                        <?php
+                                                        for ($i = 0; $i <= $qtde; $i++) {
+                                                            if ($i == $ix) {
+                                                                ?>
+                                                                <option selected="true" value="<?= $i; ?>"><?= $i; ?></option>
+                                                                <?php
+                                                            } else if ($i != $ix) {
+                                                                ?>
+                                                                <option value="<?= $i; ?>"><?= $i; ?></option>
+                                                                <?php
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <tr>
+                                            <td><?= $equipamento ?></td>
+                                            <td>
+                                                <select class="form-control" name="qtd_select">
+                                                    <?php
+                                                    for ($i = 0; $i <= $qtde; $i++) {
+                                                        if ($i == $ix) {
+                                                            ?>
+                                                            <option selected="true" value="<?= $i; ?>"><?= $i; ?></option>
+                                                            <?php
+                                                        } else if ($i != $ix) {
+                                                            ?>
+                                                            <option value="<?= $i; ?>"><?= $i; ?></option>
+                                                            <?php
+                                                        }
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
 
                             </tbody>
                         </table>
                         <button type="button" class="btn btn-secondary btn-lg" >
-                            <a href="#" style="color: white">Voltar</a>
+                            <a href="cadastro.php" style="color: white">Voltar</a>
                         </button>
                         <input type="submit" name="enviar" class="btn btn-primary btn-lg" value="Concluir" style=" float: right;font-size: 1rem; padding: 1.7%">
                         <div class="trava mt-md-5"></div>  
@@ -84,19 +121,19 @@
             </div>
         </div>
 
-    </body>
-    <script src="dist/js/bootstrap.js" type="text/javascript"></script>
-    <!-- Ativar events -->
-    <script>
-        var effects = document.querySelectorAll('.effects')[0];
+</body>
+<script src="dist/js/bootstrap.js" type="text/javascript"></script>
+<!-- Ativar events -->
+<script>
+    var effects = document.querySelectorAll('.effects')[0];
 
-        effects.addEventListener('click', function (e) {
+    effects.addEventListener('click', function (e) {
 
-            if (e.target.className.indexOf('hvr') > -1) {
-                e.preventDefault();
-                e.target.blur();
+        if (e.target.className.indexOf('hvr') > -1) {
+            e.preventDefault();
+            e.target.blur();
 
-            }
-        });
-    </script>
+        }
+    });
+</script>
 </html>

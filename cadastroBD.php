@@ -16,32 +16,25 @@ $validacao = $dados['nr_matricula'];
 
 if ($validacao != NULL or $validacao != '') {
     if ($x1 == 1) {
-        echo "<SCRIPT Language='javascript'>
-            var confirma = confirm('Número de matricula já cadastrado!');
-            if (confirma) {
-            location.href='cadastro.php?&i=1';
-            } else {
-            location.href='cadastro.php?&i=1';
-            }
-            </SCRIPT>";
+        //Número de matricula já cadastrado!
+        echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = "
+        . "'login.php?i=1&msg=alert_ja_cadastrado'; </SCRIPT>";
+        exit();
     } else {
-        echo "<SCRIPT Language='javascript'>
-            var confirma = confirm('Número de matricula já cadastrado!');
-            if (confirma) {
-            location.href='cadastro.php?&i=2';
-            } else {
-            location.href='cadastro.php?&i=2';
-            }
-            </SCRIPT>";
+        echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = "
+        . "'login.php?i=2&msg=alert_ja_cadastrado'; </SCRIPT>";
+        exit();
     }
 } else {
     $sql = "CALL insere_cadastro ('$x1', '$x2', '$x3', '$x4', '$x5');";
     $pdo->query($sql);
-    sleep(5);
+    sleep(2);
     header('location: ./index.php?url=selecao.php');
     echo "'<SCRIPT Language='javascript'>
-            window.alert('Atualizado com Sucesso!');
-            location.href='index.php?url=selecao.php';
+            window.alert('Cadastrado com Sucesso!');
+            location.href='selecao.php';
             </SCRIPT>'";
+    echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = "
+        . "'login.php?i=1&msg=alert_cadastrado'; </SCRIPT>";
     exit();
 }

@@ -1,12 +1,12 @@
 
-<a href="#" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
+<a href="index.php" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
 <header>
     <h1 class="d-none d-lg-block text-nowrap text-center">
         Faça seu Empréstimo
     </h1>
 </header>
-<div class="trava container-fluid mt-md-5">
-    <div class="offset-md-3">
+<div class="trava container-fluid  mt-md-5">
+    <div class="offset-md-3  mt-md-5">
         <div class="row item-card text-center">
             <?php
             include './conexao.php';

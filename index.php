@@ -21,21 +21,6 @@
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="events/css/hover.css" rel="stylesheet" type="text/css"/>
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-        <script>
-            function excluir(valor) {
-                return confirm('Deseja realmente excluir o registro ' + valor + '?');
-            }
-        </script>
-        <script>
-            function editar(valor) {
-                return confirm('Deseja realmente salvar as alterações em ' + valor + '?');
-            }
-        </script>
-        <script>
-            function salvar() {
-                return confirm('Deseja realmente salvar as alterações?');
-            }
-        </script>
     </head>
 
     <body>
@@ -67,15 +52,15 @@
     <script src="dist/js/bootstrap.js" type="text/javascript"></script>
     <!-- Ativar events -->
     <script>
-            var effects = document.querySelectorAll('.effects')[0];
+        var effects = document.querySelectorAll('.effects')[0];
 
-            effects.addEventListener('click', function (e) {
+        effects.addEventListener('click', function (e) {
 
-                if (e.target.className.indexOf('hvr') > -1) {
-                    e.preventDefault();
-                    e.target.blur();
+            if (e.target.className.indexOf('hvr') > -1) {
+                e.preventDefault();
+                e.target.blur();
 
-                }
-            });
+            }
+        });
     </script>
 </html>

@@ -45,6 +45,25 @@ header h1{
     background: url(../img/barra.jpg) no-repeat bottom left;
 }
 
+.cabecalho_selec_equip{
+    height: 7rem;
+    align-self: center;
+    background-color: #585657; 
+}
+
+.cabecalho_selec_equip h1{
+    font-size: 2.5rem;
+    color: #FFF;
+    font-weight: bold;
+    line-height: 70px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 6%;
+    text-transform: uppercase;
+    float: left;
+    background: url(../img/barra.jpg) no-repeat bottom left;
+}
+
 /*Usado para a estilização do menus iniciais*/
 
 .item-card a:hover{
