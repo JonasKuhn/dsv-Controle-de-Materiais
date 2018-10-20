@@ -16,10 +16,11 @@ $fl_validacao = $dados['fl_validacao'];
 
 if ($nr_matricula != NULL) {
     if ($fl_validacao != FALSE) {
-        $_SESSION['id'] = $dados['nr_matricula'];
-        $_SESSION['nome'] = $dados['nome_pessoa'];
+        $_SESSION["id"] = $nr_matricula;
+        $_SESSION["tipo_pessoa"] = $tipo_pessoa;
+        $_SESSION["nome"] = $dados['nome_pessoa'];
         setcookie("usuario", $dados['nome_pessoa']);
-        header("Location: ./seleciona_equipamentos.php");
+        header("Location: ./seleciona_equipamentos.php?i=$tipo_pessoa");
     } else {
         echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = "
         . "'login.php?msg=alert'; </SCRIPT>";

@@ -46,37 +46,73 @@
                             <tbody>
                                 <?php
                                 include ('conexao.php');
-                                $sqlEq = "select * from tb_tipo_equipamento";
+                                $sqlEq = "select cod_tipo_equipamento, desc_tipo, qtd_tipo from tb_tipo_equipamento";
                                 $queryEq = $pdo->query($sqlEq);
+
                                 while ($dadosEq = $queryEq->fetch()) {
                                     $equipamento = $dadosEq['desc_tipo'];
                                     $id = $dadosEq['cod_tipo_equipamento'];
                                     $qtde = $dadosEq['qtd_tipo'];
                                     $equipamentoTrim = str_replace(' ', '', $equipamento);
-                                    ?>
-                                    <tr>
-                                        <td><?= $equipamento ?></td>
-                                        <td><input class="form-control" type="number" name="<?= $id ?>" required="" value="0"></td>
-                                    </tr>
-                                <?php } ?>
-                                <!--<tr>
-                                    <td>Régua</td>
-                                    <td><input class="form-control" type="number" name="regua" required="" value="0"></td>
-                                </tr>
-                                <tr>
-                                    <td>Adaptador HDMI</td>
-                                    <td><input class="form-control" type="number" name="hdmi" required="" value="0"></td>
-                                </tr>
-                                <tr>
-                                    <td>Passador de slides</td>
-                                    <td><input class="form-control" type="number" name="passador" required="" value="0"></td>
-                                </tr>-->
 
+                                    if ($_GET['i'] == 1) {
+                                        if ($id == 2) {
+                                            
+                                        } else {
+                                            ?>
+                                            <tr>
+                                                <td><?= $equipamento ?></td>
+                                                <td>
+                                                    <select class="form-control" name="qtd_select">
+                                                        <?php
+                                                        for ($i = 0; $i <= $qtde; $i++) {
+                                                            if ($i == $ix) {
+                                                                ?>
+                                                                <option selected="true" value="<?= $i; ?>"><?= $i; ?></option>
+                                                                <?php
+                                                            } else if ($i != $ix) {
+                                                                ?>
+                                                                <option value="<?= $i; ?>"><?= $i; ?></option>
+                                                                <?php
+                                                            }
+                                                        }
+                                                        ?>
+                                                    </select>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <tr>
+                                            <td><?= $equipamento ?></td>
+                                            <td>
+                                                <select class="form-control" name="qtd_select">
+                                                    <?php
+                                                    for ($i = 0; $i <= $qtde; $i++) {
+                                                        if ($i == $ix) {
+                                                            ?>
+                                                            <option selected="true" value="<?= $i; ?>"><?= $i; ?></option>
+                                                            <?php
+                                                        } else if ($i != $ix) {
+                                                            ?>
+                                                            <option value="<?= $i; ?>"><?= $i; ?></option>
+                                                            <?php
+                                                        }
+                                                    }
+                                                    ?>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                    }
+                                }
+                                ?>
 
                             </tbody>
                         </table>
                         <button type="button" class="btn btn-secondary btn-lg" >
-                            <a href="#" style="color: white">Voltar</a>
+                            <a href="cadastro.php" style="color: white">Voltar</a>
                         </button>
                         <input type="submit" name="enviar" class="btn btn-primary btn-lg" value="Concluir" style=" float: right;font-size: 1rem; padding: 1.7%">
                         <div class="trava mt-md-5"></div>  
@@ -85,19 +121,19 @@
             </div>
         </div>
 
-    </body>
-    <script src="dist/js/bootstrap.js" type="text/javascript"></script>
-    <!-- Ativar events -->
-    <script>
-        var effects = document.querySelectorAll('.effects')[0];
+</body>
+<script src="dist/js/bootstrap.js" type="text/javascript"></script>
+<!-- Ativar events -->
+<script>
+    var effects = document.querySelectorAll('.effects')[0];
 
-        effects.addEventListener('click', function (e) {
+    effects.addEventListener('click', function (e) {
 
-            if (e.target.className.indexOf('hvr') > -1) {
-                e.preventDefault();
-                e.target.blur();
+        if (e.target.className.indexOf('hvr') > -1) {
+            e.preventDefault();
+            e.target.blur();
 
-            }
-        });
-    </script>
+        }
+    });
+</script>
 </html>

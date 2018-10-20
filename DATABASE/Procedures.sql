@@ -22,3 +22,19 @@ BEGIN
     END IF;
 END $$
 DELIMITER ;
+
+## QTD EQUIPAMENTO
+DELIMITER $$
+CREATE PROCEDURE atualiza_qtd_equipamento (desc_equipamento TEXT, desc_observacao TEXT, fl_curso_gti BOOLEAN, fl_status BOOLEAN, tipo_equipamento INT)
+BEGIN
+	IF ((desc_equipamento != '') && (desc_observacao != '') && (fl_curso_gti != '') && (fl_status != '') && (cod_tipo_equipamento != '')) THEN
+		INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento) 
+		VALUES                     (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, tipo_equipamento);
+        
+        UPDATE tb_tipo_equipamento SET qtd_tipo = qtd_tipo + 1  WHERE cod_tipo_equipamento = tipo_equipamento;
+        
+	ELSE
+		SELECT 'Preencha todos os campos.';
+	END IF;
+END$$
+DELIMITER ;
