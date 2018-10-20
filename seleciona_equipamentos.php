@@ -23,14 +23,16 @@
     </head>
     <!--style="line-height:90px; margin-left: 8%; float: left;"-->
     <body>
-        <a href="#" style="position: absolute; top: 5%; left: 3%;"><img src="img/logo.png" alt="UCEFF" ></a>
-        <header>
-            <h1 style="position: absolute; left: 3%">
-                Selecione os Equipamentos
+        <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;">
+            <img src="img/logo.png" alt="UCEFF" >
+        </a>
+        <div class="cabecalho_selec_equip">
+            <h1 class="d-none d-lg-block text-nowrap text-center">
+                Selecione a qtd de equipamentos
             </h1>
         </header>
 
-        <div class="container-fluid">
+        <div class="trava container-fluid">
             <div class="row">
                 <div class="col-md-6 offset-3 mt-md-5">
                     <form action="confirma_emprestimo.php" method="POST">
@@ -50,13 +52,12 @@
                                     $equipamento = $dadosEq['desc_tipo'];
                                     $id = $dadosEq['cod_tipo_equipamento'];
                                     $qtde = $dadosEq['qtd_tipo'];
-                                    $equipamentoTrim = str_replace(' ','',$equipamento);
-                                
-                                ?>
-                                <tr>
-                                    <td><?=$equipamento?></td>
-                                    <td><input class="form-control" type="number" name="<?=$id?>" required="" value="0"></td>
-                                </tr>
+                                    $equipamentoTrim = str_replace(' ', '', $equipamento);
+                                    ?>
+                                    <tr>
+                                        <td><?= $equipamento ?></td>
+                                        <td><input class="form-control" type="number" name="<?= $id ?>" required="" value="0"></td>
+                                    </tr>
                                 <?php } ?>
                                 <!--<tr>
                                     <td>Régua</td>

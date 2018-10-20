@@ -23,13 +23,13 @@
     </head>
 
     <body>
-        <a href="#" style="position: absolute; top: 5%; left: 3%;"><img src="img/logo.png" alt="UCEFF" ></a>
+        <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
-            <h1 style="position: absolute; left: 3%">
-                Confirmar Reserva
+            <h1 class="d-none d-lg-block text-nowrap text-center">
+                Faça seu Empréstimo
             </h1>
         </header>
-        <div class="container-fluid mt-md-5">
+        <div class="trava container-fluid mt-md-5">
 
             <div class="row">
                 <div class="col-md-6 offset-3">
@@ -71,15 +71,29 @@
                                     ?>
                                     <tr>
                                         <td><?= $equipamentoNome ?></td>
-                                        <td><?= $qtde;
-                            }
-                                ?></td>
+                                        <td><?=
+                                            $qtde;
+                                        }
+                                        ?></td>
                                 </tr>
 
                             </tbody>
                         </table>
-                        <button type="button" class="btn btn-secondary btn-lg"><a href="seleciona_equipamentos.php" style="color: white">Voltar</a></button>
-                        <button type="submit" class="btn btn-primary" style="float: right;">Concluir</button>
+                        <div class="row mt-md-2">
+                            <div class="col-md-6">
+                                <a href="seleciona_equipamentos.php">
+                                    <button type="button" class="btn btn-secondary" style="color: white">
+                                        Voltar
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary" style="float: right; color: white;">
+                                    Entrar
+                                </button>
+                            </div>
+                        </div>
+                        <br>    
                     </form>
                     <div class="trava"></div>
                 </div>

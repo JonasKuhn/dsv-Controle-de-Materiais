@@ -22,23 +22,19 @@
         <link href="events/css/hover.css" rel="stylesheet" type="text/css"/>
         <link href="font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
         <script>
-            function excluir(valor) {
-                return confirm('Deseja realmente excluir o registro ' + valor + '?');
-            }
-        </script>
-        <script>
-            function editar(valor) {
-                return confirm('Deseja realmente salvar as alterações em ' + valor + '?');
-            }
-        </script>
-        <script>
-            function salvar() {
-                return confirm('Deseja realmente salvar as alterações?');
+            function somenteNumeros(num) {
+                var er = /[^0-9.]/;
+                er.lastIndex = 0;
+                var campo = num;
+                if (er.test(campo.value)) {
+                    campo.value = "";
+                }
             }
         </script>
     </head>
 
     <body>
+
         <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
             <h1 class="d-none d-lg-block text-nowrap text-center">
@@ -48,14 +44,18 @@
 
         <div class="trava"></div>
         <div class="col-md-4 offset-md-4 mt-md-5">
-            <form action="loginBD.php" method="post" name="form" id="form">
+            <form action="loginBD.php" method="post" target="_self" name="form" id="form">
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-addon" style="margin-right: 0.4rem;">
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-user-circle"></i>
                         </div>
-                        <input name="tipo_pessoa" value="<?= $_GET['i'];?>" style="display: none;">
-                        <input type="text" name="nr_matricula" id="codigo" value="" class="form-control" placeholder="Usuário">
+                        <input onkeyup="somenteNumeros(this);" 
+                               maxlength="6"  
+                               ng-model="numero.valor"
+                               name="nr_matricula" type="text" 
+                               placeholder="Digite sua Matrícula" 
+                               class="form-control input-md" required="">
                     </div>
                 </div>
                 <div class="form-group">
@@ -63,12 +63,48 @@
                         <div class="input-group-addon" style="margin-right: 0.4rem;">
                             <i class="fa fa-asterisk"></i>
                         </div>
-                        <input type="password" name="senha_pessoa" id="senha" class="form-control" placeholder="Senha">
+                        <input type="password" name="senha_pessoa" id="senha" class="form-control" required="" placeholder="Senha">
                     </div>
                 </div>
-                <div class="row">
+                <?php
+                $msg = $_GET['msg'];
+                if (isset($msg) && $msg != false && $msg == "alert") {
+                    echo "<div class='alert alert-warning fade show text-center' role='alert'> "
+                    . "<strong>ALERTA!</strong> <br>"
+                    . "Seu cadastro ainda não foi validado entre em contato com o NTI."
+                    . "</div>";
+                }
+                if (isset($msg) && $msg != false && $msg == "error") {
+                    echo "<div class='alert alert-danger fade show text-center' role='alert'> "
+                    . "<strong>ALERTA!</strong> <br>"
+                    . "Matricula ou senha incorreta!<br>"
+                    . "Caso não consiga logar entre em contato com o NTI."
+                    . "</div>";
+                }
+                if (isset($msg) && $msg != false && $msg == "alert_cadastrado") {
+                    echo "<div class='alert alert-danger fade show text-center' role='alert'> "
+                    . "<strong>SUCESSO!</strong> <br>"
+                    . "Matricula cadastrada!!"
+                    . "</div>";
+                }
+                if (isset($msg) && $msg != false && $msg == "alert_ja_cadastrado") {
+                    echo "<div class='alert alert-danger fade show text-center' role='alert'> "
+                    . "<strong>ALERTA!</strong> <br>"
+                    . "Matricula já esta cadastrada!!"
+                    . "</div>";
+                }
+                ?>
+
+                <div class="text-center">
+                    <a href="cadastro.php?i=<?= $_GET['i']; ?>" >Não possuí cadastro?</a>
+                </div>
+                <div class="row mt-md-2">
                     <div class="col-md-6">
-                        <a href="cadastro.php?i=<?= $_GET['i'];?>" >Não possuí cadastro?</a>
+                        <a href="index.php?url=selecao_pessoa.php">
+                            <button type="button" class="btn btn-secondary" style="color: white">
+                                Voltar
+                            </button>
+                        </a>
                     </div>
                     <div class="col-md-6">
                         <button type="submit" class="btn btn-primary" style="float: right; color: white;">

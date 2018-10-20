@@ -21,10 +21,22 @@
         <script src="dist/js/bootstrap.js" type="text/javascript"></script>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
         <script src="jquery/jquery.js" type="text/javascript"></script>
+        <script src="jquery/jquery.mask.js" type="text/javascript"></script>
+        <script>
+            function somenteNumeros(num) {
+                var er = /[^0-9.]/;
+                er.lastIndex = 0;
+                var campo = num;
+                if (er.test(campo.value)) {
+                    campo.value = "";
+                }
+            }
+        </script>
+
     </head>
 
     <body>
-        <a href="#" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
+        <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
             <h1 class="d-none d-lg-block text-nowrap text-center">
                 Preencha seus dados
@@ -34,13 +46,16 @@
         <form method="POST" action="cadastroBD.php" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="col-md-6 offset-md-3 mt-md-5">
-                    <!-- Text input-->
-
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Matrícula:</label>  
                         <div class="col-md-8 ml-3">
                             <input name="cod_tipo_pessoa" value="<?= $_GET['i']; ?>" style="display: none;">
-                            <input name="nr_matricula" type="text" placeholder="Digite sua Matrícula" class="form-control input-md" required="">
+                            <input onkeyup="somenteNumeros(this);" 
+                                   maxlength="6" type="text"  
+                                   ng-model="numero.valor"
+                                   name="nr_matricula" type="text" 
+                                   placeholder="Digite sua Matrícula" 
+                                   class="form-control input-md" required="">
 
                         </div>
                     </div>
@@ -58,8 +73,9 @@
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Celular:</label>  
                         <div class="col-md-8 ml-3">
-                            <input name="telefone_pessoa" type="tel" placeholder="Digite seu número de telefone" class="form-control input-md" required="">
-
+                            <input type="text" class="form-control" name="telefone_pessoa" id="telefone_pessoa"
+                                   pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{3,4}"
+                                   placeholder="(11) 12345-6789">
                         </div>
                     </div>
 
@@ -71,17 +87,36 @@
 
                         </div>
                     </div>
+                    <?php
+                    $msg = $_GET['msg'];
 
-                    <a href="login.php?i=<?= $_GET['i']; ?>"><button type="button" class="btn btn-secondary" style="color: white">
-                        Voltar
-                        </button></a>
-                    <button type="submit" class="btn btn-primary" style="float: right; color: white" >
-                        Concluir
-                    </button>
+                    if (isset($msg) && $msg != false && $msg == "alert_ja_cadastrado") {
+                        echo "<div class='alert alert-danger fade show text-center' role='alert'> "
+                        . "<strong>ALERTA!</strong> <br>"
+                        . "Matricula já esta cadastrada!!"
+                        . "</div>";
+                    }
+                    ?>
+                    <div class="row mt-md-5">
+                        <div class="col-md-6">
+                            <a href="login.php?i=<?= $_GET['i']; ?>">
+                                <button type="button" class="btn btn-secondary" style="color: white">
+                                    Voltar
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-primary" style="float: right; color: white">
+                                Concluir
+                            </button>
+                        </div>
+                    </div>
                     <div class="trava"></div>
                 </div>
             </div>
-        </div>
-    </form>
-</body>
+            <script type="text/javascript">
+                $('#telefone_pessoa').mask('(00) 00000-0000');
+            </script>
+        </form>
+    </body>
 </html>
