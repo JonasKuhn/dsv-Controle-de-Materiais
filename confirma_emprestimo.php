@@ -33,7 +33,7 @@
 
             <div class="row">
                 <div class="col-md-6 offset-3">
-                    <form method="POST" action="#">
+                    <form name="form" id="form" method="POST" action="realiza_emprestimo.php?reg=<?= $_GET['reg'] ?>">
                         <table class="table table-bordered table-hover table-responsive-md">
                             <thead>
                                 <tr>
@@ -43,45 +43,44 @@
                             </thead>
                             <tbody>
                                 <?php
-                                include ('conexao.php');
-                                $sqlEq = "select * from tb_tipo_equipamento";
+                                include './conexao.php';
+                                $sqlEq = "select desc_tipo, cod_tipo_equipamento from tb_tipo_equipamento;";
                                 $queryEq = $pdo->query($sqlEq);
+
                                 while ($dadosEq = $queryEq->fetch()) {
-                                    $equipamentoNome = $dadosEq['desc_tipo'];
-                                    $id = $dadosEq['cod_tipo_equipamento'];
-                                    $nomeTrim = str_replace(' ', '', $equipamentoNome);
-                                    //$nomeMin = strtolower($nomeTrim);
-                                    $qtde = $_POST[$id];
+                                    $desc_tipo = $dadosEq['desc_tipo'];
+                                    $cod_tipo_equipamento = $dadosEq['cod_tipo_equipamento'];
+                                    $equipamentoTrim = str_replace(' ', '', $desc_tipo);
 
-
-                                    if ($qtde > 0) {
-                                        $sql = "select cod_equipamento from tb_equipamento "
-                                                . "where cod_tipo_equipamento = $id limit $qtde";
-                                        $query = $pdo->query($sql);
-                                        while ($dados = $query->fetch()) {
-                                            $emerson = $dados['cod_equipamento'];
-                                            $sql1 = "insert into tb_emprestimo (nr_matricula,data_emprestimo,status,cod_equipamento,cod_pessoa,cod_situacao,created) values (1234,now(),true,$emerson, 1,1,now())";
-                                            if ($pdo->query($sql1)) {
-                                                header("location: index.php");
-                                            } else {
-                                                echo ("Erro: %s\n" . $pdo->error);
-                                            }
-                                        }
+                                    $a = $_POST[$cod_tipo_equipamento];
+                                    if ($_GET['i'] == 1) {
+                                        if ($cod_tipo_equipamento == 2) {
+                                            
+                                        } else {
+                                            ?>
+                                            <tr>
+                                        <input type="text" hidden="" name="<?= $cod_tipo_equipamento; ?>" value="<?= $a; ?>">
+                                        <td><?= $desc_tipo; ?></td>
+                                        <td><span><?= $a; ?></span></td>
+                                        </tr>
+                                        <?php
                                     }
+                                } else {
                                     ?>
                                     <tr>
-                                        <td><?= $equipamentoNome ?></td>
-                                        <td><?=
-                                            $qtde;
-                                        }
-                                        ?></td>
-                                </tr>
-
+                                    <input type="text"  name="<?= $cod_tipo_equipamento; ?>" value="<?= $a; ?>">
+                                    <td><?= $desc_tipo; ?></td>
+                                    <td><span><?= $a; ?></span></td>
+                                    </tr>
+                                    <?php
+                                }
+                            }
+                            ?>
                             </tbody>
                         </table>
                         <div class="row mt-md-2">
                             <div class="col-md-6">
-                                <a href="seleciona_equipamentos.php">
+                                <a href="seleciona_equipamentos.php?i=<?= $_GET['i'] ?>&reg=<?= $_GET['reg'] ?>">
                                     <button type="button" class="btn btn-secondary" style="color: white">
                                         Voltar
                                     </button>

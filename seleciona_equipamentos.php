@@ -35,7 +35,7 @@
         <div class="trava container-fluid">
             <div class="row">
                 <div class="col-md-6 offset-3 mt-md-5">
-                    <form action="confirma_emprestimo.php" method="POST">
+                    <form action="confirma_emprestimo.php?i=<?= $_GET['i']; ?>&reg=<?= $_GET['reg']; ?>" method="POST">
                         <table class="table table-bordered table-hover table-responsive-md">
                             <thead>
                                 <tr>
@@ -50,22 +50,22 @@
                                 $queryEq = $pdo->query($sqlEq);
 
                                 while ($dadosEq = $queryEq->fetch()) {
-                                    $equipamento = $dadosEq['desc_tipo'];
-                                    $id = $dadosEq['cod_tipo_equipamento'];
-                                    $qtde = $dadosEq['qtd_tipo'];
-                                    $equipamentoTrim = str_replace(' ', '', $equipamento);
+                                    $desc_tipo = $dadosEq['desc_tipo'];
+                                    $cod_tipo_equipamento = $dadosEq['cod_tipo_equipamento'];
+                                    $qtd_tipo = $dadosEq['qtd_tipo'];
+                                    $equipamentoTrim = str_replace(' ', '', $desc_tipo);
 
                                     if ($_GET['i'] == 1) {
-                                        if ($id == 2) {
+                                        if ($cod_tipo_equipamento == 2) {
                                             
                                         } else {
                                             ?>
                                             <tr>
-                                                <td><?= $equipamento ?></td>
+                                                <td><?= $desc_tipo ?></td>
                                                 <td>
-                                                    <select class="form-control" name="qtd_select">
+                                                    <select class="form-control" name="<?= $cod_tipo_equipamento; ?>">
                                                         <?php
-                                                        for ($i = 0; $i <= $qtde; $i++) {
+                                                        for ($i = 0; $i <= $qtd_tipo; $i++) {
                                                             if ($i == $ix) {
                                                                 ?>
                                                                 <option selected="true" value="<?= $i; ?>"><?= $i; ?></option>
@@ -85,7 +85,7 @@
                                     } else {
                                         ?>
                                         <tr>
-                                            <td><?= $equipamento ?></td>
+                                            <td><?= $desc_tipo ?></td>
                                             <td>
                                                 <select class="form-control" name="qtd_select">
                                                     <?php
@@ -110,13 +110,25 @@
                                 ?>
 
                             </tbody>
-                        </table>
-                        <button type="button" class="btn btn-secondary btn-lg" >
-                            <a href="cadastro.php" style="color: white">Voltar</a>
-                        </button>
-                        <input type="submit" name="enviar" class="btn btn-primary btn-lg" value="Concluir" style=" float: right;font-size: 1rem; padding: 1.7%">
-                        <div class="trava mt-md-5"></div>  
+                        </table>   
+                        <div class="row mt-md-2">
+                            <div class="col-md-6">
+                                <a href="login.php">
+                                    <button type="button" class="btn btn-secondary" style="color: white">
+                                        Voltar
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary" style="float: right; color: white">
+                                    Concluir
+                                </button>
+                            </div>
+                        </div>
+                        <br> 
                     </form>
+
+                    <div class="trava"></div> 
                 </div>
             </div>
         </div>

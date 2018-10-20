@@ -30,10 +30,6 @@ if ($validacao != NULL or $validacao != '') {
     $pdo->query($sql);
     sleep(2);
     header('location: ./index.php?url=selecao.php');
-    echo "'<SCRIPT Language='javascript'>
-            window.alert('Cadastrado com Sucesso!');
-            location.href='selecao.php';
-            </SCRIPT>'";
     echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = "
         . "'login.php?i=1&msg=alert_cadastrado'; </SCRIPT>";
     exit();

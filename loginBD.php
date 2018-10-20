@@ -20,7 +20,7 @@ if ($nr_matricula != NULL) {
         $_SESSION["tipo_pessoa"] = $tipo_pessoa;
         $_SESSION["nome"] = $dados['nome_pessoa'];
         setcookie("usuario", $dados['nome_pessoa']);
-        header("Location: ./seleciona_equipamentos.php?i=$tipo_pessoa");
+        header("Location: ./seleciona_equipamentos.php?i=$tipo_pessoa&reg=$nr_matricula");
     } else {
         echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = "
         . "'login.php?msg=alert'; </SCRIPT>";
