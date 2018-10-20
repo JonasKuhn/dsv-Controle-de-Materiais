@@ -1,67 +1,94 @@
-<?php
 
-include "../conexao.php";
-session_start();
-$login = trim($_POST["login"]);
-$senha = trim($_POST["senha"]);
-$senha_crypt = md5($senha);
-if ($login == "" || $senha == "") {
-    echo "'<SCRIPT Language='javascript'>
-            window.alert('Todos os campos devem ser preenchidos!');
-            location.href='login.html';
-            </SCRIPT>'";
-} else {
-    $sql = "SELECT * FROM tb_admin WHERE login_admin = '$login';";
-    $result = $pdo->query($sql);
-    foreach ($result as $row):
-        if ($row != "") {
-            if ($senha_crypt === $row['senha_admin']) {
-                $_SESSION["id_usuario"] = $row["cod_admin"];
-                $_SESSION["login"] = stripslashes($row["nome_admin"]);
-                header("Location: intranet.php");
-                exit;
-            } else {
-                echo "'<SCRIPT Language='javascript'>
-            window.alert('Login e/ou senha incorretos!');
-            location.href='login.html';
-            </SCRIPT>'";
-                
-            }
-        } else {
-            echo "'<SCRIPT Language='javascript'>
-            window.alert('Login e/ou senha incorretos!');
-            location.href='login.html';
-            </SCRIPT>'";
-            
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Jonas Kuhn">
+
+    <meta property="og:url" content="">
+    <meta property="og:type" content="">
+    <!-- no type existem vários tipos article/wesite....-->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+
+    <!-- Tamanho que o FB recomenda 1200x630 máximo 5mb-->
+    <meta property="og:image" content="">
+
+    <title>Empréstimos NTI</title>
+    <link rel="shortcut icon" href="" type="image/x-icon"/>
+
+    <link href="../dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
+    <link href="../events/css/hover.css" rel="stylesheet" type="text/css"/>
+    <link href="../font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
+    <script>
+        function excluir(valor) {
+            return confirm('Deseja realmente excluir o registro ' + valor + '?');
         }
-    endforeach;
-}
+    </script>
+    <script>
+        function editar(valor) {
+            return confirm('Deseja realmente salvar as alterações em ' + valor + '?');
+        }
+    </script>
+    <script>
+        function salvar() {
+            return confirm('Deseja realmente salvar as alterações?');
+        }
+    </script>
+</head>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 offset-md-4 mt-md-5">
+            <div class="col-md-4 offset-4 mt-md-5">
+                <img src="../img/pic_logo_inst.png" alt="">
+            </div>
+            <div class="row">
+                <div class="col-md-10 offset-1 mt-md-5">
+                    <form action="autentica.php" method="post" name="form" id="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon" style="margin-right: 0.4rem;">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <input type="text" name="login" id="codigo" value="" class="form-control" placeholder="Usuário">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-addon" style="margin-right: 0.4rem;">
+                                    <i class="fa fa-asterisk"></i>
+                                </div>
+                                <input type="password" name="senha" id="senha" class="form-control" placeholder="Senha">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="#" >Não possuí cadastro?</a>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit" class="btn btn-primary btn-sm" style="float: right; color: white;">
+                                    Entrar
+                                </button>
+                            </div>
+                            <div class="col-md-12">
+                                <?php
+                                $msg = $_GET['msg'];
 
-
-
-
-/*
-$entrar = $_POST['login'];
-
-if (isset($entrar)) {
-    $usuario = addslashes($_POST['login_admin']);
-    $senha = md5(addslashes($_POST['senha_admin']));
-
-    require 'conexao.php';
-
-    $sql = $pdo->query("SELECT * FROM tb_admin WHERE login_admin = '$usuario' AND senha_admin = '$senha'");
-
-    if ($sql->rowCount() > 0) {
-        $dado = $sql->fetch();
-        $_SESSION['id'] = $dado['id'];
-        $_SESSION['nome'] = $dado['login_admin'];
-        setcookie("usuario", $dado['nome_admin']);
-        header("Location: ./index.php");
-    } else {
-        echo "'<SCRIPT Language='javascript'>
-            window.alert('Login e/ou senha incorretos!');
-            location.href='login.html';
-            </SCRIPT>'";
-        die();
-    }
-}*/
+                                if (isset($msg) && $msg != false && $msg == "aut") {
+                                    echo "<br/><div class='alert alert-danger' role='alert'>Autenticação necessária</div>";
+                                }
+                                if (isset($msg) && $msg != false && $msg == "bad_aut") {
+                                    echo "<br/><div class='alert alert-danger' role='alert'>Login ou Senha Incorretos</div>";
+                                }
+                                if (isset($msg) && $msg != false && $msg == "empty") {
+                                    echo "<br/><div class='alert alert-danger' role='alert'>Todos os Campos Devem Ser Preenchidos</div>";
+                                }
+                                
+                                ?>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
