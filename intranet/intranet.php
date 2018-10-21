@@ -33,7 +33,7 @@
 
                             </ul>
                         </li>
-                        <li><a href="#">Sair</a></li>
+                        <li><a href="logout.php">Sair</a></li>
                     </ul>
                 </nav>
 
