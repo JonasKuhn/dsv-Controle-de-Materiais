@@ -3,9 +3,14 @@
         font-weight: bold;
         font-size: 1.3rem;
     }
+    
     .table-link{
         text-decoration: none;
         color: black;
+    }
+    
+    .table-link:hover{
+        text-decoration: none;
     }
 </style>
 <h1 class="mt-md-5">Usuários Administradores</h1>

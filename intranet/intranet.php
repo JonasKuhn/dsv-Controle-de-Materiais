@@ -11,7 +11,7 @@
     <body>
         <!--Sidebar -->
         <div class="row">
-            <div id="sidebar" style="margin-right: 4rem">
+            <div id="sidebar" style="margin-right: 4rem;">
                 <div class="inner">
 
                     <!-- Menu -->
