@@ -72,7 +72,7 @@
                             </div>
                             <div class="col-md-12">
                                 <?php
-                                $msg = $_GET['msg'];
+                                @$msg = $_GET['msg'];
 
                                 if (isset($msg) && $msg != false && $msg == "aut") {
                                     echo "<br/><div class='alert alert-danger' role='alert'>Autenticação necessária</div>";

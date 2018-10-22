@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-8">
                 <?php
-                $url = $_GET['url'];
+                @$url = $_GET['url'];
                 switch ($url) {
                     case'admin':
                         include('administradores.php');

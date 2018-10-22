@@ -34,14 +34,14 @@
         include '../conexao.php';
         $sql = "select * from tb_admin";
         $query = $pdo->query($sql);
-        foreach ($query as $row):
+        foreach ($query as $row){
             $id = $row["cod_admin"];
             $nome = $row["nome_admin"];
             $login = $row["login_admin"];
             $senha = $row["senha_admin"];
             $criado = $row["created"];
             $modificado = $row["modified"];
-        endforeach;
+        }
         ?>
         <tr>
             <td><a href="?url=usuario-alterar&id=<?= $id ?>" class="table-link">
@@ -53,7 +53,7 @@
             <td scope="row"><?= $id ?></td>
             <td><?= $nome ?></td>
             <td><?= $login ?></td>
-            <td><?= $senha ?></td>
+            <td><?= substr($senha,0,10); ?></td>
             <td><?= $criado ?></td>
             <td><?= $modificado ?></td>
         </tr>
