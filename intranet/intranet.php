@@ -15,7 +15,7 @@
                 <div class="inner">
 
                     <!-- Menu -->
-                    <nav id="menu">
+                    <nav id="menu" style="font-size: 1rem">
                         <header class="major">
                             <h2>Empréstimo NTI</h2>
                         </header>
