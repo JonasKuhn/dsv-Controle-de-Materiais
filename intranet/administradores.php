@@ -8,8 +8,8 @@
         color: black;
     }
 </style>
-<h1 style="margin-top: 3rem">Usuários Administradores</h1>
-<table class="table table-bordered table-hover table-responsive-md" style="font-size: 1.2rem">
+<h1 class="mt-md-5">Usuários Administradores</h1>
+<table class="table table-bordered table-hover " style="font-size: 1.2rem">
     <thead>
         <tr>
             <th scope="col"><a href="?url=usuario-incluir" class="table-link">

@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <link href="assets/css/.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <!--Sidebar -->
         <div class="row">
-            <div class="col-md-3" id="sidebar" style="margin-right: 3rem">
+            <div id="sidebar" style="margin-right: 4rem">
                 <div class="inner">
 
                     <!-- Menu -->
