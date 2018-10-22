@@ -46,14 +46,14 @@
         <tr>
             <td><a href="?url=usuario-alterar&id=<?= $id ?>" class="table-link">
                     <i class="fa fa-edit fa-2x"></i>
-                </a><br><a href="?url=usuario-excluir&id=<?= $id ?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
+                </a>&nbsp;<a href="?url=usuario-excluir&id=<?= $id ?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
                     <i class="fa fa-trash-o fa-2x"></i>
                 </a>
             </td>
             <td scope="row"><?= $id ?></td>
             <td><?= $nome ?></td>
             <td><?= $login ?></td>
-            <td><?= substr($senha,0,10); ?></td>
+            <td>***************</td>
             <td><?= $criado ?></td>
             <td><?= $modificado ?></td>
         </tr>
