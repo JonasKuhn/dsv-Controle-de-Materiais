@@ -9,7 +9,7 @@ INSERT INTO tb_tipo_equipamento (cod_tipo_equipamento,desc_tipo,qtd_tipo) VALUES
 INSERT INTO tb_tipo_equipamento (cod_tipo_equipamento,desc_tipo,qtd_tipo) VALUES (9,'Adaptador VGA',2);
 INSERT INTO tb_tipo_equipamento (cod_tipo_equipamento,desc_tipo,qtd_tipo) VALUES (10,'Leitor de Código de Barras',2);
 
-INSERT INTO tb_admin (nome_admin,senha_admin,login_admin) VALUES ('Administrador','admin','admin');
+INSERT INTO tb_admin (nome_admin,senha_admin,login_admin) VALUES ('Administrador',md5('admin'),'admin');
 
 INSERT INTO tb_tipo_pessoa (desc_tipo) VALUES ('Aluno');
 INSERT INTO tb_tipo_pessoa (desc_tipo) VALUES ('Professor');
