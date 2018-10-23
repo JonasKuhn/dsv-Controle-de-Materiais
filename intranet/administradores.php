@@ -1,17 +1,35 @@
-<link type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css">
+<style type="text/css">
+    .table-font{
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+    
+    .table-link{
+        text-decoration: none;
+        color: black;
+    }
+    
+    .table-link:hover{
+        text-decoration: none;
+    }
+</style>
 <h1 class="mt-md-5">Usuários Administradores</h1>
-<table id='teste' class='table table-striped table-bordered table-hover dataTable'>
+<table class="table table-bordered table-hover " style="font-size: 1.2rem">
     <thead>
         <tr>
+            <th scope="col"><a href="?url=usuario-incluir" class="table-link">
+                    <i class="fa fa-plus fa-2x"></i>
+                </a></th>
             <th scope="col" class="table-font">#</th>
             <th scope="col" class="table-font">Nome</th>
             <th scope="col" class="table-font">Login</th>
             <th scope="col" class="table-font">Senha</th>
             <th scope="col" class="table-font">Criado</th>
             <th scope="col" class="table-font">Modificado</th>
+
         </tr>
-    </thead>    
-    <tbody> 
+    </thead>
+    <tbody>
         <?php
         include '../conexao.php';
         $sql = "select * from tb_admin";
@@ -23,36 +41,21 @@
             $senha = $row["senha_admin"];
             $criado = $row["created"];
             $modificado = $row["modified"];
-        
-            ?>
-            <tr>
-
-                <td><?=$id?></td>
-                <td><?=$nome?></td>
-                <td><?=$login?></td>
-                <td><?=$senha?></td>
-                <td><?=$criado?></td>
-                <td><?=$modificado?></td>
-            </tr>
-            <?php
         }
         ?>
+        <tr>
+            <td><a href="?url=usuario-alterar&id=<?= $id ?>" class="table-link">
+                    <i class="fa fa-edit fa-2x"></i>
+                </a>&nbsp;<a href="?url=usuario-excluir&id=<?= $id ?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
+                    <i class="fa fa-trash-o fa-2x"></i>
+                </a>
+            </td>
+            <td scope="row"><?= $id ?></td>
+            <td><?= $nome ?></td>
+            <td><?= $login ?></td>
+            <td>***************</td>
+            <td><?= $criado ?></td>
+            <td><?= $modificado ?></td>
+        </tr>
     </tbody>
 </table>
-
-<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-
-<script>
-    $(document).ready(function () {
-    $('#teste').DataTable({
-    "language": {
-    "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
-    },
