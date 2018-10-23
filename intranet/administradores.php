@@ -14,7 +14,7 @@
     }
 </style>
 <h1 class="mt-md-5">Usuários Administradores</h1>
-<table id='teste' class="table table-striped table-bordered table-hover dataTable">
+<table id='table' class="table table-striped table-bordered table-hover dataTable">
     <thead>
         <tr>
             <th scope="col"><a href="?url=usuario-incluir" class="table-link">
@@ -41,7 +41,7 @@
             $senha = $row["senha_admin"];
             $criado = $row["created"];
             $modificado = $row["modified"];
-        }
+        
         ?>
         <tr>
             <td><a href="?url=usuario-alterar&id=<?= $id ?>" class="table-link">
@@ -55,14 +55,14 @@
         <td><?= $login ?></td>
         <td>***************</td>
         <td><?= $criado ?></td>
-        <td><?= $modificado ?></td>
+        <td><?= $modificado; }?></td>
     </tr>
 </tbody>
 </table>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
 <script>
    $(document).ready(function (){
-     $('#teste').DataTable({
+     $('#table').DataTable({
       "language": {
        "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
    }

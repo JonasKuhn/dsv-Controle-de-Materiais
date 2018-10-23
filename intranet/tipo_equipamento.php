@@ -9,7 +9,7 @@
     }
 </style>
 <h1 class="mt-md-5" style="margin-bottom: 2rem">Cadastrar Tipos de Equipamentos</h1>
-<table id='teste' class="table table-striped table-bordered table-hover dataTable mt-md-5">
+<table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
     <thead>
         <tr>
             <th scope="col"><a href="?url=cad_equi_inc" class="table-link">
@@ -48,7 +48,7 @@
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
 <script>
    $(document).ready(function (){
-     $('#teste').DataTable({
+     $('#table').DataTable({
       "language": {
        "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
    }
