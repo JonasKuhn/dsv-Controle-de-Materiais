@@ -23,7 +23,7 @@
                         <ul>
                             <li><a href="intranet.php">Página Inicial</a></li>
                             <li><a href="intranet.php?url=admin">Administradores</a></li>
-                            <li><a href="#">Cadastro de Equipamento</a></li>
+                            <li><a href="intranet.php?url=cad_equi">Cadastro de Equipamento</a></li>
                             <li><a href="#">Cadastro de Alunos</a></li>
                             <li>
                                 <span class="opener">Equipamentos</span>
@@ -52,6 +52,11 @@
                 switch ($url) {
                     case'admin':
                         include('administradores.php');
+                        break;
+                    case'cad_equi':
+                        include('cad_equi.php');
+                        break;
+                    case 'cad_equi-inc': include('cad_equi-inc.php');
                         break;
                     default :
                 }
