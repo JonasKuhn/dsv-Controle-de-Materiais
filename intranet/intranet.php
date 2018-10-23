@@ -53,6 +53,15 @@
                     case'admin':
                         include('administradores.php');
                         break;
+                    case'incluir-admin':
+                        include('./incluir/inc_admin.php');
+                        break;
+                    case'editar-admin':
+                        include('./editar/edt_admin.php');
+                        break;
+                    case'excluir-admin':
+                        include('./excluir/exc_admin.php');
+                        break;
                     case'cad_equi':
                         include('cad_equi.php');
                         break;

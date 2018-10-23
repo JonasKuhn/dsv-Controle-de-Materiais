@@ -17,7 +17,7 @@
 <table class="table table-bordered table-hover " style="font-size: 1.2rem">
     <thead>
         <tr>
-            <th scope="col"><a href="?url=usuario-incluir" class="table-link">
+            <th scope="col"><a href="?url=incluir-admin" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
                 </a></th>
             <th scope="col" class="table-font">#</th>
@@ -44,9 +44,9 @@
         }
         ?>
         <tr>
-            <td><a href="?url=usuario-alterar&id=<?= $id ?>" class="table-link">
+            <td><a href="?url=editar-admin&id=<?= $id ?>" class="table-link">
                     <i class="fa fa-edit fa-2x"></i>
-                </a>&nbsp;<a href="?url=usuario-excluir&id=<?= $id ?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
+                </a>&nbsp;<a href="?url=excluir-admin&id=<?= $id ?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
                     <i class="fa fa-trash-o fa-2x"></i>
                 </a>
             </td>
