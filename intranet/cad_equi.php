@@ -12,7 +12,7 @@
 <table class="table table-bordered table-hover table-responsive-md" style="font-size: 1.2rem">
     <thead>
         <tr>
-            <th scope="col"><a href="?url=cad_equi-inc" class="table-link">
+            <th scope="col"><a href="?url=cad_equi_inc" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
                 </a></th>
             <th scope="col" class="table-font">Código</th>
