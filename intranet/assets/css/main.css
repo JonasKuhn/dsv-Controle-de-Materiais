@@ -2120,7 +2120,7 @@
 			}
 
 	strong, b {
-		color: #3d4449;
+		color: #585657;
 		font-weight: 600;
 	}
 
@@ -3758,7 +3758,7 @@
 			}
 
 				#sidebar .toggle:before {
-					color: #7f888f;
+					color: #585657;
 					margin-left: -0.0625em;
 					margin-top: -0.25em;
 					font-size: 1.1rem;
