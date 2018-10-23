@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="assets/css/main.css" />
         <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+
     </head>
     <body>
         <!--Sidebar -->
@@ -80,6 +82,7 @@
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
 
     </body>
 </html>
