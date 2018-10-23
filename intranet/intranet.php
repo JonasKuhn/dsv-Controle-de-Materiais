@@ -23,7 +23,7 @@
                         <ul>
                             <li><a href="intranet.php">Página Inicial</a></li>
                             <li><a href="intranet.php?url=admin">Administradores</a></li>
-                            <li><a href="intranet.php?url=cad_equi">Cadastro de Equipamento</a></li>
+                            <li><a href="intranet.php?url=tipo-equip">Cadastro de Tipos</a></li>
                             <li><a href="#">Cadastro de Alunos</a></li>
                             <li>
                                 <span class="opener">Equipamentos</span>
@@ -62,8 +62,8 @@
                     case'excluir-admin':
                         include('./excluir/exc_admin.php');
                         break;
-                    case'cad_equi':
-                        include('cad_equi.php');
+                    case'tipo-equip':
+                        include('tipo_equipamento.php');
                         break;
                     case 'cad_equi_inc': include('incluir/cad_equi_inc.php');
                         break;

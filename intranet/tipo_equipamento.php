@@ -8,7 +8,7 @@
         color: black;
     }
 </style>
-<h1 style="margin-top: 3rem">Cadastrar Equipamentos</h1>
+<h1 style="margin-top: 3rem">Cadastrar Tipos de Equipamentos</h1>
 <table class="table table-bordered table-hover table-responsive-md" style="font-size: 1.2rem">
     <thead>
         <tr>
@@ -24,24 +24,24 @@
     <tbody>
         <?php
         include '../conexao.php';
-        $sql = "select * from tb_equipamento";
+        $sql = "select * from tb_tipo_equipamento";
         $query = $pdo->query($sql);
-        foreach ($query as $row):
-            $cod = $row["cod_equipamento"];
-            $desc = $row["desc_equipamento"];
-            $obs = $row["desc_observacao"];
-        endforeach;
+        foreach ($query as $row){
+            $cod = $row["cod_tipo_equipamento"];
+            $desc = $row["desc_tipo"];
+            $qtde = $row["qtd_tipo"];
+        
         ?>
         <tr>
             <td><a href="#" class="table-link">
                     <i class="fa fa-edit fa-2x"></i>
-                </a><br><a href="#" onclick="return excluir('<?= $cod ?>');"  class="table-link">
+                </a><a href="#" onclick="return excluir('<?= $cod ?>');"  class="table-link">
                     <i class="fa fa-trash-o fa-2x"></i>
                 </a>
             </td>
             <td scope="row"><?= $cod ?></td>
             <td><?= $desc ?></td>
-            <td><?= $obs ?></td>
+        <td><?= $qtde; } ?></td>
         </tr>
     </tbody>
 </table>
