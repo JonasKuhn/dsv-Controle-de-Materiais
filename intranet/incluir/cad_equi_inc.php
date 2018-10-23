@@ -1,4 +1,4 @@
-<form name="cadastro" action="cad_equi_incBD.php" method="POST" enctype="multipart/form-data">
+<form name="cadastro" action="incluir/cad_equi_incBD.php" method="POST" enctype="multipart/form-data">
     <table border="0" width="500" align="center">
         <tbody>
             <tr>

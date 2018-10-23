@@ -56,7 +56,7 @@
                     case'cad_equi':
                         include('cad_equi.php');
                         break;
-                    case 'cad_equi-inc': include('cad_equi-inc.php');
+                    case 'cad_equi_inc': include('incluir/cad_equi_inc.php');
                         break;
                     default :
                 }
