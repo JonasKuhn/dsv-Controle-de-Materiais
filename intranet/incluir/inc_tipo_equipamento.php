@@ -5,7 +5,7 @@
     <div class="col-md-12 mt-md-2">
         <form action="incluir/inc_tipo_equipamento_bd.php" method="POST">
     <div class="form-group">
-        <label>Nome do Equipamento:</label>
+        <label>Nome:</label>
         <input type="text" name="nome" class="form-control" required="">
     </div>
     <div class="form-group">
