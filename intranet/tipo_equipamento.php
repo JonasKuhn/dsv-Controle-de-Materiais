@@ -37,8 +37,8 @@
             $cod = $row["cod_tipo_equipamento"];
             $desc = $row["desc_tipo"];
             $qtde = $row["qtd_tipo"];
-            $created = $row["created"];
-            $modified = $row["modified"]
+            $criado = $row["created"];
+            $modificado = $row["modified"]
             ?>
             <tr>
                 <td><a href="?url=editar-tp-equip" class="table-link">
@@ -50,8 +50,8 @@
                 <td scope="row"><?= $cod ?></td>
                 <td><?= $desc ?></td>
                 <td><?= $qtde ?></td>
-                <td><?= date('d/m/Y H:i:s', strtotime($created)) ?></td>
-                <td><?= date('d/m/Y H:i:s', strtotime($modified));
+                <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
+            <td><?= date('d/m/Y  H:i', strtotime($modificado)); } ?></td>
     } ?></td>
         </tr>
     </tbody>

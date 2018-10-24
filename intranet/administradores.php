@@ -53,8 +53,8 @@
         <td><?= $nome ?></td>
         <td><?= $login ?></td>
         <td>***************</td>
-        <td><?= $criado ?></td>
-        <td><?= $modificado; }?></td>
+        <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
+            <td><?= date('d/m/Y  H:i', strtotime($modificado)); } ?></td>
     </tr>
 </tbody>
 </table>

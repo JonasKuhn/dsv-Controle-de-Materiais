@@ -66,6 +66,9 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 
 			$criado = $row["created"];
 			$modificado = $row["modified"];
+			#if ($modificado == ""){
+			#	$modificado = $criado;
+			#}
 			?>
 			<tr>
 				<td><a href="?url=editar-tp-equip" class="table-link">
@@ -80,8 +83,8 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 			<td><?= $flgti_desc ?></td>
 			<td><?= $status_desc ?></td>
 			<td><?= $tipo ?></td>
-			<td><?= date('d/m/Y H:i:s', strtotime($criado)) ?></td>
-			<td><?= date('d/m/Y H:i:s', strtotime($modificado)); } ?></td>
+			<td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
+			<td><?= date('d/m/Y  H:i', strtotime($modificado)); } ?></td>
 		</tr>
 	</tbody>
 </table>
