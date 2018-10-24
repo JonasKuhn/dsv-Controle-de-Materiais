@@ -1,7 +1,7 @@
 <?php
 $dsn = "mysql:dbname=emprestimo_nti;host=localhost";
 $dbuser = "root";
-$dbpasswd = "8598";
+$dbpasswd = "1234";
 
 try {
     $pdo = new PDO($dsn, $dbuser, $dbpasswd, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
