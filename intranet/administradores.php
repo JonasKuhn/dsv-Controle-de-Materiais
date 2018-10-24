@@ -1,7 +1,6 @@
     <style type="text/css">
     .table-font{
-        font-weight: bold;
-        font-size: 1rem;
+        font-size: .8rem;
     }
     
     .table-link{
@@ -13,23 +12,23 @@
         text-decoration: none;
     }
 </style>
-<h1 class="mt-md-5">Usuários Administradores</h1>
+<h2 class="mt-md-5">Usuários Administradores</h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable">
     <thead>
         <tr>
             <th scope="col"><a href="?url=usuario-incluir" class="table-link">
                 <i class="fa fa-plus fa-2x"></i>
             </a></th>
-            <th scope="col" class="table-font">#</th>
-            <th scope="col" class="table-font">Nome</th>
-            <th scope="col" class="table-font">Login</th>
-            <th scope="col" class="table-font">Senha</th>
-            <th scope="col" class="table-font">Criado</th>
-            <th scope="col" class="table-font">Modificado</th>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Login</th>
+            <th scope="col">Senha</th>
+            <th scope="col">Criado</th>
+            <th scope="col">Modificado</th>
 
         </tr>
     </thead>
-    <tbody>
+    <tbody class="table-font">
         <?php
         include '../conexao.php';
         $sql = "select * from tb_admin";
