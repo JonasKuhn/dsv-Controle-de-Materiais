@@ -13,7 +13,7 @@
         echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento incluído com sucesso!</div>";
     }
     ?>
-<h2 class="mt-md-5" style="margin-bottom: 2rem">Cadastrar Tipos de Equipamentos</h2>
+<h2 class="mt-md-5" style="margin-bottom: 2rem">Tipos de Equipamentos</h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
     <thead>
         <tr>
@@ -52,7 +52,7 @@
                 <td><?= $qtde ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
             <td><?= date('d/m/Y  H:i', strtotime($modificado)); } ?></td>
-    } ?></td>
+    </td>
         </tr>
     </tbody>
 </table>
