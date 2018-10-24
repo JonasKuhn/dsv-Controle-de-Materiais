@@ -49,11 +49,6 @@ include '../conexao.php';
                         <li><a href="logout.php">Sair</a></li>
                     </ul>
                 </nav>
-
-                <!--Footer--> 
-                <footer id="footer">
-                    <p class="copyright">&copy; Leonardo Roden. All rights reserved.</p>
-                </footer>
             </div>
         </div>
         <div class="col-md-8">
