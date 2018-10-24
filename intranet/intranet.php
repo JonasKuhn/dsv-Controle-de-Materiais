@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="assets/css/main.css" />
         <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.18/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css"/>
 
     </head>
     <body>
@@ -67,7 +67,14 @@
                     case'tipo-equip':
                         include('tipo_equipamento.php');
                         break;
-                    case 'cad_equi_inc': include('incluir/cad_equi_inc.php');
+                    case'incluir-tp-equip':
+                        include('./incluir/inc_tipo_equipamento.php');
+                        break;
+                    case'editar-tp-equip':
+                        include('./editar/edt_tipo_equipamento.php');
+                        break;
+                    case'excluir-tp-equip':
+                        include('./excluir/exc_tipo_equipamento.php');
                         break;
                     default :
                 }
@@ -82,7 +89,7 @@
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
+        <script src="assets/js/datatables.min.js"></script>
 
     </body>
 </html>
