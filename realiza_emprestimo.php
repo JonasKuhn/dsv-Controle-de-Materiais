@@ -36,14 +36,13 @@ if ($vl_matricula != '') {
                                 . "VALUES ('$vl_matricula', now(), FALSE, '$cod_equipamento', '$cod_pessoa', 1)";
                         $queryinsert = $pdo->prepare($sqlInsert);
                         $queryinsert->execute();
-                        
-                        $sqlupdateEquip = "UPDATE tb_equipamento                 SET fl_status = 0 WHERE cod_equipamento = '$cod_equipamento';";
+
+                        $sqlupdateEquip = "UPDATE tb_equipamento as eq, tb_tipo_equipamento as teq "
+                                . "SET eq.fl_status = 0 "
+                                . "AND  teq.qtd_tipo = teq.qtd_tipo - 1 "
+                                . "WHERE eq.cod_equipamento = '$cod_equipamento';";
                         $queryupdateEquip = $pdo->prepare($sqlupdateEquip);
                         $queryupdateEquip->execute();
-                        
-                        $sqlupdate = "UPDATE tb_equipamento SET fl_status = 0 WHERE cod_equipamento = '$cod_equipamento';";
-                        $queryupdate = $pdo->prepare($sqlupdate);
-                        $queryupdate->execute();
 
                         echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = 'index.php'; </SCRIPT>";
                         exit();
