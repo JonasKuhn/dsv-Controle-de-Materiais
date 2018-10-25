@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="item-card fixed-bottom " >
-        <a href="?url=administradores.php" class="hvr-bubble-float-bottom-new" style="float: right; margin-right: 100px; margin-bottom:0px; border-radius: 2px; color: #FFF; padding: 5px;">
+        <a href="./intranet/login.php" class="hvr-bubble-float-bottom-new" style="float: right; margin-right: 100px; margin-bottom:0px; border-radius: 2px; color: #FFF; padding: 5px;">
             <?= $descAdm; ?>
         </a>
     </div>
