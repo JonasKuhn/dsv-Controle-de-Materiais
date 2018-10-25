@@ -5,6 +5,8 @@ CREATE TABLE `tb_tipo_equipamento` (
     `cod_tipo_equipamento` INTEGER NOT NULL AUTO_INCREMENT,
     `desc_tipo` TEXT,
     `qtd_tipo` INTEGER,
+    `created` TIMESTAMP NOT NULL DEFAULT NOW(),
+    `modified` TIMESTAMP NULL,
     CONSTRAINT `PK_tb_tipo_equipamento` PRIMARY KEY (`cod_tipo_equipamento`)
 );
 
