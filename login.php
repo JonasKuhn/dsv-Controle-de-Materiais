@@ -93,10 +93,29 @@
                     . "Matricula já esta cadastrada!!"
                     . "</div>";
                 }
+                if (isset($msg) && $msg != false && $msg == "aut") {
+                    echo "<br/>"
+                    . "<div class='alert alert-danger' role='alert'>"
+                    . "Autenticação necessária"
+                    . "</div>";
+                }
+                if (isset($msg) && $msg != false && $msg == "bad_aut") {
+                    echo "<br/>"
+                    . "<div class='alert alert-danger' role='alert'>"
+                    . "Login ou Senha Incorretos"
+                    . "</div>";
+                }
+                if (isset($msg) && $msg != false && $msg == "empty") {
+                    echo "<br/>"
+                    . "<div class='alert alert-danger' role='alert'>"
+                    . "Todos os Campos Devem Ser Preenchidos"
+                    . "</div>";
+                }
                 ?>
 
+
                 <div class="text-center">
-                    <a href="cadastro.php?i=<?= $_GET['i']; ?>" >Não possuí cadastro?</a>
+                    <a href="cadastro.php?i=<?= $_GET['i'] ?>" >Não possuí cadastro?</a>
                 </div>
                 <div class="row mt-md-2">
                     <div class="col-md-6">

@@ -28,7 +28,7 @@ WHERE eq.cod_tipo_equipamento = teq.cod_tipo_equipamento
 AND eq.cod_equipamento = 1;
 
 select * from tb_tipo_equipamento
-select * from tb_equipamento
+select * from tb_emprestimo
 
 select * from tb_pessoa
 
@@ -52,3 +52,15 @@ AND eq.fl_curso_gti != TRUE
 AND eq.fl_status != TRUE
 
 
+
+SELECT cod_equipamento 
+FROM tb_equipamento 
+WHERE fl_status = FALSE 
+AND cod_tipo_equipamento = 5
+LIMIT 0;
+
+
+
+
+
+SELECT COUNT(cod_tipo_equipamento) FROM tb_tipo_equipamento;

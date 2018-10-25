@@ -23,17 +23,20 @@
     </head>
 
     <body>
+        <?php
+        require_once 'sessao.php';
+        ?>
         <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
             <h1 class="d-none d-lg-block text-nowrap text-center">
                 Faça seu Empréstimo
             </h1>
         </header>
-        <div class="trava container-fluid mt-md-5">
 
+        <div class="trava container-fluid mt-md-5">
             <div class="row">
                 <div class="col-md-6 offset-3">
-                    <form name="form" id="form" method="POST" action="realiza_emprestimo.php?reg=<?= $_GET['reg'] ?>">
+                    <form name="form" id="form" method="POST" action="realiza_emprestimo.php">
                         <table class="table table-bordered table-hover table-responsive-md">
                             <thead>
                                 <tr>
@@ -57,7 +60,7 @@
                                     $equipamentoTrim = str_replace(' ', '', $desc_tipo);
 
                                     $a = $_POST[$cod_tipo_equipamento];
-                                    if ($_GET['i'] == 1) {
+                                    if ($_SESSION["tipo_pessoa"] == 1) {
                                         if ($cod_tipo_equipamento == 2) {
                                             
                                         } else {
@@ -82,9 +85,21 @@
                             ?>
                             </tbody>
                         </table>
+                        <?php
+                        @$msg1 = $_GET['msg1'];
+                        @$msg2 = $_GET['msg2'];
+                        @$msg = $_GET['msg'];
+
+                        if (isset($msg1) && $msg1 != false && $msg1 == "bad_aut") {
+                            echo "<br/><div class='alert alert-danger' role='alert'><?=$msg1?><br/><?=$msg2?></div>";
+                        }
+                        if (isset($msg) && $msg != false && $msg == "error") {
+                            echo "<br/><div class='alert alert-danger' role='alert'>OPPA</div>";
+                        }
+                        ?>
                         <div class="row mt-md-2">
                             <div class="col-md-6">
-                                <a href="seleciona_equipamentos.php?i=<?= $_GET['i'] ?>&reg=<?= $_GET['reg'] ?>">
+                                <a href="seleciona_equipamentos.php">
                                     <button type="button" class="btn btn-secondary" style="color: white">
                                         Voltar
                                     </button>
@@ -102,21 +117,6 @@
                 </div>
             </div>
         </div>
-
-
-
-        <?php
-        @$msg1 = $_GET['msg1'];
-        @$msg2 = $_GET['msg2'];
-        @$msg = $_GET['msg'];
-
-        if (isset($msg1) && $msg1 != false && $msg1 == "bad_aut") {
-            echo "<br/><div class='alert alert-danger' role='alert'><?=$msg1?><br/><?=$msg2?></div>";
-        }
-        if (isset($msg) && $msg != false && $msg == "error") {
-            echo "<br/><div class='alert alert-danger' role='alert'>OPPA</div>";
-        }
-        ?>
     </body>
 </html>
 

@@ -99,7 +99,7 @@
                     ?>
                     <div class="row mt-md-5">
                         <div class="col-md-6">
-                            <a href="login.php?i=<?= $_GET['i']; ?>">
+                            <a href="login.php?i=<?= $_GET['i']; ?> ">
                                 <button type="button" class="btn btn-secondary" style="color: white">
                                     Voltar
                                 </button>

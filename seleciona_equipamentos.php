@@ -23,6 +23,9 @@
     </head>
     <!--style="line-height:90px; margin-left: 8%; float: left;"-->
     <body>
+        <?php
+        require_once 'sessao.php';
+        ?>
         <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;">
             <img src="img/logo.png" alt="UCEFF" >
         </a>
@@ -35,7 +38,7 @@
         <div class="trava container-fluid">
             <div class="row">
                 <div class="col-md-6 offset-3 mt-md-5">
-                    <form action="confirma_emprestimo.php?i=<?= $_GET['i']; ?>&reg=<?= $_GET['reg']; ?>" method="POST">
+                    <form action="confirma_emprestimo.php" method="POST">
                         <table class="table table-bordered table-hover table-responsive-md">
                             <thead>
                                 <tr>
@@ -53,7 +56,7 @@
                                         . "AND eq.fl_status != TRUE";
                                 $queryEq = $pdo->prepare($sqlEq);
                                 $queryEq->execute();
-                                
+
                                 while ($dadosEq = $queryEq->fetch()) {
                                     $desc_tipo = $dadosEq['desc_tipo'];
                                     $cod_tipo_equipamento = $dadosEq['cod_tipo_equipamento'];
@@ -73,11 +76,11 @@
                                                         for ($i = 0; $i <= $qtd_tipo; $i++) {
                                                             if ($i == $ix) {
                                                                 ?>
-                                                                <option selected="true" value="<?= $i; ?>"><?= $i; ?></option>
+                                                                <option selected="true" value="">NENHUM <?= $desc_tipo ?></option>
                                                                 <?php
                                                             } else if ($i != $ix) {
                                                                 ?>
-                                                                <option value="<?= $i; ?>"><?= $i; ?></option>
+                                                                <option value="<?= $i; ?>"><?= $i.' '.$desc_tipo; ?> </option>
                                                                 <?php
                                                             }
                                                         }
@@ -97,11 +100,11 @@
                                                     for ($i = 0; $i <= $qtde; $i++) {
                                                         if ($i == $ix) {
                                                             ?>
-                                                            <option selected="true" value="<?= $i; ?>"><?= $i; ?></option>
+                                                            <option selected="true" value="">NENHUM <?= $desc_tipo ?></option>
                                                             <?php
                                                         } else if ($i != $ix) {
                                                             ?>
-                                                            <option value="<?= $i; ?>"><?= $i; ?></option>
+                                                            <option value="<?= $i; ?>"><?= $i.' '.$desc_tipo; ?></option>
                                                             <?php
                                                         }
                                                     }

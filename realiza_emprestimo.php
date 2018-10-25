@@ -1,8 +1,11 @@
 <?php
 
 include './conexao.php';
-$nr_matricula = $_GET['reg'];
-$nr_pessoa = $_GET['i'];
+require_once 'sessao.php';
+
+
+$nr_matricula = $_SESSION["id"];
+$nr_pessoa = $_SESSION["tipo_pessoa"];
 
 $sqlMatricula = "SELECT cod_pessoa, nr_matricula FROM tb_pessoa WHERE nr_matricula = '$nr_matricula';";
 $queryMatricula = $pdo->prepare($sqlMatricula);
@@ -36,7 +39,7 @@ if ($vl_matricula != '') {
 
             while ($dadolimnit = $querylimit->fetch()) {
                 $cod_equipamento = $dadolimnit['cod_equipamento'];
-                if ($cod_equipamento != NULL && $cod_equipamento != '0') {
+                if ($cod_equipamento != NULL || $cod_equipamento != '0') {
                     try {
                         //REALIZA O EMPRESTIMO
                         $sqlInsert = "INSERT INTO tb_emprestimo (nr_matricula, data_emprestimo, status, cod_equipamento, cod_pessoa, cod_situacao) "
@@ -61,6 +64,17 @@ if ($vl_matricula != '') {
                         echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = "
                         . "'login.php?msg1='$erro1'&msg2='$erro2'; </SCRIPT>";
                     }
+                } else {
+                    $x++;
+                    $sqlvalida = "SELECT COUNT(cod_tipo_equipamento) FROM tb_tipo_equipamento;";
+                    $queryvalida = $pdo->prepare($sqlvalida);
+                    $queryvalida->execute();
+                    $dadovalida = $queryvalida->fetch();
+                    $count = $dadovalida['COUNT(cod_tipo_equipamento)'];
+                    
+                    echo $count;
+                    break;
+                    
                 }
             }
         }
