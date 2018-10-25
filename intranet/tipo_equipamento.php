@@ -78,9 +78,10 @@ $(document).ready(function () {
            "language": {
                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
            },
-           dom: 'Bfrtip',
+           dom: 'Bflrtip',
            buttons: [
-               'excel'
+               'excel',
+               'pdf'
            ]
        });
    });
