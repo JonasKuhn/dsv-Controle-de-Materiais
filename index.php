@@ -33,7 +33,7 @@
                 include './selecao_pessoa.php';
                 break;
             case 'administradores.php':
-                include './intranet/login.html';
+                include './intranet/login.php';
                 break;
             case 'cadastro.php':
                 include './cadastro.php';
