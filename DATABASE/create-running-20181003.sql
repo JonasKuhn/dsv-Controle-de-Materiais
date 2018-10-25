@@ -46,7 +46,7 @@ CREATE TABLE `tb_situacao` (
 );
 
 CREATE TABLE `tb_emprestimo` (
-    `cod_emprestimo` INTEGER NOT NULL,
+    `cod_emprestimo` INTEGER NOT NULL AUTO_INCREMENT,
     `nr_matricula` VARCHAR(200),
     `data_emprestimo` DATETIME NOT NULL,
     `status` VARCHAR(200),

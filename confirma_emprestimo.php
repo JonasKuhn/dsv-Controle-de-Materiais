@@ -68,7 +68,7 @@
                                 } else {
                                     ?>
                                     <tr>
-                                    <input type="text"  name="<?= $cod_tipo_equipamento; ?>" value="<?= $a; ?>">
+                                    <input type="text" hidden="" name="<?= $cod_tipo_equipamento; ?>" value="<?= $a; ?>">
                                     <td><?= $desc_tipo; ?></td>
                                     <td><span><?= $a; ?></span></td>
                                     </tr>
@@ -98,6 +98,17 @@
                 </div>
             </div>
         </div>
+
+
+
+        <?php
+        @$msg1 = $_GET['msg1'];
+        @$msg2 = $_GET['msg2'];
+      
+        if (isset($msg) && $msg != false && $msg == "bad_aut") {
+            echo "<br/><div class='alert alert-danger' role='alert'><?=$msg1?><br/><?=$msg2?></div>";
+        }
+        ?>
     </body>
 </html>
 
