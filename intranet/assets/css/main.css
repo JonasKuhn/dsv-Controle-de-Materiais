@@ -2855,10 +2855,10 @@
 
 /* Button */
 
-	input[type="submit"],
+	/*input[type="submit"],
 	input[type="reset"],
-	input[type="button"],
-	button,
+	input[type="button"],*/
+	/*button,
 	.button {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -2885,9 +2885,9 @@
 		text-decoration: none;
 		text-transform: uppercase;
 		white-space: nowrap;
-	}
+	}*/
 
-		input[type="submit"]:hover,
+		/*input[type="submit"]:hover,
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		button:hover,
@@ -2979,7 +2979,7 @@
 			-ms-pointer-events: none;
 			pointer-events: none;
 			opacity: 0.25;
-		}
+		}*/
 
 /* Mini Posts */
 
