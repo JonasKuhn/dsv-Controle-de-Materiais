@@ -32,9 +32,6 @@
             case 'selecao_pessoa.php':
                 include './selecao_pessoa.php';
                 break;
-            case 'administradores.php':
-                include './intranet/login.php';
-                break;
             case 'cadastro.php':
                 include './cadastro.php';
                 break;
