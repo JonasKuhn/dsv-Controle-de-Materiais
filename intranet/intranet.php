@@ -82,6 +82,9 @@ include '../conexao.php';
                 case'equip':
                 include('equipamentos.php');
                 break;
+                case'incluir-equip':
+                include('./incluir/inc_equipamento.php');
+                break;
                 default :
             }
             ?>

@@ -8,6 +8,8 @@
 }
 </style>
 <?php
+$id = $_GET ['id'];
+
 @$msg = $_GET['msg'];
 if (isset($msg) && $msg != false && $msg == "inc") {
 	echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento incluído com sucesso!</div>";
@@ -17,7 +19,7 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
 	<thead>
 		<tr>
-			<th scope="col"><a href="?url=incluir-tp-equip" class="table-link">
+			<th scope="col"><a href="?url=incluir-equip&id=<?=$id?>" class="table-link">
 				<i class="fa fa-plus fa-2x"></i>
 			</a></th>
 			<th scope="col" class="table-font">#</th>
@@ -36,7 +38,7 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 		require_once 'sessao.php';
 		include '../conexao.php';
 
-		$id = $_GET ['id'];
+		
 
 		$sql = "select * from tb_equipamento where cod_tipo_equipamento = $id";
 		$result = $pdo->query($sql);
