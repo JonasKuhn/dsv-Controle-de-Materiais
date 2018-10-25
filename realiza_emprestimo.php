@@ -13,22 +13,29 @@ $vl_matricula = $dados['nr_matricula'];
 $cod_pessoa = $dados['cod_pessoa'];
 
 if ($vl_matricula != '') {
-    $sqlEquipamento = "SELECT cod_tipo_equipamento FROM tb_tipo_equipamento;";
-    $queryEquipamento = $pdo->query($sqlEquipamento);
+    $sqlEquipamento = "SELECT DISTINCT tip.cod_tipo_equipamento "
+            . "FROM tb_tipo_equipamento as tip, tb_equipamento as eq "
+            . "WHERE tip.cod_tipo_equipamento = eq.cod_tipo_equipamento "
+            . "AND eq.fl_curso_gti != TRUE "
+            . "AND eq.fl_status != TRUE";
+    $queryEquipamento = $pdo->prepare($sqlEquipamento);
+    $queryEquipamento->execute();
+
     foreach ($queryEquipamento as $tipoequip):
         $cod_tipo = $tipoequip['cod_tipo_equipamento'];
         $limite = $_POST[$cod_tipo];
-
         if ($limite != '' && $limite != 0) {
-            $sqllimit = "SELECT cod_equipamento FROM tb_equipamento WHERE fl_status != FALSE AND cod_tipo_equipamento = '$cod_tipo' LIMIT $limite;";
+            $sqllimit = "SELECT cod_equipamento "
+                    . "FROM tb_equipamento "
+                    . "WHERE fl_status = FALSE "
+                    . "AND cod_tipo_equipamento = '$cod_tipo' "
+                    . "LIMIT $limite;";
 
             $querylimit = $pdo->prepare($sqllimit);
             $querylimit->execute();
 
             while ($dadolimnit = $querylimit->fetch()) {
                 $cod_equipamento = $dadolimnit['cod_equipamento'];
-
-
                 if ($cod_equipamento != NULL && $cod_equipamento != '0') {
                     try {
                         //REALIZA O EMPRESTIMO
@@ -38,9 +45,9 @@ if ($vl_matricula != '') {
                         $queryinsert->execute();
 
                         $sqlupdateEquip = "UPDATE tb_equipamento as eq, tb_tipo_equipamento as teq "
-                                . "SET eq.fl_status = 0 "
-                                . "AND  teq.qtd_tipo = teq.qtd_tipo - 1 "
-                                . "WHERE eq.cod_equipamento = '$cod_equipamento';";
+                                . "SET eq.fl_status = 0,  teq.qtd_tipo = teq.qtd_tipo - 1 "
+                                . "WHERE eq.cod_tipo_equipamento = teq.cod_tipo_equipamento "
+                                . "AND eq.cod_equipamento = '$cod_equipamento';";
                         $queryupdateEquip = $pdo->prepare($sqlupdateEquip);
                         $queryupdateEquip->execute();
 
@@ -59,5 +66,5 @@ if ($vl_matricula != '') {
         }
     endforeach;
 } else {
-    echo "ERROR";
+    echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = 'confirma_emprestimo.php?msg=error'; </SCRIPT>";
 }

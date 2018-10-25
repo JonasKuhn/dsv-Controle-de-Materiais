@@ -21,71 +21,71 @@ INSERT INTO tb_situacao (desc_situacao) VALUES('ATRASADO');
 
 ##Filtro de Linha
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('FL01 - Filtro de Linha',               '',              0,            1,         1,                    now());
+VALUES('FL01 - Filtro de Linha',               '',              0,            0,         1,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('FL02 - Filtro de Linha',               '',              0,            1,         1,                    now());
+VALUES('FL02 - Filtro de Linha',               '',              0,            0,         1,                    now());
 
 ##Notebook
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('NOTE01 - Notebook',               '',              0,            1,         2,                    now());
+VALUES('NOTE01 - Notebook',               '',              0,            0,         2,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('NOTE02 - Notebook',               '',              0,            1,         2,                    now());
+VALUES('NOTE02 - Notebook',               '',              0,            0,         2,                    now());
 
 ##Passador de Slides
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('PSL01 - Passador de Slides',               '',              0,            1,         3,                    now());
+VALUES('PSL01 - Passador de Slides',               '',              0,            0,         3,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('PSL02 - Passador de Slides',               '',              0,            1,         3,                    now());
+VALUES('PSL02 - Passador de Slides',               '',              0,            0,         3,                    now());
 
 ##Projetor Multimídia
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('PROJ01 - Projetor Multimídia',               '',              0,            1,         4,                    now());
+VALUES('PROJ01 - Projetor Multimídia',               '',              0,            0,         4,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('PROJ02 - Projetor Multimídia',               '',              0,            1,         4,                    now());
+VALUES('PROJ02 - Projetor Multimídia',               '',              0,            0,         4,                    now());
 
 ##Adaptador HDMI
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('ADPHDMI01 - Adaptador HDMI',               '',              0,            1,         5,                    now());
+VALUES('ADPHDMI01 - Adaptador HDMI',               '',              0,            0,         5,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('ADPHDMI02 - Adaptador HDMI',               '',              0,            1,         5,                    now());
+VALUES('ADPHDMI02 - Adaptador HDMI',               '',              0,            0,         5,                    now());
 
 ##T
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('T01 - T',               '',              0,            1,         6,                    now());
+VALUES('T01 - T',               '',              0,            0,         6,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('T02 - T',               '',              0,            1,         6,                    now());
+VALUES('T02 - T',               '',              0,            0,         6,                    now());
 
 ##Mouse
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('MOS01 - Mouse',               '',              0,            1,         7,                    now());
+VALUES('MOS01 - Mouse',               '',              0,            0,         7,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('MOS02 - Mouse',               '',              0,            1,         7,                    now());
+VALUES('MOS02 - Mouse',               '',              0,            0,         7,                    now());
 
 ##Teclado Numérico USB
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('TCLNUM01 - Teclado Numérico USB',               '',              0,            1,         8,                    now());
+VALUES('TCLNUM01 - Teclado Numérico USB',               '',              0,            0,         8,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('TCLNUM02 - Teclado Numérico USB',               '',              0,            1,         8,                    now());
+VALUES('TCLNUM02 - Teclado Numérico USB',               '',              0,            0,         8,                    now());
 
 
 ##Adaptador VGA
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('ADPVGA01 - Adaptador VGA',               '',              0,            1,         9,                    now());
+VALUES('ADPVGA01 - Adaptador VGA',               '',              0,            0,         9,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('ADPVGA01 - Adaptador VGA',               '',              0,            1,         9,                    now());
+VALUES('ADPVGA01 - Adaptador VGA',               '',              0,            0,         9,                    now());
 
 ##Leitor de Código de Barras
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('LCB01 - Leitor de Código de Barras',               '',              0,            1,         9,                    now());
+VALUES('LCB01 - Leitor de Código de Barras',               '',              0,            0,         9,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('LCB02 - Leitor de Código de Barras',               '',              0,            1,         9,                    now());
+VALUES('LCB02 - Leitor de Código de Barras',               '',              0,            0,         9,                    now());

@@ -46,9 +46,14 @@
                             <tbody>
                                 <?php
                                 include ('conexao.php');
-                                $sqlEq = "select cod_tipo_equipamento, desc_tipo, qtd_tipo from tb_tipo_equipamento";
-                                $queryEq = $pdo->query($sqlEq);
-
+                                $sqlEq = "SELECT DISTINCT tip.cod_tipo_equipamento, tip.desc_tipo, tip.qtd_tipo "
+                                        . "FROM tb_tipo_equipamento as tip, tb_equipamento as eq "
+                                        . "WHERE tip.cod_tipo_equipamento = eq.cod_tipo_equipamento "
+                                        . "AND eq.fl_curso_gti != TRUE "
+                                        . "AND eq.fl_status != TRUE";
+                                $queryEq = $pdo->prepare($sqlEq);
+                                $queryEq->execute();
+                                
                                 while ($dadosEq = $queryEq->fetch()) {
                                     $desc_tipo = $dadosEq['desc_tipo'];
                                     $cod_tipo_equipamento = $dadosEq['cod_tipo_equipamento'];

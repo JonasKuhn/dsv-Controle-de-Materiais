@@ -44,7 +44,11 @@
                             <tbody>
                                 <?php
                                 include './conexao.php';
-                                $sqlEq = "select desc_tipo, cod_tipo_equipamento from tb_tipo_equipamento;";
+                                $sqlEq = "SELECT DISTINCT tip.cod_tipo_equipamento, tip.desc_tipo, tip.qtd_tipo "
+                                        . "FROM tb_tipo_equipamento as tip, tb_equipamento as eq "
+                                        . "WHERE tip.cod_tipo_equipamento = eq.cod_tipo_equipamento "
+                                        . "AND eq.fl_curso_gti != TRUE "
+                                        . "AND eq.fl_status != TRUE";
                                 $queryEq = $pdo->query($sqlEq);
 
                                 while ($dadosEq = $queryEq->fetch()) {
@@ -104,9 +108,13 @@
         <?php
         @$msg1 = $_GET['msg1'];
         @$msg2 = $_GET['msg2'];
-      
-        if (isset($msg) && $msg != false && $msg == "bad_aut") {
+        @$msg = $_GET['msg'];
+
+        if (isset($msg1) && $msg1 != false && $msg1 == "bad_aut") {
             echo "<br/><div class='alert alert-danger' role='alert'><?=$msg1?><br/><?=$msg2?></div>";
+        }
+        if (isset($msg) && $msg != false && $msg == "error") {
+            echo "<br/><div class='alert alert-danger' role='alert'>OPPA</div>";
         }
         ?>
     </body>

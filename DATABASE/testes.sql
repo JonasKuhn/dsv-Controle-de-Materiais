@@ -22,9 +22,33 @@ VALUES('ADPHDMI - Adaptador HDMI',               '',              0,            
 cod_equipamento, desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created, modified
 
 
-UPDATE tb_equipamento as eq, tb_tipo_equipamento as teq SET eqfl_status = 0 SET teq.qtd_equipame WHERE cod_equipamento = '$cod_equipamento';
-Equip
+UPDATE tb_equipamento as eq, tb_tipo_equipamento as teq 
+SET eq.fl_status = 0,  teq.qtd_tipo = teq.qtd_tipo - 1 
+WHERE eq.cod_tipo_equipamento = teq.cod_tipo_equipamento
+AND eq.cod_equipamento = 1;
+
+select * from tb_tipo_equipamento
+select * from tb_equipamento
+
+select * from tb_pessoa
+
+SELECT tip.cod_tipo_equipamento, tip.desc_tipo, tip.qtd_tipo 
+FROM tb_tipo_equipamento as tip, tb_equipamento as eq
+WHERE tip.cod_tipo_equipamento = eq.cod_tipo_equipamento
+AND eq.fl_curso_gti != TRUE
+AND eq.fl_status != FALSE
+AND tip.cod_tipo_equipamento LIMIT 1
 
 
 
-select cod_tipo_equipamento, desc_tipo, qtd_tipo from tb_tipo_equipamento
+
+INSERT INTO tb_pessoa(nr_matricula, email_pessoa, fl_validacao, telefone_pessoa, nome_pessoa, cod_tipo_pessoa, senha_pessoa) 
+			VALUES (nr_matricula, email_pessoa, false, telefone_pessoa, nome_pessoa, tipo_pessoa, nr_matricula);
+
+SELECT DISTINCT tip.cod_tipo_equipamento, tip.desc_tipo, tip.qtd_tipo 
+FROM tb_tipo_equipamento as tip, tb_equipamento as eq 
+WHERE tip.cod_tipo_equipamento = eq.cod_tipo_equipamento 
+AND eq.fl_curso_gti != TRUE 
+AND eq.fl_status != TRUE
+
+
