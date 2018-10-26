@@ -4,17 +4,17 @@
     </div>
     <div class="col-md-12 mt-md-2">
         <form action="incluir/inc_tipo_equipamento_bd.php" method="POST">
-    <div class="form-group">
-        <label>Nome:</label>
-        <input type="text" name="nome" class="form-control" required="">
-    </div>
-    <div class="form-group">
-        <label>Quantidade:</label>
-        <input type="number" name="qtde" class="form-control" value="0" readonly>
-    </div>
-    <div class="form-group">
-        <input type="submit" class="btn btn-default" value="Salvar">
-    </div>
-</form>
+            <div class="form-group">
+                <label>Nome:</label>
+                <input type="text" name="nome" class="form-control" required="">
+            </div>
+            <div class="form-group">
+                <label>Quantidade:</label>
+                <input type="number" name="qtde" class="form-control" value="0" readonly>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Salvar">
+            </div>
+        </form>
     </div>
 </div>

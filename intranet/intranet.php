@@ -43,7 +43,7 @@ include '../conexao.php';
                                         ?>
 
                                         <li><a href="intranet.php?url=equip&id=<?= $id ?>"><?= $nome ?></a></li>
-<?php } ?>
+                                    <?php } ?>
 
 
                                 </ul>

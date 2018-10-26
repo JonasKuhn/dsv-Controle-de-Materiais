@@ -14,7 +14,7 @@ if (isset($msg) && $msg != false && $msg == "inc") {
     echo "<br/><div class='alert alert-success' role='alert'>Notebook de GTI incluído com sucesso!</div>";
 }
 ?>
-<h2 class="mt-md-5" style="margin-bottom: 2rem"><?= $nomeEq ?></h2>
+<h2 class="mt-md-5" style="margin-bottom: 2rem">Notebooks GTI</h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
     <thead>
         <tr>
@@ -73,7 +73,8 @@ if (isset($msg) && $msg != false && $msg == "inc") {
                 <td><?= $status_desc ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($modificado));
-    } ?></td>
+    }
+        ?></td>
         </tr>
     </tbody>
 </table>
@@ -93,16 +94,16 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.js"></script>
 <script>
-                                    $(document).ready(function () {
-                                        $('#table').DataTable({
-                                            "language": {
-                                                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
-                                            },
-                                            dom: 'Bflrtpi',
-                                            buttons: [
-                                                'excel',
-                                                'pdf'
-                                            ]
-                                        });
-                                    });
+                    $(document).ready(function () {
+                        $('#table').DataTable({
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
+                            },
+                            dom: 'Bflrtpi',
+                            buttons: [
+                                'excel',
+                                'pdf'
+                            ]
+                        });
+                    });
 </script>
