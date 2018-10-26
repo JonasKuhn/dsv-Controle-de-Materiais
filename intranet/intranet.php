@@ -20,7 +20,7 @@ include '../conexao.php';
                 <div class="inner">
 
                     <!-- Menu -->
-                    <nav id="menu" style="font-size: 1rem">
+                    <nav id="menu" style="font-size: 1rem;" >
                         <header class="major">
                             <h2>Empréstimo NTI</h2>
                         </header>
@@ -33,7 +33,7 @@ include '../conexao.php';
                             <li><a href="intranet.php?url=gti">Notebooks GTI</a></li>
                             <li>
                                 <span class="opener">Equipamentos</span>
-                                <ul>
+                                <ul style="overflow-y: auto;">
                                     <?php
                                     $sql = "select * from tb_tipo_equipamento";
                                     $result = $pdo->query($sql);
