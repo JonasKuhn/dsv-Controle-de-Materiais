@@ -23,16 +23,20 @@ foreach ($result as $row) {
                 <label>Observação:</label>
                 <textarea name="obs"></textarea>
             </div>
-            <div class="form-group row">
-                <div class="form-group col-md-3 <?php echo $style?>" >
+            <div class="form-group">
+                <div class="form-group <?php echo $style?>" >
                     <label>Curso GTI:</label><br>
-                    <input type="radio" name="gti" value="1">Sim<br>
-                    <input type="radio" name="gti" value="0" checked>Não
+                    <select>
+                        <option value="1">Sim</option>
+                        <option value="0" checked>Não</option>
+                    </select>
                 </div>
-                <div class="form-group col-md-3">
+                <div class="form-group">
                     <label>Status:</label><br>
-                    <input type="radio" name="status" value="1" checked>Disponível<br>
-                    <input type="radio" name="status" value="0">Emprestado
+                    <select>
+                        <option value="1" checked>Disponível</option>
+                        <option value="0">Emprestado</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
