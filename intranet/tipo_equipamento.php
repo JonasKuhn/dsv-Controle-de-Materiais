@@ -17,7 +17,7 @@
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
     <thead>
         <tr>
-            <th scope="col"><a href="?url=incluir-tp-equip" class="table-link">
+            <th scope="col"><a href="?url=incluir-equip" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
                 </a></th>
             <th scope="col" class="table-font">#</th>
@@ -78,7 +78,7 @@ $(document).ready(function () {
            "language": {
                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
            },
-           dom: 'Bflrtip',
+           dom: 'Bflrtpi',
            buttons: [
                'excel',
                'pdf'

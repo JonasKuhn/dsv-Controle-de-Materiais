@@ -9,22 +9,16 @@
 </style>
 
 <?php
-$id = $_GET ['id'];
-$sql1 = "select desc_tipo from tb_tipo_equipamento where cod_tipo_equipamento = $id";
-$query = $pdo->query($sql1);
-foreach ($query as $key){
-    $nomeEq = $key['desc_tipo'];
-}
 @$msg = $_GET['msg'];
 if (isset($msg) && $msg != false && $msg == "inc") {
-    echo "<br/><div class='alert alert-success' role='alert'>$nomeEq incluído com sucesso!</div>";
+    echo "<br/><div class='alert alert-success' role='alert'>Notebook de GTI incluído com sucesso!</div>";
 }
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem"><?= $nomeEq ?></h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
     <thead>
         <tr>
-            <th scope="col"><a href="?url=incluir-equip&id=<?= $id ?>" class="table-link">
+            <th scope="col"><a href="?url=incluir-gti&id=<?= $id ?>" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
                 </a></th>
             <th scope="col" class="table-font">#</th>
@@ -32,7 +26,6 @@ if (isset($msg) && $msg != false && $msg == "inc") {
             <th scope="col" class="table-font">Observação</th>
             <th scope="col" class="table-font">GTI</th>
             <th scope="col" class="table-font">Status</th>
-            <th scope="col" class="table-font">Tipo</th>
             <th scope="col" class="table-font">Criado</th>
             <th scope="col" class="table-font">Modificado</th>
 
@@ -45,17 +38,17 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 
 
 
-        $sql = "select * from tb_equipamento where cod_tipo_equipamento = $id and fl_curso_gti = false";
+        $sql = "select * from tb_equipamento where cod_tipo_equipamento = 2 and fl_curso_gti = true";
         $result = $pdo->query($sql);
         foreach ($result as $row) {
             $id = $row["cod_equipamento"];
             $nome = $row["desc_equipamento"];
             $obs = $row["desc_observacao"];
-            $flgti = $row["fl_curso_gti"];
-            if ($flgti == 0) {
-                $flgti_desc = "Não";
+            $gti = $row["fl_curso_gti"];
+            if ($gti == 1) {
+                $gti_desc = "Sim";
             } else {
-                $flgti_desc = "Sim";
+                $gti_desc = "Não";
             }
             $status = $row["fl_status"];
             if ($status == 1) {
@@ -63,33 +56,21 @@ if (isset($msg) && $msg != false && $msg == "inc") {
             } else {
                 $status_desc = "Emprestado";
             }
-
-            $id_tipo = $row["cod_tipo_equipamento"];
-            $sql = "select desc_tipo from tb_tipo_equipamento where cod_tipo_equipamento = $id_tipo";
-            $result = $pdo->query($sql);
-            foreach ($result as $key) {
-                $tipo = $key["desc_tipo"];
-            }
-
             $criado = $row["created"];
             $modificado = $row["modified"];
-            #if ($modificado == ""){
-            #	$modificado = $criado;
-            #}
             ?>
             <tr>
                 <td><a href="?url=editar-tp-equip" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
-                    </a>&nbsp;<a href="?url=excluir-tp-equip" onclick="return excluir('<?= $cod ?>');"  class="table-link">
+                    </a><a href="?url=excluir-tp-equip" onclick="return excluir('<?= $cod ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
                 <td scope="row"><?= $id ?></td>
                 <td><?= $nome ?></td>
                 <td><?= $obs ?></td>
-                <td><?= $flgti_desc ?></td>
+                <td><?= $gti_desc ?></td>
                 <td><?= $status_desc ?></td>
-                <td><?= $tipo ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($modificado));
     } ?></td>
@@ -100,7 +81,6 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-</script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>

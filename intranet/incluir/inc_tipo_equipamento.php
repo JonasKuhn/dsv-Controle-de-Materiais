@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
         <label>Quantidade:</label>
-        <input type="number" name="qtde" class="form-control" value="0" readonly="true">
+        <input type="number" name="qtde" class="form-control" value="0" readonly>
     </div>
     <div class="form-group">
         <input type="submit" class="btn btn-default" value="Salvar">

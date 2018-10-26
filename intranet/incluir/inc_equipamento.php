@@ -14,16 +14,16 @@ foreach ($result as $row) {
         <h2>Incluir <?=$nomeTP?></h2>
     </div>
     <div class="col-md-12 mt-md-2">
-        <form action="incluir/inc_equipamento_bd.php" method="POST">
+        <form action="incluir/inc_equipamento_bd.php?id=<?=$idTP?>" method="POST">
             <div class="form-group">
                 <label>Nome:</label>
-                <input type="text" name="nome" required="">
+                <input type="text" name="nome" required>
             </div>
             <div class="form-group">
                 <label>Observação:</label>
                 <textarea name="obs"></textarea>
             </div>
-            <div class="form-group row"">
+            <div class="form-group row">
                 <div class="form-group col-md-3 <?php echo $style?>" >
                     <label>Curso GTI:</label><br>
                     <input type="radio" name="gti" value="1">Sim<br>
