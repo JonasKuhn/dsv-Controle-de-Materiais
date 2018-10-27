@@ -16,44 +16,40 @@ include '../conexao.php';
     <body>
         <!--Sidebar -->
         <div class="row">
-            <div id="sidebar" style="margin-right: 4rem;">
-                <div class="inner">
 
-                    <!-- Menu -->
-                    <nav id="menu" style="font-size: 1rem;" >
-                        <header class="major">
-                            <h2>Empréstimo NTI</h2>
-                        </header>
+            <!-- Menu -->
+            <nav id="menu" class="mt-md-5 col-md-3" style="margin-right: 3rem;margin-left: 1rem;float: left">
+                <header class="major">
+                    <h2>Empréstimo NTI</h2>
+                </header>
 
-                        <ul>
-                            <li><a href="intranet.php">Página Inicial</a></li>
-                            <li><a href="intranet.php?url=admin">Administradores</a></li>
-                            <li><a href="intranet.php?url=tipo-equip">Cadastro de Tipos</a></li>
-                            <li><a href="#">Cadastro de Alunos</a></li>
-                            <li><a href="intranet.php?url=gti">Notebooks GTI</a></li>
-                            <li>
-                                <span class="opener">Equipamentos</span>
-                                <ul style="overflow-y: auto;">
-                                    <?php
-                                    $sql = "select * from tb_tipo_equipamento";
-                                    $result = $pdo->query($sql);
-                                    foreach ($result as $row) {
-                                        $nome = $row["desc_tipo"];
-                                        $id = $row["cod_tipo_equipamento"];
-                                        ?>
+                <ul>
+                    <li><a href="intranet.php">Página Inicial</a></li>
+                    <li><a href="intranet.php?url=admin">Administradores</a></li>
+                    <li><a href="intranet.php?url=tipo-equip">Cadastro de Tipos</a></li>
+                    <li><a href="#">Cadastro de Alunos</a></li>
+                    <li><a href="intranet.php?url=gti">Notebooks GTI</a></li>
+                    <li>
+                        <span class="opener">Equipamentos</span>
+                        <ul style="overflow-y: auto;">
+                            <?php
+                            $sql = "select * from tb_tipo_equipamento";
+                            $result = $pdo->query($sql);
+                            foreach ($result as $row) {
+                                $nome = $row["desc_tipo"];
+                                $id = $row["cod_tipo_equipamento"];
+                                ?>
 
-                                        <li><a href="intranet.php?url=equip&id=<?= $id ?>"><?= $nome ?></a></li>
-                                    <?php } ?>
+                                <li><a href="intranet.php?url=equip&id=<?= $id ?>"><?= $nome ?></a></li>
+                            <?php } ?>
 
 
-                                </ul>
-                            </li>
-
-                            <li><a href="logout.php">Sair</a></li>
                         </ul>
-                    </nav>
-                </div>
-            </div>
+                    </li>
+
+                    <li><a href="logout.php">Sair</a></li>
+                </ul>
+            </nav>
             <div class="col-md-8">
                 <?php
                 @$url = $_GET['url'];
@@ -107,21 +103,7 @@ include '../conexao.php';
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.18/datatables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-    </script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.js"></script>
 
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.js"></script>
-
-</body>
+    </body>
 </html>
