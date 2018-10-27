@@ -12,6 +12,9 @@
 if (isset($msg) && $msg != false && $msg == "inc") {
     echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento incluído com sucesso!</div>";
 }
+if (isset($msg) && $msg != false && $msg == "alt") {
+    echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento alterado com sucesso!</div>";
+}
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Tipos de Equipamentos</h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
@@ -30,6 +33,7 @@ if (isset($msg) && $msg != false && $msg == "inc") {
     </thead>
     <tbody class="table-font">
         <?php
+        require './sessao.php';
         include '../conexao.php';
         $sql = "select * from tb_tipo_equipamento";
         $query = $pdo->query($sql);
@@ -41,7 +45,7 @@ if (isset($msg) && $msg != false && $msg == "inc") {
             $modificado = $row["modified"]
             ?>
             <tr>
-                <td><a href="?url=editar-tp-equip" class="table-link">
+                <td><a href="?url=editar-tp-equip&id=<?=$cod?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
                     </a>&nbsp;<a href="?url=excluir-tp-equip" onclick="return excluir('<?= $cod ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
