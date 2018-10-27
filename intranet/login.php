@@ -62,11 +62,9 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6">
-                                <a href="#" >Não possuí cadastro?</a>
-                            </div>
-                            <div class="col-md-6">
-                                <button type="submit" class="btn btn-primary btn-sm" style="float: right; color: white;">
+                            
+                            <div class="col-md-12 mt-md-2">
+                                <button type="submit" class="btn btn-primary btn-block">
                                     Entrar
                                 </button>
                             </div>
