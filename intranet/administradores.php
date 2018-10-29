@@ -51,7 +51,7 @@
                 <td scope="row"><?= $id ?></td>
                 <td><?= $nome ?></td>
                 <td><?= $login ?></td>
-                <td>***************</td>
+                <td>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($modificado));
     } ?></td>
