@@ -16,6 +16,8 @@ CREATE TABLE `tb_equipamento` (
     `desc_observacao` TEXT,
     `fl_curso_gti` BOOL NOT NULL,
     `fl_status` BOOL,
+    `aluno_gti` TEXT NULL,
+    `turma_gti` TEXT NULL,
     `cod_tipo_equipamento` INTEGER,
     `created` TIMESTAMP NOT NULL DEFAULT NOW(),
     `modified` TIMESTAMP NULL,

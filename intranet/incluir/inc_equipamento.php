@@ -26,14 +26,14 @@ foreach ($result as $row) {
             <div class="form-group">
                 <div class="form-group <?php echo $style?>" >
                     <label>Curso GTI:</label><br>
-                    <select>
+                    <select name="gti">
                         <option value="1">Sim</option>
                         <option value="0" selected>Não</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Status:</label><br>
-                    <select>
+                    <select name="status">
                         <option value="1" selected>Disponível</option>
                         <option value="0">Emprestado</option>
                     </select>
