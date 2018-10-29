@@ -18,9 +18,9 @@ include '../conexao.php';
         <div class="row">
 
             <!-- Menu -->
-            <nav id="menu" class="mt-md-5 col-md-3" style="margin-right: 3rem;margin-left: 1rem;float: left">
+            <nav id="menu" class=" mt-md-2 col-md-3" style="margin-right: 3rem;margin-left: 1rem;float: left">
                 <header class="major">
-                    <h2>Empréstimo NTI</h2>
+                    <h2>Controle de Empréstimos - NTI</h2>
                 </header>
 
                 <ul>
