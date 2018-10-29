@@ -87,6 +87,9 @@ include '../conexao.php';
                     case'gti':
                         include 'gti.php';
                         break;
+                    case'editar-gti':
+                        include './editar/edt_gti.php';
+                        break;
                     case'incluir-gti':
                         include './incluir/inc_notebook_gti.php';
                         break;

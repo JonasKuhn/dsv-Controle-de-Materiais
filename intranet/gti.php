@@ -9,9 +9,17 @@
 </style>
 
 <?php
+$sql1 = "select desc_tipo from tb_tipo_equipamento where cod_tipo_equipamento = $id";
+$query = $pdo->query($sql1);
+foreach ($query as $key) {
+    $nomeEq = $key['desc_tipo'];
+}
 @$msg = $_GET['msg'];
 if (isset($msg) && $msg != false && $msg == "inc") {
-    echo "<br/><div class='alert alert-success' role='alert'>Notebook de GTI incluído com sucesso!</div>";
+    echo "<br/><div class='alert alert-success' role='alert'>Notebook incluído com sucesso!</div>";
+}
+if (isset($msg) && $msg != false && $msg == "alt") {
+    echo "<br/><div class='alert alert-success' role='alert'>Notebook alterado com sucesso!</div>";
 }
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Notebooks GTI</h2>
@@ -60,7 +68,7 @@ if (isset($msg) && $msg != false && $msg == "inc") {
             $modificado = $row["modified"];
             ?>
             <tr>
-                <td><a href="?url=editar-tp-equip" class="table-link">
+                <td><a href="?url=editar-gti&id=<?=$id?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
                     </a><a href="?url=excluir-tp-equip" onclick="return excluir('<?= $cod ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
