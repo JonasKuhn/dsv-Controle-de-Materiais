@@ -26,7 +26,7 @@
     --breakpoint-md: 768px;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;
-    }
+}
 
 *,
 *::before,
@@ -163,8 +163,7 @@ a {
 }
 
 a:hover {
-    color: #0056b3;
-    text-decoration: underline;
+    color: #FE6B00;
 }
 
 a:not([href]):not([tabindex]) {
@@ -2297,6 +2296,8 @@ textarea.form-control {
     line-height: 1.5;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    background-color: #FE6B00;
+    color: white
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -2307,7 +2308,8 @@ textarea.form-control {
 
 .btn:hover, .btn:focus {
     text-decoration: none;
-    background-color: LightGrey;
+    background-color: #db5c00;
+    color: white
 }
 
 .btn:focus, .btn.focus {
