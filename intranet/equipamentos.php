@@ -12,7 +12,7 @@
 $id = $_GET ['id'];
 $sql1 = "select desc_tipo from tb_tipo_equipamento where cod_tipo_equipamento = $id";
 $query = $pdo->query($sql1);
-foreach ($query as $key){
+foreach ($query as $key) {
     $nomeEq = $key['desc_tipo'];
 }
 @$msg = $_GET['msg'];
@@ -92,7 +92,8 @@ if (isset($msg) && $msg != false && $msg == "inc") {
                 <td><?= $tipo ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($modificado));
-    } ?></td>
+    }
+        ?></td>
         </tr>
     </tbody>
 </table>
@@ -102,16 +103,21 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 
 <script>
-                                    $(document).ready(function () {
-                                        $('#table').DataTable({
-                                            "language": {
-                                                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
-                                            },
-                                            dom: 'Bflrtpi',
-                                            buttons: [
-                                                'excel',
-                                                'pdf'
-                                            ]
-                                        });
-                                    });
+                    $(document).ready(function () {
+                        $('#table').DataTable({
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
+                            },
+                            dom: 'Bflrtpi',
+                            buttons: [
+                                'excel',
+                                'pdf'
+                            ]
+                        });
+                    });
+                    $(document).ready(function () {
+                        setTimeout(function () {
+                            $('.alert').fadeOut(800);
+                        }, 2000);
+                    });
 </script>

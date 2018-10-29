@@ -72,9 +72,10 @@ if (isset($msg) && $msg != false && $msg == "inc") {
                 <td><?= $gti_desc ?></td>
                 <td><?= $status_desc ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
-                <td><?= date('d/m/Y  H:i', strtotime($modificado));
-    }
-        ?></td>
+                <td><?=
+                    date('d/m/Y  H:i', strtotime($modificado));
+                }
+                ?></td>
         </tr>
     </tbody>
 </table>
@@ -96,4 +97,10 @@ if (isset($msg) && $msg != false && $msg == "inc") {
                             ]
                         });
                     });
+                    $(document).ready(function () {
+                        setTimeout(function () {
+                            $('.alert').fadeOut(800);
+                        }, 2000);
+                    });
 </script>
+
