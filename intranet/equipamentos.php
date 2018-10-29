@@ -13,14 +13,18 @@ $id = $_GET ['id'];
 $sql1 = "select desc_tipo from tb_tipo_equipamento where cod_tipo_equipamento = $id";
 $query = $pdo->query($sql1);
 foreach ($query as $key) {
+    #print_r($key);
     $nomeEq = $key['desc_tipo'];
 }
 @$msg = $_GET['msg'];
 if (isset($msg) && $msg != false && $msg == "inc") {
     echo "<br/><div class='alert alert-success' role='alert'>$nomeEq incluído com sucesso!</div>";
 }
+if (isset($msg) && $msg != false && $msg == "alt") {
+    echo "<br/><div class='alert alert-success' role='alert'>$nomeEq alterado com sucesso!</div>";
+}
 ?>
-<h2 class="mt-md-5" style="margin-bottom: 2rem"><?= $nomeEq ?></h2>
+<h2 class="mt-md-5" style="margin-bottom: 2rem"><?=$nomeEq?></h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
     <thead>
         <tr>
@@ -78,7 +82,7 @@ if (isset($msg) && $msg != false && $msg == "inc") {
             #}
             ?>
             <tr>
-                <td><a href="?url=editar-tp-equip" class="table-link">
+                <td><a href="?url=editar-equip&id=<?=$id?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
                     </a>&nbsp;<a href="?url=excluir-tp-equip" onclick="return excluir('<?= $cod ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>

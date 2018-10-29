@@ -84,6 +84,9 @@ include '../conexao.php';
                     case'incluir-equip':
                         include('./incluir/inc_equipamento.php');
                         break;
+                    case'editar-equip':
+                        include('./editar/edt_equipamento.php');
+                        break;
                     case'gti':
                         include 'gti.php';
                         break;
