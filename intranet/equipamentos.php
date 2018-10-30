@@ -26,6 +26,7 @@ if (isset($msg) && $msg != false && $msg == "alt") {
 if (isset($msg) && $msg != false && $msg == "exc") {
     echo "<br/><div class='alert alert-success' role='alert'>$nomeEq excluído com sucesso!</div>";
 }
+
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem"><?=$nomeEq?></h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">

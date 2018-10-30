@@ -16,7 +16,10 @@ if (isset($msg) && $msg != false && $msg == "alt") {
     echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento alterado com sucesso!</div>";
 }
 if (isset($msg) && $msg != false && $msg == "exc") {
-    echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento deletado com sucesso!</div>";
+    echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento excluído com sucesso!</div>";
+}
+if (isset($msg) && $msg != false && $msg == "erro") {
+    echo "<br/><div class='alert alert-danger' role='alert'>Não foi possível excluir o registro, existem equipamentos vinculados! </div>";
 }
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Tipos de Equipamentos</h2>
@@ -50,7 +53,7 @@ if (isset($msg) && $msg != false && $msg == "exc") {
             <tr>
                 <td><a href="?url=editar-tp-equip&id=<?= $cod ?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
-                    </a>&nbsp;<a href="?url=excluir-tp-equip" onclick="return excluir('<?= $cod ?>');"  class="table-link">
+                    </a>&nbsp;<a href="?url=excluir-tp-equip&id=<?=$cod?>" onclick="return excluir('<?= $desc ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
@@ -61,7 +64,6 @@ if (isset($msg) && $msg != false && $msg == "exc") {
                 <td><?= date('d/m/Y  H:i', strtotime($modificado));
     }
         ?></td>
-            </td>
         </tr>
     </tbody>
 </table>
@@ -88,7 +90,7 @@ if (isset($msg) && $msg != false && $msg == "exc") {
 <script type="text/javascript">
     $(document).ready(function () {
         setTimeout(function () {
-            $('.alert').fadeOut(800);
+            $('.alert').fadeOut(1000);
         }, 2000);
     });
 </script>
