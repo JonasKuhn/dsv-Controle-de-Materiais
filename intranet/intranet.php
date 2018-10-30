@@ -17,7 +17,7 @@ include '../conexao.php';
             }
         </script>
         <style type="text/css">
-            
+
             #table_length{
                 float: left;
             }
@@ -129,27 +129,27 @@ include '../conexao.php';
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
         <script>
-                    $(document).ready(function () {
-                        $('#table').DataTable({
-                            "language": {
-                                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
-                            },
-                            dom: 'Bfrtlpi',
-                            buttons: [
-                                'excel',
-                                'pdf'
-                            ]
-                        });
-                    });
-                    $(document).ready(function () {
-                        setTimeout(function () {
-                            $('.alert').fadeOut(800);
-                        }, 2000);
-                    });
-</script>
+            $(document).ready(function () {
+                $('#table').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
+                    },
+                    dom: 'Bfrtlpi',
+                    buttons: [
+                        'excel',
+                        'pdf'
+                    ]
+                });
+            });
+            $(document).ready(function () {
+                setTimeout(function () {
+                    $('.alert').fadeOut(800);
+                }, 2000);
+            });
+        </script>
     </body>
 </html>
