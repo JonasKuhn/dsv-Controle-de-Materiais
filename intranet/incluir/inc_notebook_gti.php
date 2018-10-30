@@ -13,12 +13,21 @@
                 <textarea name="obs"></textarea>
             </div>
             <div class="form-group">
-                <div class="form-group">
-                    <label>Status:</label><br>
-                    <select name="status">
-                        <option value="1">Disponível</option>
-                        <option value="0" selected>Emprestado</option>
-                    </select>
+                <label>Status:</label><br>
+                <select name="status">
+                    <option value="1">Disponível</option>
+                    <option value="0" selected>Emprestado</option>
+                </select>
+            </div>
+            <div class="form-group row">
+                <div class="form-group col-md-6">
+                    <label>Aluno:</label>
+                    <input type="text" name="aluno" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Turma:</label>
+                    <input type="text" name="turma" required>
+
                 </div>
             </div>
             <div class="form-group">

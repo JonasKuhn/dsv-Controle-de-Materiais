@@ -34,6 +34,8 @@ if (isset($msg) && $msg != false && $msg == "alt") {
             <th scope="col" class="table-font">Observação</th>
             <th scope="col" class="table-font">GTI</th>
             <th scope="col" class="table-font">Status</th>
+            <th scope="col" class="table-font">Aluno</th>
+            <th scope="col" class="table-font">Turma</th>
             <th scope="col" class="table-font">Criado</th>
             <th scope="col" class="table-font">Modificado</th>
 
@@ -64,6 +66,8 @@ if (isset($msg) && $msg != false && $msg == "alt") {
             } else {
                 $status_desc = "Emprestado";
             }
+            $aluno = $row["aluno"];
+            $turma = $row["turma"];
             $criado = $row["created"];
             $modificado = $row["modified"];
             ?>
@@ -79,6 +83,8 @@ if (isset($msg) && $msg != false && $msg == "alt") {
                 <td><?= $obs ?></td>
                 <td><?= $gti_desc ?></td>
                 <td><?= $status_desc ?></td>
+                <td><?= $aluno ?></td>
+                <td><?= $turma ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
                 <td><?=
                     date('d/m/Y  H:i', strtotime($modificado));

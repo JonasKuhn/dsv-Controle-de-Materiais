@@ -18,6 +18,8 @@ foreach ($query as $row) {
     } else {
         $status_desc = "Emprestado";
     }
+    $aluno = $row["aluno"];
+    $turma = $row["turma"];
     $tipo = $row['cod_tipo_equipamento'];
 }
 ?>
@@ -48,6 +50,17 @@ foreach ($query as $row) {
                     <option value="1">Disponível</option>
                     <option value="0" selected="">Emprestado</option>
                 </select>
+            </div>
+            <div class="form-group row">
+                <div class="form-group col-md-6">
+                    <label>Aluno:</label>
+                    <input type="text" name="aluno" value="<?=$aluno?>" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Turma:</label>
+                    <input type="text" name="turma" value="<?=$turma?>" required>
+
+                </div>
             </div>
             <div class="form-group">
                 <label>Tipo:</label>
