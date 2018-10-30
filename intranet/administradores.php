@@ -64,22 +64,3 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 
-<script>
-                    $(document).ready(function () {
-                        $('#table').DataTable({
-                            "language": {
-                                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
-                            },
-                            dom: 'Bflrtpi',
-                            buttons: [
-                                'excel',
-                                'pdf'
-                            ]
-                        });
-                    });
-                    $(document).ready(function () {
-                        setTimeout(function () {
-                            $('.alert').fadeOut(800);
-                        }, 2000);
-                    });
-</script>

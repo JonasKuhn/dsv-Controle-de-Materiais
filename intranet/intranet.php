@@ -18,10 +18,6 @@ include '../conexao.php';
         </script>
         <style type="text/css">
             
-            .dt-buttons{
-                position: absolute;
-                margin: 0;
-            }
             #table_length{
                 float: left;
             }
