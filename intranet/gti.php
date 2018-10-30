@@ -26,7 +26,7 @@ if (isset($msg) && $msg != false && $msg == "exc") {
 }
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Notebooks GTI</h2>
-<table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
+<table id='table' class="table table-striped table-bordered table-hover table-responsive dataTable mt-md-5">
     <thead>
         <tr>
             <th scope="col"><a href="?url=incluir-gti&id=<?= $id ?>" class="table-link">
@@ -101,23 +101,4 @@ if (isset($msg) && $msg != false && $msg == "exc") {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 
-<script>
-                    $(document).ready(function () {
-                        $('#table').DataTable({
-                            "language": {
-                                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
-                            },
-                            dom: 'Bflrtpi',
-                            buttons: [
-                                'excel',
-                                'pdf'
-                            ]
-                        });
-                    });
-                    $(document).ready(function () {
-                        setTimeout(function () {
-                            $('.alert').fadeOut(800);
-                        }, 2000);
-                    });
-</script>
 

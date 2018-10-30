@@ -16,6 +16,19 @@ include '../conexao.php';
                 return confirm('Deseja realmente excluir o registro \n' + valor + '?');
             }
         </script>
+        <style type="text/css">
+            
+            .dt-buttons{
+                position: absolute;
+                margin: 0;
+            }
+            #table_length{
+                float: left;
+            }
+            #table_filter{
+                float: right;
+            }
+        </style>
     </head>
     <body>
         <!--Sidebar -->
@@ -120,6 +133,25 @@ include '../conexao.php';
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.js"></script>
-
+        
+        <script>
+                    $(document).ready(function () {
+                        $('#table').DataTable({
+                            "language": {
+                                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
+                            },
+                            dom: 'Bfrtlpi',
+                            buttons: [
+                                'excel',
+                                'pdf'
+                            ]
+                        });
+                    });
+                    $(document).ready(function () {
+                        setTimeout(function () {
+                            $('.alert').fadeOut(800);
+                        }, 2000);
+                    });
+</script>
     </body>
 </html>
