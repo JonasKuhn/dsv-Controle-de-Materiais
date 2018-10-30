@@ -23,6 +23,9 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 if (isset($msg) && $msg != false && $msg == "alt") {
     echo "<br/><div class='alert alert-success' role='alert'>$nomeEq alterado com sucesso!</div>";
 }
+if (isset($msg) && $msg != false && $msg == "exc") {
+    echo "<br/><div class='alert alert-success' role='alert'>$nomeEq excluído com sucesso!</div>";
+}
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem"><?=$nomeEq?></h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
@@ -84,7 +87,7 @@ if (isset($msg) && $msg != false && $msg == "alt") {
             <tr>
                 <td><a href="?url=editar-equip&id=<?=$id?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
-                    </a>&nbsp;<a href="?url=excluir-tp-equip" onclick="return excluir('<?= $cod ?>');"  class="table-link">
+                    </a>&nbsp;<a href="?url=excluir-equip&cod=<?=$id?>&id=<?=$id_tipo?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>

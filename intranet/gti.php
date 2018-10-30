@@ -21,6 +21,9 @@ if (isset($msg) && $msg != false && $msg == "inc") {
 if (isset($msg) && $msg != false && $msg == "alt") {
     echo "<br/><div class='alert alert-success' role='alert'>Notebook alterado com sucesso!</div>";
 }
+if (isset($msg) && $msg != false && $msg == "exc") {
+    echo "<br/><div class='alert alert-success' role='alert'>Notebook excluído com sucesso!</div>";
+}
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Notebooks GTI</h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
@@ -74,7 +77,7 @@ if (isset($msg) && $msg != false && $msg == "alt") {
             <tr>
                 <td><a href="?url=editar-gti&id=<?=$id?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
-                    </a><a href="?url=excluir-tp-equip" onclick="return excluir('<?= $cod ?>');"  class="table-link">
+                    </a><a href="?url=excluir-gti&id=<?=$id?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>

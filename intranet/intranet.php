@@ -11,7 +11,11 @@ include '../conexao.php';
         <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="assets/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" type="text/css" href="assets/css/datatables.min.css"/>
-
+        <script>
+            function excluir(valor) {
+                return confirm('Deseja realmente excluir o registro \n' + valor + '?');
+            }
+        </script>
     </head>
     <body>
         <!--Sidebar -->
@@ -87,6 +91,9 @@ include '../conexao.php';
                     case'editar-equip':
                         include('./editar/edt_equipamento.php');
                         break;
+                    case'excluir-equip':
+                        include('./excluir/exc_equipamento.php');
+                        break;
                     case'gti':
                         include 'gti.php';
                         break;
@@ -95,6 +102,9 @@ include '../conexao.php';
                         break;
                     case'incluir-gti':
                         include './incluir/inc_notebook_gti.php';
+                        break;
+                    case'excluir-gti':
+                        include('./excluir/exc_gti.php');
                         break;
                     default :
                 }
