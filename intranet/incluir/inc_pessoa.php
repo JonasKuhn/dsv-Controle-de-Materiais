@@ -1,10 +1,15 @@
 <?php
-/* $sql = "select * from tb_tipo_pessoa";
-  $result = $pdo->query($sql);
-  foreach ($result as $key) {
-  print_r($key);
-  exit;
-  } */
+
+function Mask($mask, $str) {
+
+    $str = str_replace(" ", "", $str);
+
+    for ($i = 0; $i < strlen($str); $i++) {
+        $mask[strpos($mask, "#")] = $str[$i];
+    }
+
+    return $mask;
+}
 ?>
 <div class="row mt-md-5">
     <div class="col-md-12">
@@ -19,10 +24,13 @@
                     $sql = "select * from tb_tipo_pessoa";
                     $result = $pdo->query($sql);
                     foreach ($result as $key) {
-                        $tipo = $row["desc_tipo"];
-                        $idTP = $row["cod_tipo_pessoa"];
+                        $tipo = $key["desc_tipo"];
+                        $idTP = $key["cod_tipo_pessoa"];
+                        if ($tipo === "Administrador") {
+                            $css = "d-none";
+                        }
                         ?>
-                    <option value="<?=$idTP?>"><?= $tipo ?></option>
+                        <option value="<?= $idTP ?>" class="<?= $css ?>"><?= $tipo ?></option>
                     <?php } ?>
                 </select>
             </div>
@@ -30,10 +38,29 @@
                 <label>Nome:</label>
                 <input type="text" name="nome" class="form-control" required="">
             </div>
-            <div class="form-group">
-                <label>Quantidade:</label>
-                <input type="number" name="qtde" class="form-control" value="0" readonly>
+            <div class="form-group row">
+                <div class="form-group col-md-6">
+                    <label>Matrícula:</label>
+                    <input type="text" name="matricula" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Senha:</label>
+                    <input type="password" name="senha" class="form-control">
+                </div>
             </div>
+            <div class="form-group row">
+                <div class="form-group col-md-6">
+                    <label>E-mail:</label>
+                    <input type="email" name="matricula" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Fone:</label>
+                    <input type="text" class="form-control" name="telefone_pessoa" id="telefone_pessoa"
+                           pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{3,4}"
+                           placeholder="(11) 12345-6789">
+                </div>
+            </div>
+
             <div class="form-group">
                 <input type="submit" class="btn btn-default" value="Salvar">
             </div>

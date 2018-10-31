@@ -27,11 +27,12 @@ include '../conexao.php';
         </style>
     </head>
     <body>
+        <div class="container-fluid">
         <!--Sidebar -->
         <div class="row">
 
             <!-- Menu -->
-            <nav id="menu" class=" mt-md-2 col-md-2" style="margin-right: 3rem;margin-left: 1rem;float: left;">
+            <nav id="menu" class=" mt-md-2 col-md-2" style="margin-right: 3rem;margin-left: 1rem;">
                 <header class="major">
                     <h2>Empréstimos</h2>
                 </header>
@@ -125,7 +126,7 @@ include '../conexao.php';
                 }
                 ?>
             </div>
-            <div class="trava"></div>
+        </div>
         </div>
 
 

@@ -20,8 +20,8 @@ if (isset($msg) && $msg != false && $msg == "exc") {
 }
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Pessoas</h2>
-<table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5" style="margin-left:-3rem;">
-    <thead>
+<table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
+    <thead class="table-font">
         <tr>
             <th scope="col"><a href="?url=incluir-pessoa" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
@@ -29,10 +29,9 @@ if (isset($msg) && $msg != false && $msg == "exc") {
             <th scope="col">#</th>
             <th scope="col">Matrícula</th>
             <th scope="col">Nome</th>
-            <th scope="col">Senha</th>
             <th scope="col">E-mail</th>
             <th scope="col">Telefone</th>
-            <th scope="col">Validação</th>
+            <th scope="col">Situação</th>
             <th scope="col">Tipo</th>
             <th scope="col">Criado</th>
             <th scope="col">Modificado</th>
@@ -53,9 +52,9 @@ if (isset($msg) && $msg != false && $msg == "exc") {
             $fone = $row["telefone_pessoa"];
             $validacao = $row["fl_validacao"];
             if ($validacao == 1){
-                $validacao_desc = "Aprovado";
+                $validacao_desc = "Ativo";
             } else {
-                $validacao_desc = "Aguardando";
+                $validacao_desc = "Desativado";
             }
             $idTP = $row["cod_tipo_pessoa"];
             $seleciona_tipo = "select * from tb_tipo_pessoa";
@@ -76,7 +75,6 @@ if (isset($msg) && $msg != false && $msg == "exc") {
                 <td scope="row"><?=$cod?></td>
                 <td><?=$matricula?></td>
                 <td><?=$nome?></td>
-                <td><?=$senha?></td>
                 <td><?=$email?></td>
                 <td><?=$fone?></td>
                 <td><?=$validacao_desc?></td>
