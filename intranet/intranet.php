@@ -37,10 +37,10 @@ include '../conexao.php';
                 </header>
 
                 <ul>
-                    <li><a href="intranet.php">Página Inicial</a></li>
+                    <li><a href="intranet.php">Inicial</a></li>
                     <li><a href="intranet.php?url=admin">Administradores</a></li>
                     <li><a href="intranet.php?url=tipo-equip">Cadastro de Tipos</a></li>
-                    <li><a href="#">Cadastro de Alunos</a></li>
+                    <li><a href="intranet.php?url=pessoa">Cadastro de Pessoas</a></li>
                     <li><a href="intranet.php?url=gti">Notebooks GTI</a></li>
                     <li>
                         <span class="opener">Equipamentos</span>
@@ -63,7 +63,7 @@ include '../conexao.php';
                     <li><a href="logout.php">Sair</a></li>
                 </ul>
             </nav>
-            <div class="col-md-8">
+            <div class="col-md-9">
                 <?php
                 @$url = $_GET['url'];
                 switch ($url) {
@@ -114,6 +114,12 @@ include '../conexao.php';
                         break;
                     case'excluir-gti':
                         include('./excluir/exc_gti.php');
+                        break;
+                    case'pessoa':
+                        include 'pessoa.php';
+                        break;
+                    case'incluir-pessoa':
+                        include './incluir/inc_pessoa.php';
                         break;
                     default :
                 }

@@ -26,7 +26,7 @@ if (isset($msg) && $msg != false && $msg == "exc") {
 }
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Notebooks GTI</h2>
-<table id='table' class="table table-striped table-bordered table-hover table-responsive dataTable mt-md-5">
+<table id='table' class="table table-striped table-bordered table-hover table-responsive-lg dataTable mt-md-5">
     <thead>
         <tr>
             <th scope="col"><a href="?url=incluir-gti&id=<?= $id ?>" class="table-link">
