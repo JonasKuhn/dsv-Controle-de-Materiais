@@ -10,13 +10,13 @@
 <?php
 @$msg = $_GET['msg'];
 if (isset($msg) && $msg != false && $msg == "inc") {
-    echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento incluído com sucesso!</div>";
+    echo "<br/><div class='alert alert-success' role='alert'>Pessoa incluída com sucesso!</div>";
 }
 if (isset($msg) && $msg != false && $msg == "alt") {
-    echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento alterado com sucesso!</div>";
+    echo "<br/><div class='alert alert-success' role='alert'>Pessoa alterada com sucesso!</div>";
 }
 if (isset($msg) && $msg != false && $msg == "exc") {
-    echo "<br/><div class='alert alert-success' role='alert'>Tipo de equipamento excluído com sucesso!</div>";
+    echo "<br/><div class='alert alert-success' role='alert'>Pessoa excluída com sucesso!</div>";
 }
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Pessoas</h2>
@@ -57,7 +57,7 @@ if (isset($msg) && $msg != false && $msg == "exc") {
                 $validacao_desc = "Desativado";
             }
             $idTP = $row["cod_tipo_pessoa"];
-            $seleciona_tipo = "select * from tb_tipo_pessoa";
+            $seleciona_tipo = "select * from tb_tipo_pessoa where cod_tipo_pessoa = $idTP";
             $result = $pdo->query($seleciona_tipo);
             foreach ($result as $key){
                 $tipo = $key["desc_tipo"];

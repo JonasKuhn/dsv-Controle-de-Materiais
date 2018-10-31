@@ -17,7 +17,7 @@ foreach ($result as $row) {
         <form action="incluir/inc_equipamento_bd.php?id=<?=$idTP?>" method="POST">
             <div class="form-group">
                 <label>Nome:</label>
-                <input type="text" name="nome" required>
+                <input type="text" name="nome" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Observação:</label>

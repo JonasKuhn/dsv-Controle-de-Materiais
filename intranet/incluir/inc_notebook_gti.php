@@ -6,11 +6,11 @@
         <form action="incluir/inc_notebook_gti_bd.php" method="POST">
             <div class="form-group">
                 <label>Nome:</label>
-                <input type="text" name="nome" required>
+                <input type="text" name="nome" class="form-control" required>
             </div>
             <div class="form-group">
                 <label>Observação:</label>
-                <textarea name="obs"></textarea>
+                <textarea name="obs" class="form-text"></textarea>
             </div>
             <div class="form-group">
                 <label>Status:</label><br>
@@ -22,11 +22,11 @@
             <div class="form-group row">
                 <div class="form-group col-md-6">
                     <label>Aluno:</label>
-                    <input type="text" name="aluno" required>
+                    <input type="text" name="aluno" class="form-control" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Turma:</label>
-                    <input type="text" name="turma" required>
+                    <input type="text" name="turma" class="form-control" required>
 
                 </div>
             </div>

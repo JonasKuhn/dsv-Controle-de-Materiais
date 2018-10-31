@@ -1,22 +1,9 @@
-<?php
-
-function Mask($mask, $str) {
-
-    $str = str_replace(" ", "", $str);
-
-    for ($i = 0; $i < strlen($str); $i++) {
-        $mask[strpos($mask, "#")] = $str[$i];
-    }
-
-    return $mask;
-}
-?>
 <div class="row mt-md-5">
     <div class="col-md-12">
         <h2>Incluir Pessoa</h2>
     </div>
     <div class="col-md-12 mt-md-2">
-        <form action="incluir/inc_tipo_equipamento_bd.php" method="POST">
+        <form action="incluir/inc_pessoa_bd.php" method="POST">
             <div class="form-group">
                 <label>Tipo:</label>
                 <select name="tipo">
@@ -36,29 +23,34 @@ function Mask($mask, $str) {
             </div>
             <div class="form-group">
                 <label>Nome:</label>
-                <input type="text" name="nome" class="form-control" required="">
+                <input type="text" name="nome" class="form-control" required>
             </div>
             <div class="form-group row">
                 <div class="form-group col-md-6">
                     <label>Matrícula:</label>
-                    <input type="text" name="matricula" class="form-control">
+                    <input type="text" name="matricula" class="form-control" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Senha:</label>
-                    <input type="password" name="senha" class="form-control">
+                    <input type="password" name="senha" class="form-control" required>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="form-group col-md-6">
                     <label>E-mail:</label>
-                    <input type="email" name="matricula" class="form-control">
+                    <input type="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Fone:</label>
-                    <input type="text" class="form-control" name="telefone_pessoa" id="telefone_pessoa"
-                           pattern="\([0-9]{2}\)[\s][0-9]{5}-[0-9]{3,4}"
-                           placeholder="(11) 12345-6789">
+                    <input type="text" name="telefone" class="form-control" required>
                 </div>
+            </div>
+            <div class="form-group">
+                <label>Situação:</label>
+                <select name="situacao">
+                    <option value="1" selected="">Ativo</option>
+                    <option value="0">Desativado</option>
+                </select>
             </div>
 
             <div class="form-group">

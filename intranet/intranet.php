@@ -28,105 +28,105 @@ include '../conexao.php';
     </head>
     <body>
         <div class="container-fluid">
-        <!--Sidebar -->
-        <div class="row">
+            <!--Sidebar -->
+            <div class="row">
 
-            <!-- Menu -->
-            <nav id="menu" class=" mt-md-2 col-md-2" style="margin-right: 3rem;margin-left: 1rem;">
-                <header class="major">
-                    <h2>Empréstimos</h2>
-                </header>
+                <!-- Menu -->
+                <nav id="menu" class=" mt-md-2 col-md-2" style="margin-right: 3rem;margin-left: 1rem;">
+                    <header class="major">
+                        <h2>Empréstimos</h2>
+                    </header>
 
-                <ul>
-                    <li><a href="intranet.php">Inicial</a></li>
-                    <li><a href="intranet.php?url=admin">Administradores</a></li>
-                    <li><a href="intranet.php?url=tipo-equip">Cadastro de Tipos</a></li>
-                    <li><a href="intranet.php?url=pessoa">Cadastro de Pessoas</a></li>
-                    <li><a href="intranet.php?url=gti">Notebooks GTI</a></li>
-                    <li>
-                        <span class="opener">Equipamentos</span>
-                        <ul style="overflow-y: auto;">
-                            <?php
-                            $sql = "select * from tb_tipo_equipamento";
-                            $result = $pdo->query($sql);
-                            foreach ($result as $row) {
-                                $nome = $row["desc_tipo"];
-                                $id = $row["cod_tipo_equipamento"];
-                                ?>
+                    <ul>
+                        <li><a href="intranet.php">Inicial</a></li>
+                        <li><a href="intranet.php?url=admin">Administradores</a></li>
+                        <li><a href="intranet.php?url=tipo-equip">Cadastro de Tipos</a></li>
+                        <li><a href="intranet.php?url=pessoa">Cadastro de Pessoas</a></li>
+                        <li><a href="intranet.php?url=gti">Notebooks GTI</a></li>
+                        <li>
+                            <span class="opener">Equipamentos</span>
+                            <ul style="overflow-y: auto;">
+                                <?php
+                                $sql = "select * from tb_tipo_equipamento";
+                                $result = $pdo->query($sql);
+                                foreach ($result as $row) {
+                                    $nome = $row["desc_tipo"];
+                                    $id = $row["cod_tipo_equipamento"];
+                                    ?>
 
-                                <li><a href="intranet.php?url=equip&id=<?= $id ?>"><?= $nome ?></a></li>
-                            <?php } ?>
+                                    <li><a href="intranet.php?url=equip&id=<?= $id ?>"><?= $nome ?></a></li>
+                                <?php } ?>
 
 
-                        </ul>
-                    </li>
+                            </ul>
+                        </li>
 
-                    <li><a href="logout.php">Sair</a></li>
-                </ul>
-            </nav>
-            <div class="col-md-9">
-                <?php
-                @$url = $_GET['url'];
-                switch ($url) {
-                    case'admin':
-                        include('administradores.php');
-                        break;
-                    case'incluir-admin':
-                        include('./incluir/inc_admin.php');
-                        break;
-                    case'editar-admin':
-                        include('./editar/edt_admin.php');
-                        break;
-                    case'excluir-admin':
-                        include('./excluir/exc_admin.php');
-                        break;
-                    case'tipo-equip':
-                        include('tipo_equipamento.php');
-                        break;
-                    case'incluir-tp-equip':
-                        include('./incluir/inc_tipo_equipamento.php');
-                        break;
-                    case'editar-tp-equip':
-                        include('./editar/edt_tipo_equipamento.php');
-                        break;
-                    case'excluir-tp-equip':
-                        include('./excluir/exc_tipo_equipamento.php');
-                        break;
-                    case'equip':
-                        include('equipamentos.php');
-                        break;
-                    case'incluir-equip':
-                        include('./incluir/inc_equipamento.php');
-                        break;
-                    case'editar-equip':
-                        include('./editar/edt_equipamento.php');
-                        break;
-                    case'excluir-equip':
-                        include('./excluir/exc_equipamento.php');
-                        break;
-                    case'gti':
-                        include 'gti.php';
-                        break;
-                    case'editar-gti':
-                        include './editar/edt_gti.php';
-                        break;
-                    case'incluir-gti':
-                        include './incluir/inc_notebook_gti.php';
-                        break;
-                    case'excluir-gti':
-                        include('./excluir/exc_gti.php');
-                        break;
-                    case'pessoa':
-                        include 'pessoa.php';
-                        break;
-                    case'incluir-pessoa':
-                        include './incluir/inc_pessoa.php';
-                        break;
-                    default :
-                }
-                ?>
+                        <li><a href="logout.php">Sair</a></li>
+                    </ul>
+                </nav>
+                <div class="col-md-9">
+                    <?php
+                    @$url = $_GET['url'];
+                    switch ($url) {
+                        case'admin':
+                            include('administradores.php');
+                            break;
+                        case'incluir-admin':
+                            include('./incluir/inc_admin.php');
+                            break;
+                        case'editar-admin':
+                            include('./editar/edt_admin.php');
+                            break;
+                        case'excluir-admin':
+                            include('./excluir/exc_admin.php');
+                            break;
+                        case'tipo-equip':
+                            include('tipo_equipamento.php');
+                            break;
+                        case'incluir-tp-equip':
+                            include('./incluir/inc_tipo_equipamento.php');
+                            break;
+                        case'editar-tp-equip':
+                            include('./editar/edt_tipo_equipamento.php');
+                            break;
+                        case'excluir-tp-equip':
+                            include('./excluir/exc_tipo_equipamento.php');
+                            break;
+                        case'equip':
+                            include('equipamentos.php');
+                            break;
+                        case'incluir-equip':
+                            include('./incluir/inc_equipamento.php');
+                            break;
+                        case'editar-equip':
+                            include('./editar/edt_equipamento.php');
+                            break;
+                        case'excluir-equip':
+                            include('./excluir/exc_equipamento.php');
+                            break;
+                        case'gti':
+                            include 'gti.php';
+                            break;
+                        case'editar-gti':
+                            include './editar/edt_gti.php';
+                            break;
+                        case'incluir-gti':
+                            include './incluir/inc_notebook_gti.php';
+                            break;
+                        case'excluir-gti':
+                            include('./excluir/exc_gti.php');
+                            break;
+                        case'pessoa':
+                            include 'pessoa.php';
+                            break;
+                        case'incluir-pessoa':
+                            include './incluir/inc_pessoa.php';
+                            break;
+                        default :
+                    }
+                    ?>
+                </div>
             </div>
-        </div>
         </div>
 
 
