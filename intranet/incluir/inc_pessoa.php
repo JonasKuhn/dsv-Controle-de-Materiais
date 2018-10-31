@@ -23,26 +23,26 @@
             </div>
             <div class="form-group">
                 <label>Nome:</label>
-                <input type="text" name="nome" class="form-control" required>
+                <input type="text" name="nome" class="form-control" placeholder="Digite o nome" required>
             </div>
             <div class="form-group row">
                 <div class="form-group col-md-6">
                     <label>Matrícula:</label>
-                    <input type="text" name="matricula" class="form-control" required>
+                    <input type="text" name="matricula" class="form-control" placeholder="Digite a matrícula" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Senha:</label>
-                    <input type="password" name="senha" class="form-control" required>
+                    <input type="password" name="senha" class="form-control" placeholder="Digite a senha (Igual a matrícula)" required>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="form-group col-md-6">
                     <label>E-mail:</label>
-                    <input type="email" name="email" class="form-control" required>
+                    <input type="email" name="email" class="form-control" placeholder="Digite o e-mail" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Fone:</label>
-                    <input type="text" name="telefone" class="form-control" required>
+                    <input type="text" name="telefone" maxlength="11" class="form-control" placeholder="Digite o telefone (sem caracteres especiais e espaços)" required>
                 </div>
             </div>
             <div class="form-group">
