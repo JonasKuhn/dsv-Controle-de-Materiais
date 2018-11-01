@@ -18,6 +18,10 @@ if (isset($msg) && $msg != false && $msg == "alt") {
 if (isset($msg) && $msg != false && $msg == "exc") {
     echo "<br/><div class='alert alert-success' role='alert'>Pessoa excluída com sucesso!</div>";
 }
+if (isset($msg) && $msg != false && $msg == "erro") {
+    echo "<br/><div class='alert alert-danger' role='alert'>Não foi possível excluir esta pessoa pois existem <strong>empréstimos"
+    . " pendentes</strong> em seu nome. Resolva-os e tente novamente!</div>";
+}
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Pessoas</h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable mt-md-5">
@@ -68,7 +72,7 @@ if (isset($msg) && $msg != false && $msg == "exc") {
             <tr>
                 <td><a href="?url=editar-pessoa&id=<?= $cod ?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
-                    </a>&nbsp;<a href="?url=excluir-tp-equip&id=<?= $cod ?>" onclick="return excluir('<?= $desc ?>');"  class="table-link">
+                    </a>&nbsp;<a href="?url=excluir-pessoa&id=<?= $cod ?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>

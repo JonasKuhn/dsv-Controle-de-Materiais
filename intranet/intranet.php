@@ -125,6 +125,9 @@ include '../conexao.php';
                         case'editar-pessoa':
                             include './editar/edt_pessoa.php';
                             break;
+                        case'excluir-pessoa':
+                            include './excluir/exc_pessoa.php';
+                            break;
                         default :
                     }
                     ?>
@@ -157,7 +160,7 @@ include '../conexao.php';
                 });
                 setTimeout(function () {
                     $('.alert').fadeOut(800);
-                }, 2000);
+                }, 4000);
             });
           
             
