@@ -19,8 +19,8 @@ if (isset($msg) && $msg != false && $msg == "exc") {
     echo "<br/><div class='alert alert-success' role='alert'>Pessoa excluída com sucesso!</div>";
 }
 if (isset($msg) && $msg != false && $msg == "erro") {
-    echo "<br/><div class='alert alert-danger' role='alert'>Não foi possível excluir esta pessoa pois existem <strong>empréstimos"
-    . " pendentes</strong> em seu nome. Resolva-os e tente novamente!</div>";
+    echo "<br/><div class='alert alert-danger' role='alert'>Não foi possível excluir esta pessoa pois existem"
+    . " <strong>empréstimos</strong> em seu nome.</div>";
 }
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem">Pessoas</h2>
