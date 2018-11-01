@@ -62,8 +62,8 @@
                                     $cod_tipo_equipamento = $dadosEq['cod_tipo_equipamento'];
                                     $qtd_tipo = $dadosEq['qtd_tipo'];
                                     $equipamentoTrim = str_replace(' ', '', $desc_tipo);
-
-                                    if ($_GET['i'] == 1) {
+                                    
+                                    if ($_SESSION["tipo_pessoa"] == 1) {
                                         if ($cod_tipo_equipamento == 2) {
                                             
                                         } else {
@@ -76,7 +76,7 @@
                                                         for ($i = 0; $i <= $qtd_tipo; $i++) {
                                                             if ($i == $ix) {
                                                                 ?>
-                                                                <option selected="true" value="">NENHUM <?= $desc_tipo ?></option>
+                                                                <option selected="true" value="<?= $i; ?>">NENHUM <?= $desc_tipo ?></option>
                                                                 <?php
                                                             } else if ($i != $ix) {
                                                                 ?>
@@ -93,14 +93,14 @@
                                     } else {
                                         ?>
                                         <tr>
-                                            <td><?= $desc_tipo ?></td>
+                                            <td><?= $desc_tipo; ?></td>
                                             <td>
                                                 <select class="form-control" name="qtd_select">
                                                     <?php
                                                     for ($i = 0; $i <= $qtde; $i++) {
                                                         if ($i == $ix) {
                                                             ?>
-                                                            <option selected="true" value="">NENHUM <?= $desc_tipo ?></option>
+                                                            <option selected="true" value="<?= $i; ?>">NENHUM <?= $desc_tipo ?></option>
                                                             <?php
                                                         } else if ($i != $ix) {
                                                             ?>
@@ -121,7 +121,7 @@
                         </table>   
                         <div class="row mt-md-2">
                             <div class="col-md-6">
-                                <a href="login.php">
+                                <a href="logout.php">
                                     <button type="button" class="btn btn-secondary" style="color: white">
                                         Voltar
                                     </button>

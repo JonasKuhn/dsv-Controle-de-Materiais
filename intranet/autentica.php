@@ -10,7 +10,7 @@ if ($login == "" || $senha == "") {
             window.alert('Todos os campos devem ser preenchidos!');
             location.href='login.html';
             </SCRIPT>'";*/
-    header("Location: login.php?msg=empty");
+    header("Location: index.php?msg=empty");
 } else {
     $sql = "SELECT * FROM tb_admin WHERE login_admin = '$login';";
     $result = $pdo->query($sql);
@@ -22,19 +22,11 @@ if ($login == "" || $senha == "") {
                 header("Location: intranet.php");
                 exit;
             } else {
-                /*echo "'<SCRIPT Language='javascript'>
-            window.alert('Login e/ou senha incorretos!');
-            location.href='login.html';
-            </SCRIPT>'";*/
-                header("Location: login.php?msg=bad_aut");
+                header("Location: index.php?msg=bad_aut");
                 
             }
         } else {
-            /*echo "'<SCRIPT Language='javascript'>
-            window.alert('Login e/ou senha incorretos!');
-            location.href='login.html';
-            </SCRIPT>'";*/
-            header("Location: login.php?msg=bad_aut");
+            header("Location: index.php?msg=bad_aut");
             
         }
     endforeach;

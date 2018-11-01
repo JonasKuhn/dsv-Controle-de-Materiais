@@ -46,7 +46,7 @@
                             </thead>
                             <tbody>
                                 <?php
-                                include './conexao.php';
+                                include_once './conexao.php';
                                 $sqlEq = "SELECT DISTINCT tip.cod_tipo_equipamento, tip.desc_tipo, tip.qtd_tipo "
                                         . "FROM tb_tipo_equipamento as tip, tb_equipamento as eq "
                                         . "WHERE tip.cod_tipo_equipamento = eq.cod_tipo_equipamento "
@@ -60,12 +60,22 @@
                                     $equipamentoTrim = str_replace(' ', '', $desc_tipo);
 
                                     $a = $_POST[$cod_tipo_equipamento];
-                                    if ($_SESSION["tipo_pessoa"] == 1) {
-                                        if ($cod_tipo_equipamento == 2) {
-                                            
-                                        } else {
-                                            ?>
-                                            <tr>
+                                    if ($a != '' || $a != NULL) {
+                                        if ($_SESSION["tipo_pessoa"] == 1) {
+                                            if ($cod_tipo_equipamento == 2) {
+                                                
+                                            } else {
+                                                ?>
+                                                <tr>
+                                            <input type="text" hidden="" name="<?= $cod_tipo_equipamento; ?>" value="<?= $a; ?>">
+                                            <td><?= $desc_tipo; ?></td>
+                                            <td><span><?= $a; ?></span></td>
+                                            </tr>
+                                            <?php
+                                        }
+                                    } else {
+                                        ?>
+                                        <tr>
                                         <input type="text" hidden="" name="<?= $cod_tipo_equipamento; ?>" value="<?= $a; ?>">
                                         <td><?= $desc_tipo; ?></td>
                                         <td><span><?= $a; ?></span></td>
@@ -77,7 +87,7 @@
                                     <tr>
                                     <input type="text" hidden="" name="<?= $cod_tipo_equipamento; ?>" value="<?= $a; ?>">
                                     <td><?= $desc_tipo; ?></td>
-                                    <td><span><?= $a; ?></span></td>
+                                    <td><span> 0 </span></td>
                                     </tr>
                                     <?php
                                 }
@@ -94,7 +104,11 @@
                             echo "<br/><div class='alert alert-danger' role='alert'><?=$msg1?><br/><?=$msg2?></div>";
                         }
                         if (isset($msg) && $msg != false && $msg == "error") {
-                            echo "<br/><div class='alert alert-danger' role='alert'>OPPA</div>";
+                            echo "<br/><div class='alert alert-danger' role='alert'>ERRO NA APLICAÇÃO!!</div>";
+                        }
+                        if (isset($msg) && $msg != false && $msg == "minimoequip") {
+                            echo "<br/><div class='alert alert-danger' role='alert' style='text-align:center;'>Nenhum equipamento selecionado!!<br/> "
+                            . "Clique e <a href='seleciona_equipamentos.php'>VOLTAR</a> e selecione algum equipamento.</div>";
                         }
                         ?>
                         <div class="row mt-md-2">

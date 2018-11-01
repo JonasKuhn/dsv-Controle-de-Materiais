@@ -7,6 +7,12 @@ require_once 'sessao.php';
 $nr_matricula = $_SESSION["id"];
 $nr_pessoa = $_SESSION["tipo_pessoa"];
 
+$sqlvalida = "SELECT COUNT(cod_tipo_equipamento) FROM tb_tipo_equipamento where qtd_tipo != 0;";
+$queryvalida = $pdo->prepare($sqlvalida);
+$queryvalida->execute();
+$dadovalida = $queryvalida->fetch();
+$count = $dadovalida['COUNT(cod_tipo_equipamento)'];
+
 $sqlMatricula = "SELECT cod_pessoa, nr_matricula FROM tb_pessoa WHERE nr_matricula = '$nr_matricula';";
 $queryMatricula = $pdo->prepare($sqlMatricula);
 $queryMatricula->execute();
@@ -44,7 +50,7 @@ if ($vl_matricula != '') {
                         //REALIZA O EMPRESTIMO
                         $sqlInsert = "INSERT INTO tb_emprestimo (nr_matricula, data_emprestimo, status, cod_equipamento, cod_pessoa, cod_situacao) "
                                 . "VALUES ('$vl_matricula', now(), FALSE, '$cod_equipamento', '$cod_pessoa', 1)";
-                        $queryinsert = $pdo->prepare($sqlInsert);
+                        $queryinsert = $pdo->preapare($sqlInsert);
                         $queryinsert->execute();
 
                         $sqlupdateEquip = "UPDATE tb_equipamento as eq, tb_tipo_equipamento as teq "
@@ -64,21 +70,16 @@ if ($vl_matricula != '') {
                         echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = "
                         . "'login.php?msg1='$erro1'&msg2='$erro2'; </SCRIPT>";
                     }
-                } else {
-                    $x++;
-                    $sqlvalida = "SELECT COUNT(cod_tipo_equipamento) FROM tb_tipo_equipamento;";
-                    $queryvalida = $pdo->prepare($sqlvalida);
-                    $queryvalida->execute();
-                    $dadovalida = $queryvalida->fetch();
-                    $count = $dadovalida['COUNT(cod_tipo_equipamento)'];
-                    
-                    echo $count;
-                    break;
-                    
                 }
             }
+        } else {
+            $x++;
         }
     endforeach;
+    
+    if($count >= $x++){
+        echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = 'confirma_emprestimo.php?msg=minimoequip';</SCRIPT>";
+    }
 } else {
     echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = 'confirma_emprestimo.php?msg=error'; </SCRIPT>";
 }
