@@ -19,14 +19,18 @@
         <link href="intranet/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
-
+        <script>
+            function voltar() {
+                return confirm('Deseja realmente cancelar seu emprestimo?');
+            }
+        </script>
     </head>
 
     <body>
         <?php
         require_once 'sessao.php';
         ?>
-        <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
+        <a href="index.php?url=logout.php" onclick="return voltar();"  style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
             <h1 class="d-none d-lg-block text-nowrap text-center">
                 Faça seu Empréstimo

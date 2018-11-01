@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <?php
-                $msg = $_GET['msg'];
+                @$msg = $_GET['msg'];
                 if (isset($msg) && $msg != false && $msg == "alert") {
                     echo "<div class='alert alert-warning fade show text-center' role='alert'> "
                     . "<strong>ALERTA!</strong> <br>"

@@ -20,13 +20,18 @@
         <link href="dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="events/css/hover.css" rel="stylesheet" type="text/css"/>
+        <script>
+            function voltar() {
+                return confirm('Deseja realmente cancelar seu emprestimo?');
+            }
+        </script>
     </head>
     <!--style="line-height:90px; margin-left: 8%; float: left;"-->
     <body>
         <?php
         require_once 'sessao.php';
         ?>
-        <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;">
+        <a href="index.php?url=logout.php" onclick="return voltar();" style="line-height:90px; margin-left: 100px; float: left;">
             <img src="img/logo.png" alt="UCEFF" >
         </a>
         <div class="cabecalho_selec_equip">
@@ -62,7 +67,7 @@
                                     $cod_tipo_equipamento = $dadosEq['cod_tipo_equipamento'];
                                     $qtd_tipo = $dadosEq['qtd_tipo'];
                                     $equipamentoTrim = str_replace(' ', '', $desc_tipo);
-                                    
+
                                     if ($_SESSION["tipo_pessoa"] == 1) {
                                         if ($cod_tipo_equipamento == 2) {
                                             
@@ -80,7 +85,7 @@
                                                                 <?php
                                                             } else if ($i != $ix) {
                                                                 ?>
-                                                                <option value="<?= $i; ?>"><?= $i.' '.$desc_tipo; ?> </option>
+                                                                <option value="<?= $i; ?>"><?= $i . ' ' . $desc_tipo; ?> </option>
                                                                 <?php
                                                             }
                                                         }
@@ -104,7 +109,7 @@
                                                             <?php
                                                         } else if ($i != $ix) {
                                                             ?>
-                                                            <option value="<?= $i; ?>"><?= $i.' '.$desc_tipo; ?></option>
+                                                            <option value="<?= $i; ?>"><?= $i . ' ' . $desc_tipo; ?></option>
                                                             <?php
                                                         }
                                                     }
@@ -145,15 +150,15 @@
 <script src="dist/js/bootstrap.js" type="text/javascript"></script>
 <!-- Ativar events -->
 <script>
-    var effects = document.querySelectorAll('.effects')[0];
+            var effects = document.querySelectorAll('.effects')[0];
 
-    effects.addEventListener('click', function (e) {
+            effects.addEventListener('click', function (e) {
 
-        if (e.target.className.indexOf('hvr') > -1) {
-            e.preventDefault();
-            e.target.blur();
+                if (e.target.className.indexOf('hvr') > -1) {
+                    e.preventDefault();
+                    e.target.blur();
 
-        }
-    });
+                }
+            });
 </script>
 </html>

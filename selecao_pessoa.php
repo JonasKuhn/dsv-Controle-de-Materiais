@@ -26,12 +26,14 @@
                 $cod = $dados['cod_tipo_pessoa'];
                 $desc = $dados['desc_tipo'];
 
+                $var = base64_encode($cod);
+
                 if ($desc != $descAdm) {
                     ?>
                     <div class="align-center col-md-4">
                         <div class="col align-self-md-center">
                             <div class="card h-100">
-                                <a href="./login.php?i=<?= $cod; ?>" class="hvr-grow-shadow">
+                                <a href="./login.php?i=<?= $var; ?>" class="hvr-grow-shadow">
                                     <div class="card-body" 
                                          style="display: flex; 
                                          align-items: center; 

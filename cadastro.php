@@ -32,6 +32,11 @@
                 }
             }
         </script>
+        <script>
+            function salvar() {
+                return confirm('Seus dados estão todos corretos?');
+            }
+        </script>
 
     </head>
 
@@ -43,13 +48,18 @@
             </h1>
         </header>
         <div class="trava"></div>
+
         <form method="POST" action="cadastroBD.php" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="col-md-6 offset-md-3 mt-md-5">
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Matrícula:</label>  
                         <div class="col-md-8 ml-3">
-                            <input name="cod_tipo_pessoa" value="<?= $_GET['i']; ?>" style="display: none;">
+                            <input name="cod_tipo_pessoa" value="<?php
+                            $var = $_GET['i'];
+                            $dec = base64_decode($var);
+                            echo $dec;
+                            ?>" style="display: none;">
                             <input onkeyup="somenteNumeros(this);" 
                                    maxlength="6" type="text"  
                                    ng-model="numero.valor"
@@ -60,7 +70,6 @@
                         </div>
                     </div>
 
-                    <!-- Text input-->
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Nome:</label>  
                         <div class="col-md-8 ml-3 ">
@@ -88,7 +97,7 @@
                         </div>
                     </div>
                     <?php
-                    $msg = $_GET['msg'];
+                    @$msg = $_GET['msg'];
 
                     if (isset($msg) && $msg != false && $msg == "alert_ja_cadastrado") {
                         echo "<div class='alert alert-danger fade show text-center' role='alert'> "
@@ -106,8 +115,8 @@
                             </a>
                         </div>
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-primary" style="float: right; color: white">
-                                Concluir
+                            <button type="submit" onclick="return salvar();" class="btn btn-primary" style="float: right; color: white">
+                                Cadastrar
                             </button>
                         </div>
                     </div>

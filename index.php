@@ -25,7 +25,7 @@
 
     <body>
         <?php
-        $url = $_GET['url'];
+        @$url = $_GET['url'];
 
         switch ($url) {
             // CASE PARA OS MENUS
@@ -37,6 +37,9 @@
                 break;
             case 'login.php':
                 include './login.php';
+                break;
+            case 'logout.php':
+                include './logout.php';
                 break;
             default :
                 include './selecao_pessoa.php';
