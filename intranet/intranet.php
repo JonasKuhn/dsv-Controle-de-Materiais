@@ -122,6 +122,9 @@ include '../conexao.php';
                         case'incluir-pessoa':
                             include './incluir/inc_pessoa.php';
                             break;
+                        case'editar-pessoa':
+                            include './editar/edt_pessoa.php';
+                            break;
                         default :
                     }
                     ?>
@@ -135,6 +138,7 @@ include '../conexao.php';
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+        <script src="../jquery/jquery.mask.js" type="text/javascript"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
@@ -151,12 +155,13 @@ include '../conexao.php';
                         'pdf'
                     ]
                 });
-            });
-            $(document).ready(function () {
                 setTimeout(function () {
                     $('.alert').fadeOut(800);
                 }, 2000);
             });
+          
+            
+            $("#telefone").mask("(00) 00000-0000");
         </script>
     </body>
 </html>

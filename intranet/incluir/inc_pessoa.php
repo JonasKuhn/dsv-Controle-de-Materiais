@@ -41,8 +41,8 @@
                     <input type="email" name="email" class="form-control" placeholder="Digite o e-mail" required>
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Fone:</label>
-                    <input type="text" name="telefone" maxlength="11" class="form-control" placeholder="Digite o telefone (sem caracteres especiais e espaços)" required>
+                    <label>Fone:</label>                   
+                    <input  type="tel" class="form-control" placeholder="Somente números" name="telefone" id="telefone"/>
                 </div>
             </div>
             <div class="form-group">

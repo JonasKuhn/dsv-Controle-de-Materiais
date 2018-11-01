@@ -66,7 +66,7 @@ if (isset($msg) && $msg != false && $msg == "exc") {
             $modificado = $row["modified"]
             ?>
             <tr>
-                <td><a href="?url=editar-tp-equip&id=<?= $cod ?>" class="table-link">
+                <td><a href="?url=editar-pessoa&id=<?= $cod ?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
                     </a>&nbsp;<a href="?url=excluir-tp-equip&id=<?= $cod ?>" onclick="return excluir('<?= $desc ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
