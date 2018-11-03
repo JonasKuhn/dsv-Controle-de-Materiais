@@ -5,15 +5,22 @@ $date = date('Y-m-d');
 $sql = "SELECT * FROM tb_emprestimo";
 $result = $pdo->query($sql);
 foreach ($result as $key) {
+    $situacao = $key['cod_situacao'];
     $cod = $key['cod_emprestimo'];
     $dt_emprestimo = $key['data_emprestimo'];
     $dt_amd = date('Y-m-d', strtotime($dt_emprestimo));
+    if ($situacao == 1){
+        
+    
     if ($dt_amd < $date) {
         $emprestimo_atraso = "UPDATE tb_emprestimo SET cod_situacao = 3 "
-                . "WHERE cod_emprestimo = $cod AND cod_situacao = 3";
-        $pdo->query($emprestimo_atraso);
+                . "WHERE cod_emprestimo = $cod";
+        if($pdo->query($emprestimo_atraso)){
+        }
     }
+    } 
 }
+
 ?>
 <style type="text/css">
     .dataTables_filter{
