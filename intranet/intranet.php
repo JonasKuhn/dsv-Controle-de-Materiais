@@ -68,6 +68,9 @@ include '../conexao.php';
                     <?php
                     @$url = $_GET['url'];
                     switch ($url) {
+                        case'inicial':
+                            include('./inicial.php');
+                            break;
                         case'admin':
                             include('administradores.php');
                             break;
@@ -173,17 +176,7 @@ include '../conexao.php';
             
             $("#telefone").mask("(00) 00000-0000");
             
-             $('#apr').DataTable({
-                    "language": {
-                        "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
-                    },
-                    dom: 'frtp',
-                    buttons: [
-                        'excel',
-                        'pdf'
-                    ]
-                });
-                $('#atraso').DataTable({
+             $('.inicial').DataTable({
                     "language": {
                         "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
                     },

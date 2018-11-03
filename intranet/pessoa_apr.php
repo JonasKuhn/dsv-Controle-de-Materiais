@@ -6,21 +6,10 @@
         text-decoration: none;
         color: black;
     }
-    .paginate_button, #apr_filter{
-        font-size: .789rem;
-    }
+
 </style>
-<?php
-@$msg = $_GET['msg'];
-if (isset($msg) && $msg != false && $msg == "apr") {
-    echo "<br/><div class='alert alert-success table-font' role='alert'>Cadastro validado com sucesso!</div>";
-}
-if (isset($msg) && $msg != false && $msg == "apr_all") {
-    echo "<br/><div class='alert alert-success table-font' role='alert'>Todos os cadatros foram validados com sucesso!</div>";
-}
-?>
 <h4 class="mt-md-5 text-center" style="margin-bottom: 2rem">Aguardando Aprovação</h4>
-<table id="apr" class="table table-striped table-bordered table-hover dataTable mt-md-5">
+<table class="table table-striped table-bordered table-hover dataTable mt-md-5 inicial">
     
     <thead class="table-font">
         <tr>
