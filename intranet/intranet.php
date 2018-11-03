@@ -128,7 +128,11 @@ include '../conexao.php';
                         case'excluir-pessoa':
                             include './excluir/exc_pessoa.php';
                             break;
+                        case'apr':
+                            include 'pessoa_aprova.php';
+                            break;
                         default :
+                            include './inicial.php';
                     }
                     ?>
                 </div>
@@ -165,6 +169,17 @@ include '../conexao.php';
           
             
             $("#telefone").mask("(00) 00000-0000");
+            
+             $('#apr').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
+                    },
+                    dom: 'frtp',
+                    buttons: [
+                        'excel',
+                        'pdf'
+                    ]
+                });
         </script>
     </body>
 </html>
