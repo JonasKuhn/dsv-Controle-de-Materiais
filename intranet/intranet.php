@@ -129,7 +129,10 @@ include '../conexao.php';
                             include './excluir/exc_pessoa.php';
                             break;
                         case'apr':
-                            include 'pessoa_aprova.php';
+                            include './editar/pessoa_aprova.php';
+                            break;
+                        case'devolver-equip':
+                            include './editar/devolver_equipamento.php';
                             break;
                         default :
                             include './inicial.php';
@@ -171,6 +174,16 @@ include '../conexao.php';
             $("#telefone").mask("(00) 00000-0000");
             
              $('#apr').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
+                    },
+                    dom: 'frtp',
+                    buttons: [
+                        'excel',
+                        'pdf'
+                    ]
+                });
+                $('#atraso').DataTable({
                     "language": {
                         "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
                     },
