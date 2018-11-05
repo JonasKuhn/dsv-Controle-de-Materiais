@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-        <?php
-        // put your code here
-        ?>
-    </body>
-</html>
+
+<?php
+
+include("../../conexao.php");
+
+$id = $_GET['id'];
+
+$nome = $_POST['nome_admin'];
+$log_adm = $_POST['login_admin'];
+$senha = $_POST['senha_admin'];
+
+//ENVIAR DADOS AO BD
+$sql = "update tb_admin set "
+        . "nome_admin = '$nome',"
+        . "login_admin = '$log_adm',"
+        . "senha_admin = '$senha',"
+        . "modified = now() "
+        . "where cod_admin = $id";
+
+
+if ($pdo->query($sql)) {
+    header("location: ../intranet.php?url=admin&msg=alt");
+    exit;
+} else {
+    echo("Erro: %s\n" . $pdo->error);
+}

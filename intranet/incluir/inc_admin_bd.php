@@ -1,16 +1,15 @@
 <?php
+require '../../conexao.php';
+$nome = $_POST['nome_admin'];
+$log_adm = $_POST['login_admin'];
+$senha = $_POST['senha_admin'];
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+$sql = "INSERT INTO tb_admin (nome_admin, login_admin, senha_admin, created) "
+        . "VALUES('$nome','$log_adm','$senha',now());";
 
-/**
- * Description of inc_admin_bd
- *
- * @author Emerson
- */
-class inc_admin_bd {
-    //put your code here
+if($pdo->query($sql)){
+    header("location: ../intranet.php?url=admin&msg=inc");
+    exit;
+} else {
+    echo("Erro: %s\n". $pdo->error);
 }
