@@ -66,7 +66,7 @@ if ($vl_matricula != '') {
 
                         //echo '<br> Insert tb_emprestimo - ' . $sqlInsert . ' <br> realiza<br><br> ';
                         $sqlupdateEquip = "UPDATE tb_equipamento as eq, tb_tipo_equipamento as teq "
-                                . "SET eq.fl_status = 0,  teq.qtd_tipo = teq.qtd_tipo - 1 "
+                                . "SET eq.fl_status = 1,  teq.qtd_tipo = teq.qtd_tipo - 1 "
                                 . "WHERE eq.cod_tipo_equipamento = teq.cod_tipo_equipamento "
                                 . "AND eq.cod_equipamento = $cod_equipamento;";
                         $queryupdateEquip = $pdo->prepare($sqlupdateEquip);

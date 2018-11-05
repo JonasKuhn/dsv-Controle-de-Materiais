@@ -58,7 +58,7 @@
                     </div>
 
 
-                    <table class="table table-striped table-bordered table-hover dataTable mt-md-5 ">
+                    <table id="emprestimo" class="table table-striped table-bordered table-hover dataTable mt-md-5 ">
                         <thead class="table-font">
                             <tr>
                                 <th scope="col">Matrícula</th>
