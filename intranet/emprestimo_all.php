@@ -22,7 +22,7 @@ if (isset($msg) && $msg != false && $msg == "erro") {
     echo "<br/><div class='alert alert-danger' role='alert'>Ocorreu um erro ao devolver o empréstimo!</div>";
 }
 ?>
-<h3 class="mt-md-5 text-center" style="margin-bottom: 2rem">Todos os empréstimos</h3>
+<h3 class="mt-md-5" style="margin-bottom: 2rem">Todos os empréstimos</h3>
 <table id="table" class="table table-striped table-bordered table-hover dataTable mt-md-5">
 
     <thead class="table-font">

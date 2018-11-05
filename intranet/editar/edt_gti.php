@@ -14,9 +14,9 @@ foreach ($query as $row) {
     }
     $status = $row["fl_status"];
     if ($status == 1) {
-        $status_desc = "Disponível";
-    } else {
         $status_desc = "Emprestado";
+    } else {
+        $status_desc = "Disponível";
     }
     $aluno = $row["aluno"];
     $turma = $row["turma"];

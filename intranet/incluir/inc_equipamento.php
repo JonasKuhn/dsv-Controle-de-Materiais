@@ -34,8 +34,8 @@ foreach ($result as $row) {
                 <div class="form-group">
                     <label>Status:</label><br>
                     <select name="status">
-                        <option value="1" selected>Disponível</option>
-                        <option value="0">Emprestado</option>
+                        <option value="0" selected>Disponível</option>
+                        <option value="1">Emprestado</option>
                     </select>
                 </div>
             </div>

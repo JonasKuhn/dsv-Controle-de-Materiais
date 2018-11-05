@@ -67,9 +67,9 @@ if (isset($msg) && $msg != false && $msg == "exc") {
             }
             $status = $row["fl_status"];
             if ($status == 1) {
-                $status_desc = "Disponível";
-            } else {
                 $status_desc = "Emprestado";
+            } else {
+                $status_desc = "Disponível";
             }
 
             $id_tipo = $row["cod_tipo_equipamento"];

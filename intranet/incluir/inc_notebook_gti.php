@@ -15,8 +15,8 @@
             <div class="form-group">
                 <label>Status:</label><br>
                 <select name="status">
-                    <option value="1">Disponível</option>
-                    <option value="0" selected>Emprestado</option>
+                    <option value="1" selected>Emprestado</option>
+                    <option value="0">Disponível</option>
                 </select>
             </div>
             <div class="form-group row">
