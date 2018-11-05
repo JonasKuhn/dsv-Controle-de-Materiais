@@ -50,9 +50,9 @@
                             <?php
                             //Aqui vou fazer algumas noias
                             ?>
-                            <h5 class="card-title">Seja Bem-Vindo <b style="font-size: 1.2rem;"><?= $_SESSION["nome"]; ?>!</b></h5>
+                            <h5 class="card-title">Bem-Vindo <b style="font-size: 1.2rem;"><?= $_SESSION["nome"]; ?>!</b></h5>
                             <p class="card-text">Nesta página você seleciona os equipamentos que deseja utilizar.</p>
-                            <a href="#" class="btn btn-primary" title="Veja seus empréstimos!">Ver Seus Empréstimos</a>
+                            <a href="emprestimo_pessoa.php" class="btn btn-primary" title="Veja seus empréstimos!">Ver Seus Empréstimos</a>
                         </div>
                     </div>
                     <br/>

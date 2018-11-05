@@ -64,18 +64,19 @@
                                     $equipamentoTrim = str_replace(' ', '', $desc_tipo);
 
                                     $a = $_POST[$cod_tipo_equipamento];
+
                                     if ($a != '' || $a != NULL) {
                                         if ($_SESSION["tipo_pessoa"] == 1) {
-                                            if ($cod_tipo_equipamento == 2) {
-                                                
-                                            } else {
+                                            if ($cod_tipo_equipamento != 2) {
                                                 ?>
-                                                <tr>
+                                            <tr>
                                             <input type="text" hidden="" name="<?= $cod_tipo_equipamento; ?>" value="<?= $a; ?>">
                                             <td><?= $desc_tipo; ?></td>
                                             <td><span><?= $a; ?></span></td>
                                             </tr>
                                             <?php
+                                        } else {
+                                            
                                         }
                                     } else {
                                         ?>
@@ -125,7 +126,7 @@
                             </div>
                             <div class="col-md-6">
                                 <button type="submit" class="btn btn-primary" style="float: right; color: white;">
-                                    Entrar
+                                    Finalizar Empréstimo
                                 </button>
                             </div>
                         </div>

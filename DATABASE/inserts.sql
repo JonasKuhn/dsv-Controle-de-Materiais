@@ -85,7 +85,7 @@ VALUES('ADPVGA01 - Adaptador VGA',               '',              0,            
 
 ##Leitor de Código de Barras
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('LCB01 - Leitor de Código de Barras',               '',              0,            0,         9,                    now());
+VALUES('LCB01 - Leitor de Código de Barras',               '',              0,            0,         10,                    now());
 
 INSERT INTO tb_equipamento (desc_equipamento, desc_observacao, fl_curso_gti, fl_status, cod_tipo_equipamento, created) 
-VALUES('LCB02 - Leitor de Código de Barras',               '',              0,            0,         9,                    now());
+VALUES('LCB02 - Leitor de Código de Barras',               '',              0,            0,         10,                    now());
