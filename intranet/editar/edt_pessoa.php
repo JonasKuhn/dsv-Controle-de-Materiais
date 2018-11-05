@@ -12,9 +12,11 @@ foreach ($result_pessoa as $key){
     $fone = $key['telefone_pessoa'];
     $situacao = $key['fl_validacao'];
     if ($situacao == 1){
-        $desc_situacao = 'Ativo';
+        $selected1 = 'selected';
+        $selected0 = '';
     } else {
-        $desc_situacao = 'Desativado';
+        $selected0 = 'selected';
+        $selected1 = '';
     }
 }
 ?>
@@ -71,8 +73,8 @@ foreach ($result_pessoa as $key){
             <div class="form-group">
                 <label>Situação:</label>
                 <select name="situacao">
-                    <option value="1" selected="">Ativo</option>
-                    <option value="0">Desativado</option>
+                    <option value="1" <?=$selected1?>>Ativo</option>
+                    <option value="0" <?=$selected0?>>Desativado</option>
                 </select>
             </div>
 

@@ -33,16 +33,19 @@ foreach ($result as $key) {
         <?php
         @$msg = $_GET['msg'];
         if (isset($msg) && $msg != false && $msg == "apr") {
-            echo "<br/><div class='alert alert-success table-font' role='alert'>Cadastro validado com sucesso!</div>";
+            echo "<br/><div class='alert alert-success' role='alert'>Cadastro validado com sucesso!</div>";
+        }
+        if (isset($msg) && $msg != false && $msg == "no_apr") {
+            echo "<br/><div class='alert alert-warning' role='alert'>Não existem cadastros a serem validados!</div>";
         }
         if (isset($msg) && $msg != false && $msg == "apr_all") {
-            echo "<br/><div class='alert alert-success table-font' role='alert'>Todos os cadatros foram validados com sucesso!</div>";
+            echo "<br/><div class='alert alert-success' role='alert'>Todos os cadatros foram validados com sucesso!</div>";
         }
         if (isset($msg) && $msg != false && $msg == "dev") {
-            echo "<br/><div class='alert alert-success table-font' role='alert'>Empréstimo devolvido com sucesso!</div>";
+            echo "<br/><div class='alert alert-success' role='alert'>Empréstimo devolvido com sucesso!</div>";
         }
         if (isset($msg) && $msg != false && $msg == "erro") {
-            echo "<br/><div class='alert alert-danger table-font' role='alert'>Ocorreu um erro ao devolver o empréstimo!</div>";
+            echo "<br/><div class='alert alert-danger' role='alert'>Ocorreu um erro ao devolver o empréstimo!</div>";
         }
         ?>
     </div>

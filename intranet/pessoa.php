@@ -43,7 +43,6 @@ if (isset($msg) && $msg != false && $msg == "erro") {
     </thead>
     <tbody class="table-font">
         <?php
-        require './sessao.php';
         include '../conexao.php';
         $sql = "select * from tb_pessoa";
         $query = $pdo->query($sql);

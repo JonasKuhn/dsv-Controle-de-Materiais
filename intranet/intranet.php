@@ -39,6 +39,7 @@ include '../conexao.php';
 
                     <ul>
                         <li><a href="intranet.php">Inicial</a></li>
+                        <li><a href="intranet.php?url=emprestimo">Empréstimos</a></li>
                         <li><a href="intranet.php?url=admin">Administradores</a></li>
                         <li><a href="intranet.php?url=tipo-equip">Cadastro de Tipos</a></li>
                         <li><a href="intranet.php?url=pessoa">Cadastro de Pessoas</a></li>
@@ -133,6 +134,9 @@ include '../conexao.php';
                             break;
                         case'apr':
                             include './editar/pessoa_aprova.php';
+                            break;
+                        case'emprestimo':
+                            include './emprestimo_all.php';
                             break;
                         case'devolver-equip':
                             include './editar/devolver_equipamento.php';

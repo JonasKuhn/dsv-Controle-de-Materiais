@@ -29,7 +29,7 @@
             $matricula = $key['nr_matricula'];
             $data = $key['data_emprestimo'];
             $id_equip = $key['cod_equipamento'];
-            $seleciona_equip = "select desc_equipamento from tb_equipamento where cod_equipamento = $cod";
+            $seleciona_equip = "select desc_equipamento from tb_equipamento where cod_equipamento = $id_equip";
             $query = $pdo->query($seleciona_equip);
             foreach ($query as $row) {
                 $equipamento = $row['desc_equipamento'];
