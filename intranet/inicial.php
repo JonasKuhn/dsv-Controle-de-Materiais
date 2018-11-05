@@ -2,7 +2,7 @@
 header('Refresh:300');
 include '../conexao.php';
 $date = date('Y-m-d');
-$sql = "SELECT * FROM tb_emprestimo";
+$sql = "SELECT cod_situacao,cod_emprestimo,data_emprestimo FROM tb_emprestimo";
 $result = $pdo->query($sql);
 foreach ($result as $key) {
     $situacao = $key['cod_situacao'];

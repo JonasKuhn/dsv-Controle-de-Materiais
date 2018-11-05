@@ -10,6 +10,9 @@
         <div class="row item-card text-center">
             <?php
             include './conexao.php';
+
+            header("Refresh:10");
+            
             $sqlTipoPessoa = "SELECT * FROM tb_tipo_pessoa;";
 
             $sqlTipoPessoaAdm = "SELECT * FROM tb_tipo_pessoa WHERE desc_tipo = 'Administrador';";
@@ -33,7 +36,7 @@
                     <div class="align-center col-md-4">
                         <div class="col align-self-md-center">
                             <div class="card h-100">
-                                <a href="./login.php?i=<?= $var; ?>" class="hvr-grow-shadow">
+                                <a href="./login.php" class="hvr-grow-shadow">
                                     <div class="card-body" 
                                          style="display: flex; 
                                          align-items: center; 
@@ -52,7 +55,7 @@
         </div>
     </div>
     <div class="item-card fixed-bottom " >
-        <a href="./intranet/login.php" class="hvr-bubble-float-bottom-new" style="float: right; margin-right: 100px; margin-bottom:0px; border-radius: 2px; color: #FFF; padding: 5px;">
+        <a href="./intranet/index.php" class="hvr-bubble-float-bottom-new" style="float: right; margin-right: 100px; margin-bottom:0px; border-radius: 2px; color: #FFF; padding: 5px;">
             <?= $descAdm; ?>
         </a>
     </div>

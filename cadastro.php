@@ -52,14 +52,31 @@
         <form method="POST" action="cadastroBD.php" enctype="multipart/form-data">
             <div class="container-fluid">
                 <div class="col-md-6 offset-md-3 mt-md-5">
+                    <div class="form-group row offset-md-1"> 
+                        <label class="col-md-2 col-form-label">Tipo Pessoa:</label>  
+                        <div class="col-md-8 ml-3 ">
+                            <select class="form-control" name="cod_tipo_pessoa" required="">
+                                <?php
+                                include './conexao.php';
+                                $sqlTipoPessoa = "SELECT cod_tipo_pessoa, desc_tipo FROM tb_tipo_pessoa;";
+                                $queryTipoPessoa = $pdo->prepare($sqlTipoPessoa);
+                                $queryTipoPessoa->execute();
+                                while ($dadosTipoPessoa = $queryTipoPessoa->fetch()) {
+                                    $desc_tipo = $dadosTipoPessoa['desc_tipo'];
+                                    $cod_tipo_pessoa = $dadosTipoPessoa['cod_tipo_pessoa'];
+                                    if ($desc_tipo != 'Administrador') {
+                                        ?>
+                                        <option value="<?= $cod_tipo_pessoa; ?>"><?= $desc_tipo; ?></option>
+                                        <?php
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group row offset-md-1">
                         <label class="col-md-2 col-form-label">Matrícula:</label>  
                         <div class="col-md-8 ml-3">
-                            <input name="cod_tipo_pessoa" value="<?php
-                            $var = $_GET['i'];
-                            $dec = base64_decode($var);
-                            echo $dec;
-                            ?>" style="display: none;">
                             <input onkeyup="somenteNumeros(this);" 
                                    maxlength="6" type="text"  
                                    ng-model="numero.valor"

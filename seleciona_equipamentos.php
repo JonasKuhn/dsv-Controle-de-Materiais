@@ -28,21 +28,34 @@
     </head>
     <!--style="line-height:90px; margin-left: 8%; float: left;"-->
     <body>
-        <?php
-        require_once 'sessao.php';
-        ?>
-        <a href="index.php?url=logout.php" onclick="return voltar();" style="line-height:90px; margin-left: 100px; float: left;">
-            <img src="img/logo.png" alt="UCEFF" >
-        </a>
-        <div class="cabecalho_selec_equip">
-            <h1 class="d-none d-lg-block text-nowrap text-center">
-                Selecione a qtd de equipamentos
-            </h1>
+        <header>
+            <?php
+            require_once 'sessao.php';
+            ?>
+            <a href="index.php?url=logout.php" onclick="return voltar();" style="line-height:90px; margin-left: 100px; float: left;">
+                <img src="img/logo.png" alt="UCEFF" >
+            </a>
+            <div class="cabecalho_selec_equip">
+                <h1 class="d-none d-lg-block text-nowrap text-center">
+                    Selecione a qtd de equipamentos
+                </h1>
+            </div>
         </header>
 
         <div class="trava container-fluid">
             <div class="row">
-                <div class="col-md-6 offset-3 mt-md-5">
+                <div class="col-md-6 offset-3">
+                    <div class="card text-center ">
+                        <div class="card-body">
+                            <?php
+                            //Aqui vou fazer algumas noias
+                            ?>
+                            <h5 class="card-title">Seja Bem-Vindo <b style="font-size: 1.2rem;"><?= $_SESSION["nome"]; ?>!</b></h5>
+                            <p class="card-text">Nesta página você seleciona os equipamentos que deseja utilizar.</p>
+                            <a href="#" class="btn btn-primary" title="Veja seus empréstimos!">Ver Seus Empréstimos</a>
+                        </div>
+                    </div>
+                    <br/>
                     <form action="confirma_emprestimo.php" method="POST">
                         <table class="table table-bordered table-hover table-responsive-md">
                             <thead>
@@ -100,9 +113,9 @@
                                         <tr>
                                             <td><?= $desc_tipo; ?></td>
                                             <td>
-                                                <select class="form-control" name="qtd_select">
+                                                <select class="form-control" name="<?= $cod_tipo_equipamento; ?>">
                                                     <?php
-                                                    for ($i = 0; $i <= $qtde; $i++) {
+                                                    for ($i = 0; $i <= $qtd_tipo; $i++) {
                                                         if ($i == $ix) {
                                                             ?>
                                                             <option selected="true" value="<?= $i; ?>">NENHUM <?= $desc_tipo ?></option>
@@ -146,19 +159,19 @@
             </div>
         </div>
 
-</body>
-<script src="dist/js/bootstrap.js" type="text/javascript"></script>
-<!-- Ativar events -->
-<script>
-            var effects = document.querySelectorAll('.effects')[0];
+    </body>
+    <script src="dist/js/bootstrap.js" type="text/javascript"></script>
+    <!-- Ativar events -->
+    <script>
+                var effects = document.querySelectorAll('.effects')[0];
 
-            effects.addEventListener('click', function (e) {
+                effects.addEventListener('click', function (e) {
 
-                if (e.target.className.indexOf('hvr') > -1) {
-                    e.preventDefault();
-                    e.target.blur();
+                    if (e.target.className.indexOf('hvr') > -1) {
+                        e.preventDefault();
+                        e.target.blur();
 
-                }
-            });
-</script>
+                    }
+                });
+    </script>
 </html>

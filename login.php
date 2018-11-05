@@ -34,14 +34,12 @@
     </head>
 
     <body>
-
         <a href="index.php" style="line-height:90px; margin-left: 100px; float: left;"><img src="img/logo.png" alt="UCEFF" ></a>
         <header>
             <h1 class="d-none d-lg-block text-nowrap text-center">
                 Faça seu Login
             </h1>
         </header>
-
         <div class="trava"></div>
         <div class="col-md-4 offset-md-4 mt-md-5">
             <form action="loginBD.php" method="post" target="_self" name="form" id="form">
@@ -115,7 +113,7 @@
 
 
                 <div class="text-center">
-                    <a href="cadastro.php?i=<?= $_GET['i'] ?>" >Não possuí cadastro?</a>
+                    <a href="cadastro.php" >Não possuí cadastro?</a>
                 </div>
                 <div class="row mt-md-2">
                     <div class="col-md-6">
