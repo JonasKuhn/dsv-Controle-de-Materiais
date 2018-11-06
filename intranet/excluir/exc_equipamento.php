@@ -1,10 +1,9 @@
 <?php
 
-include '../../conexao.php';
 $id = $_GET['cod'];
 $tipo = $_GET['id'];
 
-$verifica = "SELECT * FROM tb_equipamento WHERE cod_equipamento = $id";
+$verifica = "SELECT * FROM tb_emprestimo WHERE cod_equipamento = $id";
 $result = $pdo->query($verifica);
 foreach ($result as $key) {
     $res = $key['cod_equipamento'];

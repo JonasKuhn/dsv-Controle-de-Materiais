@@ -61,7 +61,11 @@ if (isset($msg) && $msg != false && $msg == "erro") {
                 <td><?= $desc ?></td>
                 <td><?= $qtde ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
-                <td><?= date('d/m/Y  H:i', strtotime($modificado));
+                <td><?php if ($modificado <= '2018-01-01') {
+                    echo $modificado = '---';
+                } else {
+                    echo date('d/m/Y  H:i', strtotime($modificado));
+                }
     }
         ?></td>
         </tr>
