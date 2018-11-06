@@ -9,19 +9,19 @@ foreach ($query as $row) {
     $gti = $row["fl_curso_gti"];
     $status = $row["fl_status"];
     $tipo = $row['cod_tipo_equipamento'];
-    if ($tipo != 2){
-        $css = 'd-none';
-    }
     $sql = "select desc_tipo from tb_tipo_equipamento where cod_tipo_equipamento = $tipo";
     $result = $pdo->query($sql);
-    foreach ($result as $key){
+    foreach ($result as $key) {
         $nomeTP = $key['desc_tipo'];
+    }
+    if ($nomeTP != "Notebook") {
+        $css = 'd-none';
     }
 }
 ?>
 <div class="row mt-md-5">
     <div class="col-md-12">
-        <h2>Alterar <?=$nomeTP?></h2>
+        <h2>Alterar <?= $nomeTP ?></h2>
     </div>
     <div class="col-md-12 mt-md-2">
         <form action="editar/edt_equipamento_bd.php?id=<?= $id ?>" method="POST">
@@ -33,7 +33,7 @@ foreach ($query as $row) {
                 <label>Observação:</label>
                 <textarea name="obs"><?= $obs ?></textarea>
             </div>
-            <div class="form-group <?=$css?>">
+            <div class="form-group <?= $css ?>">
                 <label>GTI:</label>
                 <select name="gti" class="form-control" required="">
                     <option value="1">Sim</option>
@@ -48,7 +48,7 @@ foreach ($query as $row) {
                     $sql1 = "select * from tb_tipo_equipamento;";
                     $result = $pdo->query($sql1);
 
-                    foreach ($result as $dados){
+                    foreach ($result as $dados) {
                         $matriz[] = array(
                             'cod' => $dados['cod_tipo_equipamento'],
                             'valor' => $dados['desc_tipo']

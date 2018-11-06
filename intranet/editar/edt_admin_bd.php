@@ -13,7 +13,7 @@ $senha = $_POST['senha_admin'];
 $sql = "update tb_admin set "
         . "nome_admin = '$nome',"
         . "login_admin = '$log_adm',"
-        . "senha_admin = '$senha',"
+        . "senha_admin = md5('$senha'),"
         . "modified = now() "
         . "where cod_admin = $id";
 

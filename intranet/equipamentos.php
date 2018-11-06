@@ -26,6 +26,9 @@ if (isset($msg) && $msg != false && $msg == "alt") {
 if (isset($msg) && $msg != false && $msg == "exc") {
     echo "<br/><div class='alert alert-success' role='alert'>$nomeEq excluído com sucesso!</div>";
 }
+if (isset($msg) && $msg != false && $msg == "erro") {
+    echo "<br/><div class='alert alert-danger' role='alert'>Não foi possível excluir o equipamento, existe vínculos em empréstimos</div>";
+}
 
 ?>
 <h2 class="mt-md-5" style="margin-bottom: 2rem"><?=$nomeEq?></h2>

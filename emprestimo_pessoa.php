@@ -70,7 +70,7 @@
                         <tbody class="table-font">
                             <?php
                             include './conexao.php';
-                            $sql = "SELECT cod_emprestimo,nr_matricula,cod_pessoa,cod_equipamento FROM tb_emprestimo WHERE cod_situacao != 3 AND cod_situacao != 2";
+                            $sql = "SELECT cod_emprestimo,nr_matricula,cod_pessoa,cod_equipamento,data_emprestimo FROM tb_emprestimo WHERE cod_situacao != 3 AND cod_situacao != 2";
                             $result = $pdo->query($sql);
                             foreach ($result as $key) {
                                 $id = $key['cod_emprestimo'];

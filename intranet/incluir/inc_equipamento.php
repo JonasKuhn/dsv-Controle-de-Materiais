@@ -1,12 +1,12 @@
 <?php
 $idTP = $_GET['id'];
-if ($idTP != 2) {
-    $style = 'd-none"';
-}
 $sql = "select desc_tipo from tb_tipo_equipamento where cod_tipo_equipamento = $idTP";
 $result = $pdo->query($sql); 
 foreach ($result as $row) {
     $nomeTP = $row["desc_tipo"];
+}
+if ($nomeTP != "Notebook") {
+    $style = 'd-none"';
 }
 ?>
 <div class="row mt-md-5">
