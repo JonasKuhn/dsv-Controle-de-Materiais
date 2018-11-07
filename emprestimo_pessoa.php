@@ -58,7 +58,7 @@
                     </div>
 
 
-                    <table id="emprestimo" class="table table-striped table-bordered table-hover dataTable mt-md-5 ">
+                    <table id="table" class="testetable table table-striped table-bordered table-hover dataTable mt-md-5 ">
                         <thead class="table-font">
                             <tr>
                                 <th scope="col">Matrícula</th>
@@ -70,7 +70,7 @@
                         <tbody class="table-font">
                             <?php
                             include './conexao.php';
-                            $sql = "SELECT cod_emprestimo,nr_matricula,cod_pessoa,cod_equipamento FROM tb_emprestimo WHERE cod_situacao != 3 AND cod_situacao != 2";
+                            $sql = "SELECT cod_emprestimo,nr_matricula,cod_pessoa,cod_equipamento,data_emprestimo FROM tb_emprestimo WHERE cod_situacao != 3 AND cod_situacao != 2";
                             $result = $pdo->query($sql);
                             foreach ($result as $key) {
                                 $id = $key['cod_emprestimo'];
@@ -119,8 +119,29 @@
 
     </body>
     <script src="dist/js/bootstrap.js" type="text/javascript"></script>
+    <script src="intranet/assets/js/datatables.min.js" type="text/javascript"></script>
     <!-- Ativar events -->
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/b-1.5.4/b-html5-1.5.4/datatables.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+
     <script>
+                                $(document).ready(function () {
+                                    $('.testetable').DataTable({
+                                        "language": {
+                                            "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
+                                        },
+                                        dom: 'rt',
+                                        buttons: [
+                                            'excel',
+                                            'pdf'
+                                        ]
+                                    });
+                                    setTimeout(function () {
+                                        $('.alert').fadeOut(800);
+                                    }, 4000);
+                                });
                                 var effects = document.querySelectorAll('.effects')[0];
 
                                 effects.addEventListener('click', function (e) {
