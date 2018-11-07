@@ -81,7 +81,7 @@ include '../conexao.php';
                         case'editar-admin':
                             include('./editar/edt_admin.php');
                             break;
-                        case'excluir-admin':
+                        case'exc_admin':
                             include('./excluir/exc_admin.php');
                             break;
                         case'tipo-equip':

@@ -47,8 +47,8 @@ foreach ($query as $row) {
             <div class="form-group">
                 <label>Status:</label>
                 <select name="status" class="form-control" required="">
-                    <option value="1">Disponível</option>
-                    <option value="0" selected="">Emprestado</option>
+                    <option value="0">Disponível</option>
+                    <option value="1" selected="">Emprestado</option>
                 </select>
             </div>
             <div class="form-group row">
