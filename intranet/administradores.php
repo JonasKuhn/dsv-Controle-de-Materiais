@@ -14,7 +14,6 @@
     }
 </style>
 <?php
-
 @$msg = $_GET['msg'];
 if (isset($msg) && $msg != false && $msg == "inc") {
     echo "<br/><div class='alert alert-success' role='alert'>Administrador incluído com sucesso!</div>";
@@ -30,7 +29,7 @@ if (isset($msg) && $msg != false && $msg == "exc") {
 
 <h2 class="mt-md-5">Administradores</h2>
 <table id='table' class="table table-striped table-bordered table-hover dataTable">
-    <thead>
+    <thead class="table-font">
         <tr>
             <th scope="col"><a href="?url=incluir-admin" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
@@ -69,9 +68,14 @@ if (isset($msg) && $msg != false && $msg == "exc") {
                 <td><?= $login ?></td>
                 <td>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
-                <td><?= date('d/m/Y  H:i', strtotime($modificado));
-    }
-        ?></td>
+                <td><?php
+                    if ($modificado <= '2018-01-01') {
+                        echo $modificado = '---';
+                    } else {
+                        echo date('d/m/Y  H:i', strtotime($modificado));
+                    }
+                }
+                ?></td>
         </tr>
     </tbody>
 </table>

@@ -53,7 +53,7 @@ if (isset($msg) && $msg != false && $msg == "erro") {
             <tr>
                 <td><a href="?url=editar-tp-equip&id=<?= $cod ?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
-                    </a>&nbsp;<a href="?url=excluir-tp-equip&id=<?=$cod?>" onclick="return excluir('<?= $desc ?>');"  class="table-link">
+                    </a>&nbsp;<a href="?url=excluir-tp-equip&id=<?= $cod ?>" onclick="return excluir('<?= $desc ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
@@ -61,13 +61,14 @@ if (isset($msg) && $msg != false && $msg == "erro") {
                 <td><?= $desc ?></td>
                 <td><?= $qtde ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
-                <td><?php if ($modificado <= '2018-01-01') {
-                    echo $modificado = '---';
-                } else {
-                    echo date('d/m/Y  H:i', strtotime($modificado));
+                <td><?php
+                    if ($modificado <= '2018-01-01') {
+                        echo $modificado = '---';
+                    } else {
+                        echo date('d/m/Y  H:i', strtotime($modificado));
+                    }
                 }
-    }
-        ?></td>
+                ?></td>
         </tr>
     </tbody>
 </table>

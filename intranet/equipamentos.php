@@ -29,9 +29,8 @@ if (isset($msg) && $msg != false && $msg == "exc") {
 if (isset($msg) && $msg != false && $msg == "erro") {
     echo "<br/><div class='alert alert-danger' role='alert'>Não foi possível excluir o equipamento, existem vínculos em empréstimos</div>";
 }
-
 ?>
-<h2 class="mt-md-5" style="margin-bottom: 2rem"><?=$nomeEq?></h2>
+<h2 class="mt-md-5" style="margin-bottom: 2rem"><?= $nomeEq ?></h2>
 <table id='table' class="table table-striped table-bordered table-hover table-responsive-lg dataTable mt-md-5">
     <thead>
         <tr>
@@ -84,14 +83,11 @@ if (isset($msg) && $msg != false && $msg == "erro") {
 
             $criado = $row["created"];
             $modificado = $row["modified"];
-            #if ($modificado == ""){
-            #	$modificado = $criado;
-            #}
             ?>
             <tr>
-                <td><a href="?url=editar-equip&id=<?=$id?>" class="table-link">
+                <td><a href="?url=editar-equip&id=<?= $id ?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
-                    </a>&nbsp;<a href="?url=excluir-equip&cod=<?=$id?>&id=<?=$id_tipo?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
+                    </a>&nbsp;<a href="?url=excluir-equip&cod=<?= $id ?>&id=<?= $id_tipo ?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
@@ -102,9 +98,14 @@ if (isset($msg) && $msg != false && $msg == "erro") {
                 <td><?= $status_desc ?></td>
                 <td><?= $tipo ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
-                <td><?= date('d/m/Y  H:i', strtotime($modificado));
-    }
-        ?></td>
+                <td><?php
+                    if ($modificado <= '2018-01-01') {
+                        echo $modificado = '---';
+                    } else {
+                        echo date('d/m/Y  H:i', strtotime($modificado));
+                    }
+                }
+                ?></td>
         </tr>
     </tbody>
 </table>

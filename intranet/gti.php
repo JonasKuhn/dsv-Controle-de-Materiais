@@ -75,9 +75,9 @@ if (isset($msg) && $msg != false && $msg == "exc") {
             $modificado = $row["modified"];
             ?>
             <tr>
-                <td><a href="?url=editar-gti&id=<?=$id?>" class="table-link">
+                <td><a href="?url=editar-gti&id=<?= $id ?>" class="table-link">
                         <i class="fa fa-edit fa-2x"></i>
-                    </a><a href="?url=excluir-gti&id=<?=$id?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
+                    </a><a href="?url=excluir-gti&id=<?= $id ?>" onclick="return excluir('<?= $nome ?>');"  class="table-link">
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
@@ -89,8 +89,12 @@ if (isset($msg) && $msg != false && $msg == "exc") {
                 <td><?= $aluno ?></td>
                 <td><?= $turma ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
-                <td><?=
-                    date('d/m/Y  H:i', strtotime($modificado));
+                <td><?php
+                    if ($modificado <= '2018-01-01') {
+                        echo $modificado = '---';
+                    } else {
+                        echo date('d/m/Y  H:i', strtotime($modificado));
+                    }
                 }
                 ?></td>
         </tr>

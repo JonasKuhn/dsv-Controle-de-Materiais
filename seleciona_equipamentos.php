@@ -82,7 +82,7 @@
                                     $equipamentoTrim = str_replace(' ', '', $desc_tipo);
 
                                     if ($_SESSION["tipo_pessoa"] == 1) {
-                                        if ($cod_tipo_equipamento == 2) {
+                                        if ($cod_tipo_equipamento == ``) {
                                             
                                         } else {
                                             ?>

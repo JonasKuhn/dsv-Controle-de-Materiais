@@ -54,7 +54,7 @@ if (isset($msg) && $msg != false && $msg == "erro") {
             $email = $row["email_pessoa"];
             $fone = $row["telefone_pessoa"];
             $validacao = $row["fl_validacao"];
-            if ($validacao == 1){
+            if ($validacao == 1) {
                 $validacao_desc = "Ativo";
             } else {
                 $validacao_desc = "Desativado";
@@ -62,7 +62,7 @@ if (isset($msg) && $msg != false && $msg == "erro") {
             $idTP = $row["cod_tipo_pessoa"];
             $seleciona_tipo = "select * from tb_tipo_pessoa where cod_tipo_pessoa = $idTP";
             $result = $pdo->query($seleciona_tipo);
-            foreach ($result as $key){
+            foreach ($result as $key) {
                 $tipo = $key["desc_tipo"];
             }
             $criado = $row["created"];
@@ -75,16 +75,20 @@ if (isset($msg) && $msg != false && $msg == "erro") {
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
-                <td scope="row"><?=$cod?></td>
-                <td><?=$matricula?></td>
-                <td><?=$nome?></td>
-                <td><?=$email?></td>
-                <td><?=$fone?></td>
-                <td><?=$validacao_desc?></td>
-                <td><?=$tipo?></td>
+                <td scope="row"><?= $cod ?></td>
+                <td><?= $matricula ?></td>
+                <td><?= $nome ?></td>
+                <td><?= $email ?></td>
+                <td><?= $fone ?></td>
+                <td><?= $validacao_desc ?></td>
+                <td><?= $tipo ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
-                <td><?=
-                    date('d/m/Y  H:i', strtotime($modificado));
+                <td><?php
+                    if ($modificado <= '2018-01-01') {
+                        echo $modificado = '---';
+                    } else {
+                        echo date('d/m/Y  H:i', strtotime($modificado));
+                    }
                 }
                 ?></td>
         </tr>
