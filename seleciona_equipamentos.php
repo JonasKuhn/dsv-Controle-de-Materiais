@@ -147,7 +147,7 @@
                             </div>
                             <div class="col-md-6">
                                 <button type="submit" class="btn btn-primary" style="float: right; color: white">
-                                    Concluir
+                                    Selecionar
                                 </button>
                             </div>
                         </div>
