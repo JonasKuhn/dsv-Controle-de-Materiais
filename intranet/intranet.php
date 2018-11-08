@@ -6,6 +6,7 @@ include '../conexao.php';
     <head>
         <title>Empréstimo NTI</title>
         <meta charset="utf-8" />
+        <link rel="shortcut icon" href="../img/logoUceff.png" >
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>

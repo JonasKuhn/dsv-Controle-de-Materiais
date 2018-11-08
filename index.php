@@ -15,7 +15,7 @@
         <meta property="og:image" content="">
 
         <title>Empréstimos NTI</title>
-        <link rel="shortcut icon" href="" type="image/x-icon"/>
+        <link rel="shortcut icon" href="img/logoUceff.png" >
 
         <link href="dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>

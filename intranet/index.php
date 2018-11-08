@@ -1,6 +1,7 @@
 
 <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" href="../img/logoUceff.png" >
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="author" content="Jonas Kuhn">
 
@@ -62,7 +63,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            
+
                             <div class="col-md-12 mt-md-2">
                                 <button type="submit" class="btn btn-primary btn-block">
                                     Entrar
@@ -81,7 +82,6 @@
                                 if (isset($msg) && $msg != false && $msg == "empty") {
                                     echo "<br/><div class='alert alert-danger' role='alert'>Todos os Campos Devem Ser Preenchidos</div>";
                                 }
-                                
                                 ?>
                             </div>
                     </form>
