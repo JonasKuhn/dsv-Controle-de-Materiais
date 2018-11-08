@@ -21,6 +21,7 @@
         <link href="css/estilo.css" rel="stylesheet" type="text/css"/>
         <link href="events/css/hover.css" rel="stylesheet" type="text/css"/>
 
+        <link rel="stylesheet" type="text/css" href="intranet/assets/css/datatables.min.css"/>
         <style type="text/css">
             .table-font{
                 font-size: .789rem;
@@ -70,7 +71,7 @@
                         <tbody class="table-font">
                             <?php
                             include './conexao.php';
-                            $sql = "SELECT cod_emprestimo,nr_matricula,cod_pessoa,cod_equipamento,data_emprestimo FROM tb_emprestimo WHERE cod_situacao != 3 AND cod_situacao != 2";
+                            $sql = "SELECT cod_emprestimo,nr_matricula,cod_pessoa,cod_equipamento,data_emprestimo,cod_situacao FROM tb_emprestimo WHERE cod_situacao != 2;";
                             $result = $pdo->query($sql);
                             foreach ($result as $key) {
                                 $id = $key['cod_emprestimo'];
@@ -88,14 +89,29 @@
                                 foreach ($query as $row) {
                                     $equipamento = $row['desc_equipamento'];
                                 }
-                                ?>
-                                <tr>
-                                    <td><?= $matricula ?></td>
-                                    <td><?= $nome_pessoa ?></td>
-                                    <td><?= date('d/m/Y', strtotime($data)); ?></td>
-                                    <td><?= $equipamento ?></td>
-                                </tr>
-                            <?php } ?>
+
+                                $situacao = $key['cod_situacao'];
+
+                                if ($situacao == 3) {
+                                    ?>
+                                    <tr style="background-color: #f8d7da; border-color: #f5c6cb;" title="Esse empréstimo está atrasado entre em contato com o NTI!">
+                                        <td><?= $matricula ?></td>
+                                        <td><?= $nome_pessoa ?></td>
+                                        <td><?= date('d/m/Y', strtotime($data)); ?></td>
+                                        <td><?= $equipamento ?></td>
+                                    </tr>
+                                <?php } else {
+                                    ?>
+                                    <tr>
+                                        <td><?= $matricula ?></td>
+                                        <td><?= $nome_pessoa ?></td>
+                                        <td><?= date('d/m/Y', strtotime($data)); ?></td>
+                                        <td><?= $equipamento ?></td>
+                                    </tr>
+                                <?php
+                                }
+                            }
+                            ?>
                         </tbody>
                     </table>
 
@@ -108,9 +124,11 @@
                             </a>
                         </div>
                         <div class="col-md-6">
-                            <button type="submit" onclick="return voltar();" class="btn btn-primary" style="float: right; color: white;">
-                                Sair
-                            </button>
+                            <a href="logout.php">
+                                <button onclick="return voltar();" class="btn btn-primary" style="float: right; color: white;">
+                                    Sair
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -127,30 +145,30 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 
     <script>
-                                $(document).ready(function () {
-                                    $('.testetable').DataTable({
-                                        "language": {
-                                            "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
-                                        },
-                                        dom: 'rt',
-                                        buttons: [
-                                            'excel',
-                                            'pdf'
-                                        ]
+                                    $(document).ready(function () {
+                                        $('.testetable').DataTable({
+                                            "language": {
+                                                "url": "//cdn.datatables.net/plug-ins/1.10.10/i18n/Portuguese-Brasil.json"
+                                            },
+                                            dom: 'rt',
+                                            buttons: [
+                                                'excel',
+                                                'pdf'
+                                            ]
+                                        });
+                                        setTimeout(function () {
+                                            $('.alert').fadeOut(800);
+                                        }, 4000);
                                     });
-                                    setTimeout(function () {
-                                        $('.alert').fadeOut(800);
-                                    }, 4000);
-                                });
-                                var effects = document.querySelectorAll('.effects')[0];
+                                    var effects = document.querySelectorAll('.effects')[0];
 
-                                effects.addEventListener('click', function (e) {
+                                    effects.addEventListener('click', function (e) {
 
-                                    if (e.target.className.indexOf('hvr') > -1) {
-                                        e.preventDefault();
-                                        e.target.blur();
+                                        if (e.target.className.indexOf('hvr') > -1) {
+                                            e.preventDefault();
+                                            e.target.blur();
 
-                                    }
-                                });
+                                        }
+                                    });
     </script>
 </html>
