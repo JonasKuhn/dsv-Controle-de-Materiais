@@ -82,7 +82,7 @@
                                     $equipamentoTrim = str_replace(' ', '', $desc_tipo);
 
                                     if ($_SESSION["tipo_pessoa"] == 1) {
-                                        if ($cod_tipo_equipamento == ``) {
+                                        if ($cod_tipo_equipamento == '') {
                                             
                                         } else {
                                             ?>
@@ -94,7 +94,7 @@
                                                         for ($i = 0; $i <= $qtd_tipo; $i++) {
                                                             if ($i == $ix) {
                                                                 ?>
-                                                                <option selected="true" value="<?= $i; ?>">NENHUM <?= $desc_tipo ?></option>
+                                                                <option selected value="<?= $i; ?>">Nenhum <?= $desc_tipo ?></option>
                                                                 <?php
                                                             } else if ($i != $ix) {
                                                                 ?>
@@ -118,7 +118,7 @@
                                                     for ($i = 0; $i <= $qtd_tipo; $i++) {
                                                         if ($i == $ix) {
                                                             ?>
-                                                            <option selected="true" value="<?= $i; ?>">NENHUM <?= $desc_tipo ?></option>
+                                                            <option selected value="<?= $i; ?>">NENHUM <?= $desc_tipo ?></option>
                                                             <?php
                                                         } else if ($i != $ix) {
                                                             ?>

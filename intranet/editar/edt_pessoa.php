@@ -3,7 +3,7 @@ $id_pessoa = $_GET['id'];
 $sql_pessoa = ("SELECT * from tb_pessoa where cod_pessoa = '$id_pessoa' ");
 $result_pessoa = $pdo->query($sql_pessoa);
 
-foreach ($result_pessoa as $key){
+foreach ($result_pessoa as $key) {
     $id_tipo = ['cod_tipo_pessoa'];
     $nome = $key['nome_pessoa'];
     $matricula = $key['nr_matricula'];
@@ -11,7 +11,7 @@ foreach ($result_pessoa as $key){
     $email = $key['email_pessoa'];
     $fone = $key['telefone_pessoa'];
     $situacao = $key['fl_validacao'];
-    if ($situacao == 1){
+    if ($situacao == 1) {
         $selected1 = 'selected';
         $selected0 = '';
     } else {
@@ -26,7 +26,7 @@ foreach ($result_pessoa as $key){
         <h2>Editar Pessoa</h2>
     </div>
     <div class="col-md-12 mt-md-2">
-        <form action="editar/edt_pessoa_bd.php?id=<?=$id_pessoa?>" method="POST">
+        <form action="editar/edt_pessoa_bd.php?id=<?= $id_pessoa ?>" method="POST">
             <div class="form-group">
                 <label>Tipo:</label>
                 <select name="tipo" class="form-control" required="">
@@ -38,7 +38,7 @@ foreach ($result_pessoa as $key){
                         if ($item['cod_tipo_pessoa'] == $id_tipo) {
                             echo "<option value='{$item['cod_tipo_pessoa']}' selected>{$item['desc_tipo']}</option>";
                         } else {
-                            echo "<option value='{$item['cod_tipo_pessoa']}'>{$item['desc_tipo']}</option>";
+                            echo "<option value='{$item['cod_tipo_pessoa']}' >{$item['desc_tipo']}</option>";
                         }
                     }
                     ?>
@@ -48,33 +48,33 @@ foreach ($result_pessoa as $key){
             <div class="form-group">
 
                 <label>Nome:</label>
-                <input type="text" name="nome" class="form-control" placeholder="Digite o nome" value="<?=$nome?>" required>
+                <input type="text" name="nome" class="form-control" placeholder="Digite o nome" value="<?= $nome ?>" required>
             </div>
             <div class="form-group row">
                 <div class="form-group col-md-6">
                     <label>Matrícula:</label>
-                    <input type="text" name="matricula" class="form-control" placeholder="Digite a matrícula" value="<?=$matricula?>" required>
+                    <input type="text" name="matricula" class="form-control" placeholder="Digite a matrícula" value="<?= $matricula ?>" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Senha:</label>
-                    <input type="text" name="senha" class="form-control" placeholder="Digite a senha (Igual a matrícula)" value="<?=$senha?>" required>
+                    <input type="text" name="senha" class="form-control" placeholder="Digite a senha (Igual a matrícula)" value="<?= $senha ?>" required>
                 </div>
             </div>
             <div class="form-group row">
                 <div class="form-group col-md-6">
                     <label>E-mail:</label>
-                    <input type="email" name="email" class="form-control" placeholder="Digite o e-mail" value="<?=$email?>" required>
+                    <input type="email" name="email" class="form-control" placeholder="Digite o e-mail" value="<?= $email ?>" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Fone:</label>
-                    <input  type="tel" class="form-control" name="telefone" value="<?=$fone?>" id="telefone" required>
+                    <input  type="tel" class="form-control" name="telefone" value="<?= $fone ?>" id="telefone" required>
                 </div>
             </div>
             <div class="form-group">
                 <label>Situação:</label>
                 <select name="situacao">
-                    <option value="1" <?=$selected1?>>Ativo</option>
-                    <option value="0" <?=$selected0?>>Desativado</option>
+                    <option value="1" <?= $selected1 ?>>Ativo</option>
+                    <option value="0" <?= $selected0 ?>>Desativado</option>
                 </select>
             </div>
 
