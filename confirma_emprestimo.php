@@ -67,7 +67,7 @@
 
                                     if ($a != '' || $a != NULL) {
                                         if ($_SESSION["tipo_pessoa"] == 1) {
-                                            if ($cod_tipo_equipamento != 2) {
+                                            if ($cod_tipo_equipamento != '') {
                                                 ?>
                                             <tr>
                                             <input type="text" hidden="" name="<?= $cod_tipo_equipamento; ?>" value="<?= $a; ?>">
