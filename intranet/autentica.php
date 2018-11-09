@@ -21,8 +21,7 @@ foreach ($result as $row) {
             header("Location: index.php?msg=bad_aut");
             exit;
         }
-    } else {
-        header("Location: index.php?msg=bad_aut");
-        exit;
     }
 }
+header("Location: index.php?msg=bad_aut");
+exit;
