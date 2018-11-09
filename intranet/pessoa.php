@@ -30,7 +30,6 @@ if (isset($msg) && $msg != false && $msg == "erro") {
             <th scope="col"><a href="?url=incluir-pessoa" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
                 </a></th>
-            <th scope="col">#</th>
             <th scope="col">Matrícula</th>
             <th scope="col">Nome</th>
             <th scope="col">E-mail</th>
@@ -75,7 +74,6 @@ if (isset($msg) && $msg != false && $msg == "erro") {
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
-                <td scope="row"><?= $cod ?></td>
                 <td><?= $matricula ?></td>
                 <td><?= $nome ?></td>
                 <td><?= $email ?></td>

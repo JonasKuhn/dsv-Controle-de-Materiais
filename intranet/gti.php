@@ -32,7 +32,6 @@ if (isset($msg) && $msg != false && $msg == "exc") {
             <th scope="col"><a href="?url=incluir-gti&id=<?= $id ?>" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
                 </a></th>
-            <th scope="col" class="table-font">#</th>
             <th scope="col" class="table-font">Nome</th>
             <th scope="col" class="table-font">Observação</th>
             <th scope="col" class="table-font">GTI</th>
@@ -81,7 +80,6 @@ if (isset($msg) && $msg != false && $msg == "exc") {
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
-                <td scope="row"><?= $id ?></td>
                 <td><?= $nome ?></td>
                 <td><?= $obs ?></td>
                 <td><?= $gti_desc ?></td>

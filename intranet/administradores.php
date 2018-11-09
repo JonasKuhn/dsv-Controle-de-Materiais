@@ -34,7 +34,6 @@ if (isset($msg) && $msg != false && $msg == "exc") {
             <th scope="col"><a href="?url=incluir-admin" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
                 </a></th>
-            <th scope="row">Cód.</th>
             <th scope="col">Nome</th>
             <th scope="col">Login</th>
             <th scope="col">Senha</th>
@@ -63,7 +62,6 @@ if (isset($msg) && $msg != false && $msg == "exc") {
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
-                <td scope="row"><?= $id ?></td>
                 <td><?= $nome ?></td>
                 <td><?= $login ?></td>
                 <td>&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</td>

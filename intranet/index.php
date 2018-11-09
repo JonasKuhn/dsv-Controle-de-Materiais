@@ -15,27 +15,11 @@
     <meta property="og:image" content="">
 
     <title>Empréstimos NTI</title>
-    <link rel="shortcut icon" href="" type="image/x-icon"/>
 
     <link href="../dist/css/bootstrap.css" rel="stylesheet" type="text/css"/>
     <link href="../css/estilo.css" rel="stylesheet" type="text/css"/>
     <link href="../events/css/hover.css" rel="stylesheet" type="text/css"/>
     <link href="../font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css"/>
-    <script>
-        function excluir(valor) {
-            return confirm('Deseja realmente excluir o registro ' + valor + '?');
-        }
-    </script>
-    <script>
-        function editar(valor) {
-            return confirm('Deseja realmente salvar as alterações em ' + valor + '?');
-        }
-    </script>
-    <script>
-        function salvar() {
-            return confirm('Deseja realmente salvar as alterações?');
-        }
-    </script>
 </head>
 <div class="container-fluid">
     <div class="row">
@@ -77,10 +61,10 @@
                                     echo "<br/><div class='alert alert-danger' role='alert'>Autenticação necessária</div>";
                                 }
                                 if (isset($msg) && $msg != false && $msg == "bad_aut") {
-                                    echo "<br/><div class='alert alert-danger' role='alert'>Login ou Senha Incorretos</div>";
+                                    echo "<br/><div class='alert alert-danger' role='alert'>Login ou senha incorretos</div>";
                                 }
                                 if (isset($msg) && $msg != false && $msg == "empty") {
-                                    echo "<br/><div class='alert alert-danger' role='alert'>Todos os Campos Devem Ser Preenchidos</div>";
+                                    echo "<br/><div class='alert alert-danger' role='alert'>Todos os campos devem ser preenchidos</div>";
                                 }
                                 ?>
                             </div>

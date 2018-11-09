@@ -29,7 +29,6 @@ if (isset($msg) && $msg != false && $msg == "erro") {
             <th scope="col"><a href="?url=incluir-tp-equip" class="table-link">
                     <i class="fa fa-plus fa-2x"></i>
                 </a></th>
-            <th scope="col" class="table-font">#</th>
             <th scope="col" class="table-font">Equipamento</th>
             <th scope="col" class="table-font">Quantidade</th>
             <th scope="col" class="table-font">Criado</th>
@@ -57,7 +56,6 @@ if (isset($msg) && $msg != false && $msg == "erro") {
                         <i class="fa fa-trash-o fa-2x"></i>
                     </a>
                 </td>
-                <td scope="row"><?= $cod ?></td>
                 <td><?= $desc ?></td>
                 <td><?= $qtde ?></td>
                 <td><?= date('d/m/Y  H:i', strtotime($criado)) ?></td>
