@@ -23,7 +23,7 @@
         <link href="events/css/hover.css" rel="stylesheet" type="text/css"/>
         <script>
             function voltar() {
-                return confirm('Deseja realmente cancelar seu emprestimo?');
+                return confirm('Deseja realmente sair da seleção de equipamentos?');
             }
         </script>
     </head>
@@ -141,7 +141,7 @@
                         <div class="row mt-md-2">
                             <div class="col-md-6">
                                 <a href="logout.php">
-                                    <button type="button" class="btn btn-secondary" style="color: white">
+                                    <button type="button" onclick="return voltar();" class="btn btn-secondary" style="color: white">
                                         Voltar
                                     </button>
                                 </a>

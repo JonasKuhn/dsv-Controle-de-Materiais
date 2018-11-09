@@ -109,20 +109,37 @@
                                         <td><?= date('d/m/Y', strtotime($data)); ?></td>
                                         <td><?= $equipamento ?></td>
                                     </tr>
-                                <?php
+                                    <?php
                                 }
                             }
                             ?>
                         </tbody>
                     </table>
+                    <?php
+                    @$msg = $_GET['msg'];
+                    if (isset($msg) && $msg != false && $msg == "atrasado") {
+                        echo "<div class='alert alert-warning fade show text-center' role='alert'> "
+                        . "<strong>ALERTA!</strong> <br>"
+                        . "Você possui empréstimos atrasados entre em contato com o NTI."
+                        . "</div>";
+                    }
+                    ?>
 
                     <div class="row mt-md-2">
                         <div class="col-md-6">
-                            <a href="seleciona_equipamentos.php">
-                                <button type="button" class="btn btn-secondary" style="color: white">
+                            <?php
+                            if ($situacao != 3) {
+                                ?>
+                                <a href="seleciona_equipamentos.php">
+                                    <button type="button" class="btn btn-secondary" style="color: white">
+                                        Voltar
+                                    </button>
+                                </a>
+                            <?php } else { ?>
+                                <button type="button" class="disabled btn btn-secondary" style="color: white">
                                     Voltar
                                 </button>
-                            </a>
+                            <?php } ?>
                         </div>
                         <div class="col-md-6">
                             <a href="logout.php">

@@ -22,7 +22,17 @@ if ($x1 == "" || $x2 == "") {
             $_SESSION["tipo_pessoa"] = $tipo_pessoa;
             $_SESSION["nome"] = $dados['nome_pessoa'];
             setcookie("usuario", $dados['nome_pessoa']);
-            header("Location: ./seleciona_equipamentos.php");
+
+            $sqlValidaEmprestimo = "SELECT COUNT(cod_equipamento) FROM tb_emprestimo WHERE cod_situacao = 3;";
+            $queryValidaEmprestimo = $pdo->prepare($sqlValidaEmprestimo);
+            $queryValidaEmprestimo->execute();
+            $dado = $queryValidaEmprestimo->fetch();
+            $number = $dado['COUNT(cod_equipamento)'];
+            if ($number > 0) {
+                header("Location: ./emprestimo_pessoa.php?msg=atrasado");
+            } else {
+                header("Location: ./seleciona_equipamentos.php");
+            }
         } else {
             echo "<SCRIPT Language='javascript' type='text/javascript'> window.location.href = "
             . "'login.php?msg=alert'; </SCRIPT>";
