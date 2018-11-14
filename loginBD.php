@@ -23,7 +23,7 @@ if ($x1 == "" || $x2 == "") {
             $_SESSION["nome"] = $dados['nome_pessoa'];
             setcookie("usuario", $dados['nome_pessoa']);
 
-            $sqlValidaEmprestimo = "SELECT COUNT(cod_equipamento) FROM tb_emprestimo WHERE cod_situacao = 3;";
+            $sqlValidaEmprestimo = "SELECT COUNT(cod_equipamento) FROM tb_emprestimo WHERE cod_situacao = 3 AND nr_matricula = $nr_matricula;";
             $queryValidaEmprestimo = $pdo->prepare($sqlValidaEmprestimo);
             $queryValidaEmprestimo->execute();
             $dado = $queryValidaEmprestimo->fetch();
