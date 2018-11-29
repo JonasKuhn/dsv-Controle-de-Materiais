@@ -19,7 +19,7 @@ $sqlMatricula = "SELECT cod_pessoa, nr_matricula FROM tb_pessoa WHERE nr_matricu
 $queryMatricula = $pdo->prepare($sqlMatricula);
 $queryMatricula->execute();
 $dados = $queryMatricula->fetch();
-$vl_matricula = $dados['nr_matricula'];
+@$vl_matricula = $dados['nr_matricula'];
 $cod_pessoa = $dados['cod_pessoa'];
 
 //echo 'Quantidade de equipamento - ' . $count . '<br> Matricula - ' . $vl_matricula . '<br> Cod Pessoa - ' . $cod_pessoa;
@@ -83,7 +83,7 @@ if ($vl_matricula != '') {
                 }
             }
         } else {
-            $x++;
+            @$x++;
             
             //echo '<br> Valor X - '.$x.'<br>';
         }
